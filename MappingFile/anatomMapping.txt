@@ -1,0 +1,7 @@
+head/neck,0
+lower extremity,1
+oral/genital,2
+palms/soles,3
+torso,4
+unknow,5
+upper extremity,6

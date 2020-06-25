@@ -31,18 +31,19 @@ if __name__ == "__main__":
     ### config
     batchSize = 16
     labelsNumber = 1
-    epoch = 50
+    epoch = 35
     displayTimes = 20
-    reg_lambda = 1.e-4
+    reg_lambda = 2.e-4
     reduction = 'mean'
+    drop_rate = 0.3
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 2700
     ###
-    loadWeight = False
-    trainModelLoad = 0.7272255535055351
+    loadWeight = True
+    trainModelLoad = 0.9265452029520296
     ###
-    LR = 5e-3
+    LR = 1.e-3
     ###
     device0 = "cuda:0"
 
@@ -73,7 +74,7 @@ if __name__ == "__main__":
                                     pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = resnest101(number_classes=labelsNumber,drop_connect_ratio=0.15).to(device0)
+    model = resnest101(number_classes=labelsNumber,drop_connect_ratio=drop_rate).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()
@@ -84,7 +85,7 @@ if __name__ == "__main__":
 
     lossCri = nn.BCELoss(reduction=reduction).to(device0)
 
-    optimizer = AdaBound(model.parameters(), lr=LR, final_lr=5e-4, weight_decay=reg_lambda)
+    optimizer = torch.optim.SGD(model.parameters(),lr=LR,momentum=0.9, weight_decay=reg_lambda,nesterov=True)
 
     if loadWeight:
         model.load_state_dict(torch.load(modelSavePath + "Model_Re" + str(trainModelLoad) + ".pth"))

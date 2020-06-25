@@ -33,16 +33,16 @@ if __name__ == "__main__":
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
-    reg_lambda = 1.e-4
+    reg_lambda = 2.5e-4
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 3500
     ###
-    loadWeight = False
-    trainModelLoad = 0.7272255535055351
+    loadWeight = True
+    trainModelLoad = 0.9133417896678967
     ###
-    LR = 1e-3
+    LR = 1e-4
     ###
     device0 = "cuda:1"
 
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
         tv.transforms.CenterCrop(size=[272, 408]),
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=45)], p=0.2),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])

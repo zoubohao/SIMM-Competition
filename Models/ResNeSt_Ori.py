@@ -3,10 +3,12 @@ import torch
 import torch.nn as nn
 from Models.SplAtConv2d import SplAtConv2d
 import torch.nn.functional as F
+from Tools import MemoryEfficientSwish
 
 __all__ = ['ResNet', 'Bottleneck', "resnest101"]
 
 class DropBlock2D(nn.Module):
+
     def __init__(self, prob):
         super().__init__()
         self.prob = prob
@@ -26,15 +28,15 @@ class Bottleneck(nn.Module):
     """ResNet Bottleneck
     """
     # pylint: disable=unused-argument
-    expansion = 2
+    expansion = 4
     def __init__(self, inplanes, planes, stride=1, downsample=None, cardinality=2, radix = 2,bottleneck_width=64, dilation=1,
                  norm_layer=None, dropblock_prob=0.25, last_gamma=False):
         super(Bottleneck, self).__init__()
         group_width = int(planes * (bottleneck_width / 64.)) * cardinality
         self.conv1 = nn.Conv2d(inplanes, group_width, kernel_size=1, bias=False)
-        self.bn1 = norm_layer(group_width)
+        self.bn1 = norm_layer(group_width,eps=1e-3, momentum=1-0.99)
         self.dropblock_prob = dropblock_prob
-        self.expansion = 2
+        self.expansion = 4
 
         if dropblock_prob > 0.0:
             self.dropblock = DropBlock2D(dropblock_prob)
@@ -48,13 +50,13 @@ class Bottleneck(nn.Module):
 
         self.conv3 = nn.Conv2d(
             group_width, planes * self.expansion , kernel_size=1, bias=False)
-        self.bn3 = norm_layer(planes * self.expansion)
+        self.bn3 = norm_layer(planes * self.expansion,eps=1e-3, momentum=1-0.99)
 
         if last_gamma:
             from torch.nn.init import zeros_
             zeros_(self.bn3.weight)
 
-        self.relu = nn.ReLU(True)
+        self.relu = MemoryEfficientSwish()
         self.downsample = downsample
         self.dilation = dilation
         self.stride = stride
@@ -86,7 +88,7 @@ class Bottleneck(nn.Module):
 
         return out
 
-from Tools import Mish
+from Tools import Pool2dStaticSamePadding
 from Tools import Conv2dDynamicSamePadding
 class ResNet(nn.Module):
 
@@ -108,30 +110,25 @@ class ResNet(nn.Module):
         conv_kwargs =  {}
         if deep_stem:
             self.conv1 = nn.Sequential(
-                Conv2dDynamicSamePadding(3, stem_width, kernel_size=5, stride=2),
-                nn.BatchNorm2d(stem_width),
-                Mish(),
-                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1,groups=stem_width),
-                nn.GroupNorm(32,stem_width),
-                Mish(),
-                Conv2dDynamicSamePadding(stem_width,stem_width,kernel_size=1),
-                nn.BatchNorm2d(stem_width)
+                Conv2dDynamicSamePadding(3, stem_width, kernel_size=3, stride=2, bias=False),
+                nn.BatchNorm2d(stem_width,eps=1e-3, momentum=1-0.99),
+                MemoryEfficientSwish(),
+                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
+                nn.BatchNorm2d(stem_width,eps=1e-3, momentum=1-0.99),
+                MemoryEfficientSwish(),
+                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
             )
         else:
             self.conv1 = conv_layer(3, stem_width, kernel_size=7, stride=2, padding=3,bias=False, **conv_kwargs)
-        self.reConv1 = Conv2dDynamicSamePadding(3,stem_width,3,2)
 
-        self.conv2 = nn.Sequential(
-            Conv2dDynamicSamePadding(stem_width,stem_width,kernel_size=3, stride=2, groups=stem_width, bias=False),
-            nn.GroupNorm(num_groups=stem_width,num_channels=stem_width,eps=1e-3,affine=True),
-            Mish(),
-            Conv2dDynamicSamePadding(stem_width, stem_width,kernel_size=1, stride=1),
-            nn.BatchNorm2d(stem_width)
-        )
-        self.reConv2 = Conv2dDynamicSamePadding(stem_width,stem_width,kernel_size=3,stride=2)
+        self.maxPool = Pool2dStaticSamePadding(kernel_size=3,stride=2, pooling="max")
 
-        self.layer1 = self._make_layer(block, 64, layers[0], norm_layer=norm_layer)
-        self.layer2 = self._make_layer(block, 128, layers[1], stride=2, norm_layer=norm_layer)
+        self.layer1 = self._make_layer(block, 64, layers[0],
+                                       norm_layer=norm_layer,
+                                       dropblock_prob=dropblock_prob)
+        self.layer2 = self._make_layer(block, 128, layers[1], stride=2,
+                                       norm_layer=norm_layer,
+                                       dropblock_prob=dropblock_prob)
         self.layer3 = self._make_layer(block, 256, layers[2], stride=2,
                                            norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
@@ -139,8 +136,12 @@ class ResNet(nn.Module):
                                            norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
 
-        self.dropout = nn.Dropout(0.4,True)
-        self.fc1 = nn.Linear(1024, num_classes)
+        self._conv_head = nn.Conv2d(2048, 2048, kernel_size=1, bias=False)
+        self._bn1 = nn.BatchNorm2d(num_features=2048, momentum=1-0.99, eps=1e-3)
+        self._swish = MemoryEfficientSwish()
+
+        self.dropout = nn.Dropout(0.65,True)
+        self.fc1 = nn.Linear(2048, num_classes)
 
     def _make_layer(self, block, planes, blocks, stride=1, norm_layer=None,
                     dropblock_prob=0.25):
@@ -156,7 +157,7 @@ class ResNet(nn.Module):
                 down_layers.append(nn.Conv2d(self.inplanes, planes * block.expansion,
                                              kernel_size=1, stride=stride, bias=False))
 
-            down_layers.append(norm_layer(planes * block.expansion))
+            down_layers.append(norm_layer(planes * block.expansion,momentum=1-0.99, eps=1e-3))
             downsample = nn.Sequential(*down_layers)
 
         layers = list()
@@ -178,10 +179,10 @@ class ResNet(nn.Module):
 
 
     def forward(self, img):
-        conv1 = self.conv1(img) +  self.reConv1(img)
-        #print(x.shape)
-        conv2 = self.conv2(conv1) + self.reConv2(conv1)
-        #print(x.shape)
+        conv1 = self.conv1(img)
+        #print(conv1.shape)
+        conv2 = self.maxPool(conv1)
+        #print(conv2.shape)
         x = self.layer1(conv2)
         #print(x.shape)
         x = self.layer2(x)
@@ -190,13 +191,14 @@ class ResNet(nn.Module):
         #print(x.shape)
         x = self.layer4(x)
         #print(x.shape)
+        x = self._swish(self._bn1(self._conv_head(x)))
 
-        fc1 = self.fc1(self.dropout(F.adaptive_avg_pool2d(x,[1,1]).view([-1,1024])))
+        fc1 = self.fc1(self.dropout(F.adaptive_avg_pool2d(x,[1,1]).view([-1,2048])))
 
         return fc1
 
 def resnest101(number_classes, drop_connect_ratio):
-    model = ResNet(Bottleneck, [3, 4, 17, 3], groups=2, radix = 2, bottleneck_width=64,
+    model = ResNet(Bottleneck, [3, 4, 20, 3], groups=2, radix = 2, bottleneck_width=64,
                    deep_stem=True, stem_width=64, avg_down=True,
                    dropblock_prob=drop_connect_ratio,
                    num_classes=number_classes,last_gamma=True)

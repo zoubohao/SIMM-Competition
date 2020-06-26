@@ -33,26 +33,26 @@ if __name__ == "__main__":
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
-    reg_lambda = 2.5e-4
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 3500
     ###
-    loadWeight = True
-    trainModelLoad = 0.9133417896678967
+    loadWeight = False
+    trainModelLoad = "Model_EFB70.92.pth"
     ###
-    LR = 1e-4
+    LR = 1e-3
     ###
-    device0 = "cuda:1"
-
+    device0 = "cuda:0"
+    model_name = "b6"
+    reg_lambda = 2e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
         tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
         tv.transforms.ToTensor(),
-        tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = EfficientNet.from_pretrained("efficientnet-b6",num_classes=labelsNumber).to(device0)
+    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=True).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     optimizer = torch.optim.SGD(model.parameters(),lr=LR,momentum=0.9, weight_decay=reg_lambda,nesterov=True)
 
     if loadWeight :
-        model.load_state_dict(torch.load(modelSavePath + "Model_EF" + str(trainModelLoad) + ".pth"))
+        model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
 
     negGene = generator(trainNegDataLoader)
     posGene = generator(trainPosDataLoader)
@@ -148,9 +148,9 @@ if __name__ == "__main__":
                         print("Val part, " + str(probability) + " , " + str(truth))
                     fpr, tpr, _ = metrics.roc_curve(y_true=targetsList,y_score=scoreList,pos_label=1)
                     aucV = metrics.auc(fpr, tpr)
-                torch.save(model.state_dict(), modelSavePath + "Model_EF" + str(float(aucV)) + ".pth")
+                torch.save(model.state_dict(), modelSavePath + "Model_EF" + model_name + str(aucV) + ".pth")
                 model = model.train(mode=True)
-    torch.save(model.state_dict(), modelSavePath + "Model_EFF" + ".pth")
+    torch.save(model.state_dict(), modelSavePath + "Model_EF"+ model_name + "Final" + ".pth")
 
 
 

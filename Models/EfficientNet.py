@@ -41,7 +41,7 @@ class MBConvBlock(nn.Module):
         self._block_args = block_args
         self._bn_mom = 1 - global_params.batch_norm_momentum # pytorch's difference from tensorflow
         self._bn_eps = global_params.batch_norm_epsilon
-        self.has_se = (self._block_args.se_ratio is not None) and (0 < self._block_args.se_ratio <= 1)
+        self.has_se = True
         self.id_skip = block_args.id_skip  # whether to use skip connection and drop connect
 
         # Expansion phase (Inverted Bottleneck)
@@ -195,7 +195,7 @@ class EfficientNet(nn.Module):
 
         # Final linear layer
         self._avg_pooling = nn.AdaptiveAvgPool2d(1)
-        self._dropout = nn.Dropout(self._global_params.dropout_rate)
+        self._dropout = nn.Dropout(self._global_params.dropout_rate,True)
         self._fc = nn.Linear(out_channels, self._global_params.num_classes)
         self._swish = MemoryEfficientSwish()
 
@@ -232,8 +232,8 @@ class EfficientNet(nn.Module):
         # Blocks
         for idx, block in enumerate(self._blocks):
             drop_connect_rate = self._global_params.drop_connect_rate
-            if drop_connect_rate:
-                drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
+            # if drop_connect_rate:
+            #     drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
             x = block(x, drop_connect_rate=drop_connect_rate)
             if prev_x.size(2) > x.size(2):
                 endpoints[f'reduction_{len(endpoints)+1}'] = prev_x
@@ -260,9 +260,12 @@ class EfficientNet(nn.Module):
 
         # Blocks
         for idx, block in enumerate(self._blocks):
+            #print(idx)
             drop_connect_rate = self._global_params.drop_connect_rate
-            if drop_connect_rate:
-                drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
+            #print("Drop before scale ",drop_connect_rate)
+            # if drop_connect_rate:
+            #     drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
+            #print("Drop after scale ",drop_connect_rate)
             x = block(x, drop_connect_rate=drop_connect_rate)
         
         # Head

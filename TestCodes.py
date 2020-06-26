@@ -123,7 +123,7 @@ imgPIL1 = Image.open(os.path.join("./train","ISIC_0089738"+ ".jpg")).convert("RG
 imgPIL2 = Image.open(os.path.join("./train","ISIC_0096227"+ ".jpg")).convert("RGB")
 cutmixPIL = CutMix(imgPIL1,imgPIL2).save("./Check.jpg")
 
-
+print([1,2,3] + [3,4,5,6])
 
 
 

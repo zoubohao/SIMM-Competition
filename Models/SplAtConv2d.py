@@ -5,6 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 from torch.nn import Conv2d, Module
 from torch.nn.modules.utils import _pair
+from Tools import MemoryEfficientSwish
 
 class DropBlock2D(nn.Module):
 
@@ -39,13 +40,11 @@ class SplAtConv2d(Module):
         self.dropblock_prob = dropblock_prob
         self.conv = Conv2d(in_channels, channels*radix, kernel_size, stride, padding, dilation,
                                groups=groups*radix, bias=bias)
-        self.use_bn = norm_layer is not None
-        if self.use_bn:
-            self.bn0 = nn.GroupNorm(groups * radix, channels * radix)
-        self.relu = nn.ReLU(True)
+
+        self.bn0 = nn.BatchNorm2d(channels * radix, eps=1e-3, momentum=1-0.99)
+        self.relu = MemoryEfficientSwish()
         self.fc1 = Conv2d(channels, inter_channels, 1, groups=self.cardinality)
-        if self.use_bn:
-            self.bn1 = norm_layer(inter_channels)
+        self.bn1 = norm_layer(inter_channels,eps=1e-3, momentum=1-0.99)
         self.fc2 = Conv2d(inter_channels, channels*radix, 1, groups=self.cardinality)
         if dropblock_prob > 0.0:
             self.dropblock = DropBlock2D(dropblock_prob, 3)
@@ -53,8 +52,8 @@ class SplAtConv2d(Module):
 
     def forward(self, x):
         x = self.conv(x)
-        if self.use_bn:
-            x = self.bn0(x)
+        x = self.bn0(x)
+
         if self.dropblock_prob > 0.0:
             x = self.dropblock(x)
         x = self.relu(x)
@@ -69,8 +68,7 @@ class SplAtConv2d(Module):
         gap = F.adaptive_avg_pool2d(gap, [1,1])
         gap = self.fc1(gap)
 
-        if self.use_bn:
-            gap = self.bn1(gap)
+        gap = self.bn1(gap)
         gap = self.relu(gap)
 
         atten = self.fc2(gap)

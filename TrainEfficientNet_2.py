@@ -1,19 +1,18 @@
 import torch
 import torchvision as tv
 from torch.utils.data import DataLoader
-from Models.ResNeSt_Ori import resnest101
+from Models.EfficientNet import EfficientNet
 from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
 import sklearn.metrics as metrics
-from torch_optimizer import AdaBound
+
 
 
 def generator(data_loader):
     while True:
-        for (imgs, targets) in data_loader:
+        for  (imgs, targets) in data_loader:
             yield imgs, targets
-
 
 def randomConcatTensor(t1s, t2s):
     result = []
@@ -21,38 +20,38 @@ def randomConcatTensor(t1s, t2s):
     np.random.shuffle(index)
     lengT1s = len(t1s)
     lengT2s = len(t2s)
-    assert lengT1s == lengT2s, "Two tensor lists must have same tensors. "
+    assert lengT1s == lengT2s , "Two tensor lists must have same tensors. "
     for i in range(lengT1s):
-        result.append(torch.cat([t1s[i], t2s[i]], dim=0)[index])
+        result.append( torch.cat([t1s[i], t2s[i]], dim=0)[index] )
     return result
 
 
 if __name__ == "__main__":
     ### config
-    batchSize = 12
+    batchSize = 4
     labelsNumber = 1
-    epoch = 40
+    epoch = 50
     displayTimes = 20
-    reg_lambda = 2.5e-4
     reduction = 'mean'
-    drop_rate = 0.45
     ###
     modelSavePath = "./Model_Weight/"
-    saveTimes = 2700
+    saveTimes = 3500
     ###
-    loadWeight = True
-    trainModelLoad = 0.8641028597785978
+    loadWeight = False
+    trainModelLoad = "Model_EFB80.92.pth"
     ###
-    LR = 1.e-3
+    LR = 1e-3
     ###
     device0 = "cuda:1"
+    model_name = "b8"
+    reg_lambda = 3.0e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
         tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
         tv.transforms.ToTensor(),
-        tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
@@ -62,33 +61,32 @@ if __name__ == "__main__":
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
 
-    trainNegDataSet = SIMM_DataSet(root="./NegTrainAugResize", csvFile="./CSVFile/augNeg.csv",
-                                   transforms=transformationTrain, train=True)
+    trainNegDataSet = SIMM_DataSet(root="./NegTrainAugResize",csvFile="./CSVFile/augNeg.csv",
+                                   transforms=transformationTrain,train=True)
     trainPosDataSet = SIMM_DataSet(root="./PosTrainAugResize", csvFile="./CSVFile/augPos.csv",
                                    transforms=transformationTrain, train=True)
-    testDataSet = SIMM_DataSet(root="./train", csvFile="./CSVFile/val.csv",
-                               transforms=transformationTest, train=True)
+    testDataSet = SIMM_DataSet(root="./train",csvFile="./CSVFile/val.csv",
+                               transforms=transformationTest,train=True)
 
-    trainNegDataLoader = DataLoader(trainNegDataSet, batch_size=batchSize // 2, shuffle=True, pin_memory=True)
-    trainPosDataLoader = DataLoader(trainPosDataSet, batch_size=batchSize - batchSize // 2, shuffle=True,
-                                    pin_memory=True)
+    trainNegDataLoader = DataLoader(trainNegDataSet,batch_size=batchSize // 2,shuffle=True,pin_memory=True)
+    trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = resnest101(number_classes=labelsNumber,drop_connect_ratio=drop_rate).to(device0)
+    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=True).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()
     posLength = trainPosDataSet.__len__()
     print("Positive samples number ", posLength)
-    print("Negative samples number ", negLength)
-    trainTimesInOneEpoch = max(negLength, posLength) // (batchSize // 2) + 1
+    print("Negative samples number ",negLength)
+    trainTimesInOneEpoch = max(negLength,posLength) // (batchSize // 2) + 1
 
     lossCri = nn.BCELoss(reduction=reduction).to(device0)
 
     optimizer = torch.optim.SGD(model.parameters(),lr=LR,momentum=0.9, weight_decay=reg_lambda,nesterov=True)
 
-    if loadWeight:
-        model.load_state_dict(torch.load(modelSavePath + "Model_Re" + str(trainModelLoad) + ".pth"))
+    if loadWeight :
+        model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
 
     negGene = generator(trainNegDataLoader)
     posGene = generator(trainPosDataLoader)
@@ -97,14 +95,14 @@ if __name__ == "__main__":
     model = model.train(mode=True)
     trainingTimes = 0
     print("Training %3d times in one epoch" % (trainTimesInOneEpoch,))
-    for e in range(1, epoch + 1):
+    for e in range(1,epoch + 1):
 
         for times in range(trainTimesInOneEpoch):
-            imgsNegTr, targetsNegTr = negGene.__next__()
-            imgsPosTr, targetsPosTr = posGene.__next__()
+            imgsNegTr,  targetsNegTr = negGene.__next__()
+            imgsPosTr,  targetsPosTr = posGene.__next__()
             imgsTr, targetsTr = randomConcatTensor(
-                [imgsNegTr, targetsNegTr],
-                [imgsPosTr, targetsPosTr])
+                [imgsNegTr,  targetsNegTr],
+                [imgsPosTr,  targetsPosTr])
             imagesCuda = imgsTr.to(device0, non_blocking=True)
             labelsCuda = targetsTr.float().to(device0, non_blocking=True)
 
@@ -125,6 +123,7 @@ if __name__ == "__main__":
                     print("predicted labels : ", predict[0:5])
                     print("Truth labels : ", labelsCuda[0:5])
 
+
             if trainingTimes % saveTimes == 0:
                 ### val part
                 model = model.eval()
@@ -135,7 +134,7 @@ if __name__ == "__main__":
                     targetsList = list()
                     scoreList = list()
                     for batch_idx, (imgsTe, targetsTe) in enumerate(testloader):
-                        imgsTeCuda = imgsTe.to(device0, non_blocking=True)
+                        imgsTeCuda = imgsTe.to(device0,non_blocking=True)
 
                         ## img, sex, age_approx, anatom
                         probability = torch.sigmoid(model(imgsTeCuda)).squeeze()
@@ -146,11 +145,11 @@ if __name__ == "__main__":
                         print(batch_idx)
                         print(probability)
                         print("Val part, " + str(probability) + " , " + str(truth))
-                    fpr, tpr, _ = metrics.roc_curve(y_true=targetsList, y_score=scoreList, pos_label=1)
+                    fpr, tpr, _ = metrics.roc_curve(y_true=targetsList,y_score=scoreList,pos_label=1)
                     aucV = metrics.auc(fpr, tpr)
-                torch.save(model.state_dict(), modelSavePath + "Model_Re" + str(float(aucV)) + ".pth")
+                torch.save(model.state_dict(), modelSavePath + "Model_EF" + model_name + str(aucV) + ".pth")
                 model = model.train(mode=True)
-    torch.save(model.state_dict(), modelSavePath + "Model_ReF" + ".pth")
+    torch.save(model.state_dict(), modelSavePath + "Model_EF"+ model_name + "Final" + ".pth")
 
 
 

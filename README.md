@@ -1,2 +1,0 @@
-# SIMM Competition
- Kaggle Competition

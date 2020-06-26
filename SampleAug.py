@@ -16,8 +16,8 @@ def mixUp(image1, image2):
     return 0.5 * im1Re + 0.5 * im2Re
 
 def CutMix(image1, image2):
-    imageW = 3096
-    imageH = 2048
+    imageW = int(408 * 1.118)
+    imageH = int(272 * 1.118)
     ##
     im1 = tv.transforms.Resize([imageH, imageW])(image1)
     im2 = tv.transforms.Resize([imageH, imageW])(image2)
@@ -37,10 +37,10 @@ def CutMix(image1, image2):
 
 if __name__ == "__main__":
     dataInfor = pd.read_csv("./CSVFile/trainNeg.csv")
-    savePath = "./NegTrainAug"
+    savePath = "./NegTrainAugResize"
     if_pos = False
     csvName = "augNeg.csv"
-    if_part = True
+    if_part = False
 
     imgsNames = np.array(dataInfor["image_name"])
     sexs = np.array(dataInfor["sex"])
@@ -79,14 +79,16 @@ if __name__ == "__main__":
         thisAnatom = anatom[i]
         ### ori
         print(i)
-        im = cv2.imread(os.path.join("./train",imgName + ".jpg"))
-        cv2.imwrite(os.path.join(savePath,imgName + ".jpg"),im)
-        augNames.append(imgName)
-        augSex.append(sexs[i])
-        augAge.append(ages[i])
-        augAtom.append(anatom[i])
 
         if if_pos:
+
+            im = cv2.imread(os.path.join("./train", imgName + ".jpg"))
+            cv2.imwrite(os.path.join(savePath, imgName + ".jpg"), im)
+            augNames.append(imgName)
+            augSex.append(sexs[i])
+            augAge.append(ages[i])
+            augAtom.append(anatom[i])
+
             ### color
             b, g, r = cv2.split(im)
             cv2.imwrite(os.path.join(savePath, imgName + "BlueC.jpg"), b)
@@ -181,10 +183,16 @@ if __name__ == "__main__":
                         augAge.append(currentAge)
                         augAtom.append(currentAnatom)
         else:
+            imgPIL = Image.open(os.path.join("./train", imgName + ".jpg")).convert("RGB")
+            resizePIL = tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])(imgPIL)
+            resizePIL.save(os.path.join(savePath, imgName + ".jpg"))
+            augNames.append(imgName)
+            augSex.append(sexs[i])
+            augAge.append(ages[i])
+            augAtom.append(anatom[i])
             if i not in [0,1,2,3]:
-                if np.random.rand(1) <= 0.5:
+                if np.random.rand(1) <= 0.36:
                     j = np.random.randint(0, i)
-                    imgPIL = Image.open(os.path.join("./train", imgName + ".jpg")).convert("RGB")
                     currentImageName = imgsNames[j]
                     currentSex = sexs[j]
                     currentAge = ages[j]
@@ -200,7 +208,7 @@ if __name__ == "__main__":
                     augAtom.append(currentAnatom)
 
 
-    targets = [1 for _ in range(len(augNames))]
+    targets = [0 for _ in range(len(augNames))]
     data = {"image_name": augNames, "sex" : augSex,
             "age_approx" : augAge, "anatom_site_general_challenge" : augAtom, "target" : targets}
     dataFrame = pd.DataFrame(data=data).to_csv("./CSVFile/" + csvName,index=False)

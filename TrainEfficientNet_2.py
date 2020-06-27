@@ -28,7 +28,7 @@ def randomConcatTensor(t1s, t2s):
 
 if __name__ == "__main__":
     ### config
-    batchSize = 4
+    batchSize = 12
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
@@ -38,13 +38,13 @@ if __name__ == "__main__":
     saveTimes = 3500
     ###
     loadWeight = False
-    trainModelLoad = "Model_EFB80.92.pth"
+    trainModelLoad = "Model_EFb80.8454220479704797.pth"
     ###
     LR = 1e-3
     ###
     device0 = "cuda:1"
-    model_name = "b8"
-    reg_lambda = 3.0e-4
+    model_name = "b5"
+    reg_lambda = 1.5e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=True).to(device0)
+    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=False).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()

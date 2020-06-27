@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 
 
+
 def oneHot(mapPara, oneArray):
     size = len(oneArray)
     hotSize = len(mapPara)
@@ -12,7 +13,7 @@ def oneHot(mapPara, oneArray):
     return zerosMatrix
 
 
-def convertXGBoostFile(csvFile, ageMapping, anatomMapping, sexMapping):
+def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
     data = pd.read_csv(csvFile)
     colNames = data.columns
 
@@ -76,11 +77,12 @@ def convertXGBoostFile(csvFile, ageMapping, anatomMapping, sexMapping):
 
 
 if __name__ == "__main__":
-    testM, testT = convertXGBoostFile(csvFile="./CSVFile/train.csv", ageMapping="./MappingFile/ageMapping.txt",
+    testM, testT = convertXGBoostData(csvFile="./CSVFile/train.csv", ageMapping="./MappingFile/ageMapping.txt",
                                       anatomMapping="./MappingFile/anatomMapping.txt", sexMapping="./MappingFile/sexMapping.txt")
     print(testM.shape)
     print(testM[0:10])
     print(testT[0:10])
+
 
     
 

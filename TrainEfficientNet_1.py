@@ -36,16 +36,16 @@ if __name__ == "__main__":
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
-    saveTimes = 3500
+    saveTimes = 2500
     ###
     loadWeight = False
-    trainModelLoad = "Model_EFB70.92.pth"
+    trainModelLoad = "Model_EFb60.870445110701107.pth"
     ###
     LR = 1e-3
     ###
     device0 = "cuda:0"
     model_name = "b6"
-    reg_lambda = 2.e-4
+    reg_lambda = 2.5e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=False).to(device0)
+    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=True).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()

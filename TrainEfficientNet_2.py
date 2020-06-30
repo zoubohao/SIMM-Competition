@@ -37,14 +37,14 @@ if __name__ == "__main__":
     modelSavePath = "./Model_Weight/"
     saveTimes = 3500
     ###
-    loadWeight = False
-    trainModelLoad = "Model_EFb80.8454220479704797.pth"
+    loadWeight = True
+    trainModelLoad = "Model_EFb50.9089598708487086.pth"
     ###
     LR = 1e-3
     ###
     device0 = "cuda:1"
     model_name = "b5"
-    reg_lambda = 1.5e-4
+    reg_lambda = 2.e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([

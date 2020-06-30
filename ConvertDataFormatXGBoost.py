@@ -77,11 +77,34 @@ def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
 
 
 if __name__ == "__main__":
-    testM, testT = convertXGBoostData(csvFile="./CSVFile/train.csv", ageMapping="./MappingFile/ageMapping.txt",
+    testM, testT = convertXGBoostData(csvFile="./CSVFile/SecondTrainNeg.csv", ageMapping="./MappingFile/ageMapping.txt",
                                       anatomMapping="./MappingFile/anatomMapping.txt", sexMapping="./MappingFile/sexMapping.txt")
     print(testM.shape)
     print(testM[0:10])
     print(testT[0:10])
+
+    ## shuffle the data set
+    dataNeg = pd.read_csv("./CSVFile/SecondTrainNeg.csv")
+    dataPos = pd.read_csv("./CSVFile/SecondTrainPos.csv")
+    sColNames = dataNeg.columns
+    catMap = {}
+    sizeS = dataNeg.shape[0] + dataPos.shape[0]
+    indexs = list(range(sizeS))
+    np.random.shuffle(indexs)
+    for oneName in sColNames:
+        thisNegList = np.array(dataNeg[oneName]).reshape([-1,1])
+        thisPosList = np.array(dataPos[oneName]).reshape([-1,1])
+        catData = np.concatenate([thisNegList, thisPosList],axis=0)
+        catDataShu = catData[indexs]
+        catMap[oneName] = catDataShu.squeeze()
+    print(catMap)
+    finalData = pd.DataFrame(catMap)
+    finalData.to_csv("./CSVFile/ShuffleTrainData.csv",index=False)
+
+
+
+
+
 
 
     

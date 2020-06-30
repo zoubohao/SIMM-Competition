@@ -232,8 +232,8 @@ class EfficientNet(nn.Module):
         # Blocks
         for idx, block in enumerate(self._blocks):
             drop_connect_rate = self._global_params.drop_connect_rate
-            if drop_connect_rate:
-                drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
+            # if drop_connect_rate:
+            #     drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
             x = block(x, drop_connect_rate=drop_connect_rate)
             if prev_x.size(2) > x.size(2):
                 endpoints[f'reduction_{len(endpoints)+1}'] = prev_x
@@ -263,8 +263,8 @@ class EfficientNet(nn.Module):
             #print(idx)
             drop_connect_rate = self._global_params.drop_connect_rate
             #print("Drop before scale ",drop_connect_rate)
-            if drop_connect_rate:
-                drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
+            # if drop_connect_rate:
+            #     drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
             #print("Drop after scale ",drop_connect_rate)
             x = block(x, drop_connect_rate=drop_connect_rate)
         

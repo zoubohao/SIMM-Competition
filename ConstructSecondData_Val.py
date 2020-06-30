@@ -42,12 +42,12 @@ def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
 if __name__ == "__main__":
     #### file path
     effiWeight = "./Model_Weight/Model_EFb7_TEST_0.910.pth"   ### change here
-    CSV = "./CSVFile/augPos" \
+    CSV = "./CSVFile/val" \
           ".csv"
-    imgFiles = "./PosTrainAugResize"
+    imgFiles = "./train"
     ### name string
     modelName = "b7"
-    outputName = "_TEST_0.910_Pos"  ### change here
+    outputName = "_TEST_0.910_val"  ### change here
     ### construction data or testing the result
     if_test = False
     ### construction test data

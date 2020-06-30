@@ -1,4 +1,4 @@
-import xgboost as xgb
+
 import pandas as pd
 import numpy as np
 
@@ -45,6 +45,7 @@ def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
     ### transform age, age contains order information, so, we can't transform it into onehot encoder
     newAgeOrderInt = list()
     for ageNum in data["age_approx"]:
+        #print(ageNum)
         newAgeOrderInt.append(ageX[str(ageNum)])
 
     newAnatomInt = list()
@@ -97,7 +98,7 @@ if __name__ == "__main__":
         catData = np.concatenate([thisNegList, thisPosList],axis=0)
         catDataShu = catData[indexs]
         catMap[oneName] = catDataShu.squeeze()
-    print(catMap)
+    #print(catMap)
     finalData = pd.DataFrame(catMap)
     finalData.to_csv("./CSVFile/ShuffleTrainData.csv",index=False)
 

@@ -16,7 +16,6 @@ def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
     ## transformations of testing
     transformations = tv.transforms.Compose([
         tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])

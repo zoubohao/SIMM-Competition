@@ -88,7 +88,7 @@ class Bottleneck(nn.Module):
 
         return out
 
-from Tools import Pool2dStaticSamePadding
+
 from Tools import Conv2dDynamicSamePadding
 class ResNet(nn.Module):
 
@@ -110,10 +110,10 @@ class ResNet(nn.Module):
         conv_kwargs =  {}
         if deep_stem:
             self.conv1 = nn.Sequential(
-                Conv2dDynamicSamePadding(3, stem_width, kernel_size=3, stride=2, bias=False),
+                Conv2dDynamicSamePadding(3, stem_width, kernel_size=3, stride=1, bias=False),
                 nn.BatchNorm2d(stem_width,eps=1e-3, momentum=1-0.99),
                 MemoryEfficientSwish(),
-                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
+                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=2, bias=False),
                 nn.BatchNorm2d(stem_width,eps=1e-3, momentum=1-0.99),
                 MemoryEfficientSwish(),
                 Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
@@ -123,10 +123,10 @@ class ResNet(nn.Module):
         self.reconv1 = Conv2dDynamicSamePadding(3, stem_width, 3, 2)
 
         self.maxPool = nn.Sequential(
-                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=2, bias=False),
+                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
                 nn.BatchNorm2d(stem_width,eps=1e-3, momentum=1-0.99),
                 MemoryEfficientSwish(),
-                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
+                Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=2, bias=False),
                 nn.BatchNorm2d(stem_width,eps=1e-3, momentum=1-0.99),
                 MemoryEfficientSwish(),
                 Conv2dDynamicSamePadding(stem_width, stem_width, kernel_size=3, stride=1, bias=False),
@@ -210,7 +210,7 @@ class ResNet(nn.Module):
         return fc1
 
 def resnest101(number_classes, drop_connect_ratio):
-    model = ResNet(Bottleneck, [3, 4, 16, 3], groups=2, radix = 2, bottleneck_width=64,
+    model = ResNet(Bottleneck, [3, 4, 14, 3], groups=2, radix = 2, bottleneck_width=64,
                    deep_stem=True, stem_width=64, avg_down=True,
                    dropblock_prob=drop_connect_ratio,
                    num_classes=number_classes,last_gamma=True)

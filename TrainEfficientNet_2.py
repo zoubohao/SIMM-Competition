@@ -6,7 +6,6 @@ from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
 import sklearn.metrics as metrics
-from torch_optimizer import AdaBound
 
 
 
@@ -45,7 +44,7 @@ if __name__ == "__main__":
     ###
     device0 = "cuda:0"
     model_name = "b4"
-    reg_lambda = 1.e-4
+    reg_lambda = 2.e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
@@ -144,11 +143,15 @@ if __name__ == "__main__":
                         print(batch_idx)
                         print(probability)
                         print("Val part, " + str(probability) + " , " + str(truth))
-                    precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList, pos_label=1)
-                    aucV = metrics.auc(recall, precision)
-                torch.save(model.state_dict(), modelSavePath + "Model_EF" + model_name + str(aucV) + ".pth")
+                    precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList,
+                                                                          pos_label=1)
+                    aucPR = round(metrics.auc(recall, precision), 4)
+                    fpr, tpr, thresholds = metrics.roc_curve(y_true=targetsList, y_score = scoreList, pos_label=1)
+                    auc = round(metrics.auc(fpr, tpr), 4)
+                torch.save(model.state_dict(), modelSavePath + "Model_EF_" + model_name + "AUC" + str(auc)
+                           + "_AUCPR" + str(aucPR) + ".pth")
                 model = model.train(mode=True)
-    torch.save(model.state_dict(), modelSavePath + "Model_EF"+ model_name + "Final" + ".pth")
+    torch.save(model.state_dict(), modelSavePath + modelSavePath + "Model_EFF_.pth")
 
 
 

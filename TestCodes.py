@@ -128,12 +128,14 @@ from PIL import Image
 
 previousJ = []
 for t in range(3):
-    j = np.random.randint(0, 2)
+    j = np.random.randint(0, 3)
     while j in previousJ:
-        j = np.random.randint(0, 2)
+        j = np.random.randint(0, 3)
     previousJ.append(j)
 print(previousJ)
 
+
+print(round(0.62131232112321312321112,4))
 
 
 

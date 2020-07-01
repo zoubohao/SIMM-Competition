@@ -489,7 +489,7 @@ def efficientnet_params(model_name):
 ### b6 : 0.45
 ### b7 : 0.55
 def efficientnet(width_coefficient=None, depth_coefficient=None, image_size=None,
-                 dropout_rate=0.5, drop_connect_rate=0.25, num_classes=1000):
+                 dropout_rate=0.5, drop_connect_rate=0.35, num_classes=1000):
     """Create BlockArgs and GlobalParams for efficientnet model.
 
     Args:

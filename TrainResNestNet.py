@@ -30,14 +30,14 @@ if __name__ == "__main__":
     ### config
     batchSize = 10
     labelsNumber = 1
-    epoch = 40
+    epoch = 50
     displayTimes = 20
-    reg_lambda = 2.5e-4
+    reg_lambda = 2.8e-4
     reduction = 'mean'
-    drop_rate = 0.4
+    drop_rate = 0.42
     ###
     modelSavePath = "./Model_Weight/"
-    saveTimes = 2700
+    saveTimes = 2500
     ###
     loadWeight = False
     trainModelLoad = 0.8641028597785978
@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
@@ -143,9 +143,13 @@ if __name__ == "__main__":
                         print(batch_idx)
                         print(probability)
                         print("Val part, " + str(probability) + " , " + str(truth))
-                    precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList, pos_label=1)
-                    aucV = metrics.auc(recall, precision)
-                torch.save(model.state_dict(), modelSavePath + "Model_Re" + str(float(aucV)) + ".pth")
+                    precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList,
+                                                                          pos_label=1)
+                    aucPR = round(metrics.auc(recall, precision), 4)
+                    fpr, tpr, thresholds = metrics.roc_curve(y_true=targetsList, y_score=scoreList, pos_label=1)
+                    auc = round(metrics.auc(fpr, tpr), 4)
+                torch.save(model.state_dict(), modelSavePath + "Model_Re_" + "AUC" + str(auc)
+                               + "_AUCPR" + str(aucPR) + ".pth")
                 model = model.train(mode=True)
     torch.save(model.state_dict(), modelSavePath + "Model_ReF" + ".pth")
 

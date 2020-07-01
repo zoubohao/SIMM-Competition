@@ -14,8 +14,9 @@ def microAug(pilResize):
     img = tv.transforms.ToTensor()(pilResize)
     #print(img.shape)
     circle = cv2.circle((np.ones([img.shape[1], img.shape[2]]) * 255).astype(np.uint8),
-                        (img.shape[2]//2, img.shape[1]//2),
-                        img.shape[2]//2 - 1,
+                        (np.random.randint(img.shape[2]//2 - 25, img.shape[2]//2 + 25),
+                         np.random.randint(img.shape[1]//2 - 25, img.shape[1]//2 + 25)),
+                        np.random.randint(img.shape[2]//2 - 25, img.shape[2]//2 + 25),
                         (0, 0, 0),-1)
     mask = circle - 255
     img = np.multiply(img, mask)
@@ -156,11 +157,11 @@ if __name__ == "__main__":
 
             ### Random Corp
             randomCrop = tv.transforms.Compose([
-                tv.transforms.Resize([405, 608]),
+                tv.transforms.Resize([500, 700]),
                 tv.transforms.RandomCrop([int(272 * 1.118), int(408 * 1.118)])
             ])
             for t in range(2):
-                imgRandomCorp = microAug(randomCrop(curList[np.random.randint(0, 4)]))
+                imgRandomCorp = randomCrop(curList[np.random.randint(0, 4)])
                 imgRandomCorp.save(os.path.join(savePath, imgName + "_RandomCorp" + str(t) + ".jpg"))
                 augNames.append(imgName + "_RandomCorp" + str(t))
                 augSex.append(sexs[i])

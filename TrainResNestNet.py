@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.25),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])

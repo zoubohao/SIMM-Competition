@@ -6,10 +6,8 @@ import torchvision as tv
 import cv2
 
 def mixUp(image1, image2):
-
     im1Re = tv.transforms.ToTensor()(image1)
     im2Re = tv.transforms.ToTensor()(image2)
-
     return tv.transforms.ToPILImage()(0.5 * im1Re + 0.5 * im2Re)
 
 def microAug(pilResize):
@@ -25,7 +23,6 @@ def microAug(pilResize):
 
 def hairsAug(img):
     n_hairs = np.random.randint(80, 160)
-
     height, width, _ = img.shape  # target image width and height
     hair_images = [im for im in os.listdir("./hair") if 'png' in im]
 
@@ -47,13 +44,8 @@ def hairsAug(img):
 
         dst = cv2.add(img_bg, hair_fg)
         img[roi_ho:roi_ho + h_height, roi_wo:roi_wo + h_width] = dst
-
-
     img = cv2.resize(img, dsize=(int(408 * 1.118), int(272 * 1.118)), interpolation=cv2.INTER_LANCZOS4)
-
-
     return img
-
 
 def CutMix(image1, image2):
     imageW = int(408 * 1.118)
@@ -72,6 +64,7 @@ def CutMix(image1, image2):
     ##
     addImg = (maskImg1 + maskImg2).float()
     return tv.transforms.ToPILImage()(addImg)
+
 
 if __name__ == "__main__":
     dataInfor = pd.read_csv("./CSVFile/newTrainPos.csv")
@@ -160,6 +153,20 @@ if __name__ == "__main__":
             augSex.append(sexs[i])
             augAge.append(ages[i])
             augAtom.append(anatom[i])
+
+            ### Random Corp
+            randomCrop = tv.transforms.Compose([
+                tv.transforms.Resize([405, 608]),
+                tv.transforms.RandomCrop([int(272 * 1.118), int(408 * 1.118)])
+            ])
+            for t in range(2):
+                imgRandomCorp = microAug(randomCrop(curList[np.random.randint(0, 4)]))
+                imgRandomCorp.save(os.path.join(savePath, imgName + "_RandomCorp" + str(t) + ".jpg"))
+                augNames.append(imgName + "_RandomCorp" + str(t))
+                augSex.append(sexs[i])
+                augAge.append(ages[i])
+                augAtom.append(anatom[i])
+
 
             ### cut mix
             if i not in [0,1,2,3]:

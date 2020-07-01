@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from shutil import copyfile
+import cv2
 import re
 
 ### name, meta.clinical.age_approx, meta.clinical.anatom_site_general, meta.clinical.sex
@@ -24,9 +24,8 @@ def main(walk_path, copy_path):
                 sex = sex + list(currentDF["meta.clinical.sex"])
             else:
                 if ".txt" not in name:
-                    ### notice that there are some png pic in this data set.
-                    ### you should convert it to jpg handel.
-                    copyfile(os.path.join(root, name), os.path.join(copy_path, name))
+                    cv2.imwrite(os.path.join(copy_path, str(name.split(".")[0]) + ".jpg"),
+                                cv2.imread(os.path.join(root, name)))
 
     dataMap["image_name"] = isic_names
     dataMap["sex"] = sex
@@ -37,7 +36,7 @@ def main(walk_path, copy_path):
 
 
 if __name__ == "__main__":
-    main("./AddtionalData","./testCopy")
+    main("AdditionalData", "./AdditionalImgCopy")
     trainPos = pd.read_csv("./CSVFile/trainPos.csv")
     addPos = pd.read_csv("./CSVFile/Additional_Pos.csv")
 

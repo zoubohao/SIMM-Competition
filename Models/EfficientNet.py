@@ -284,7 +284,7 @@ class EfficientNet(nn.Module):
             Output of this model after processing.
         """
         bs = inputs.size(0)
-
+        #print(inputs.shape)
         # Convolution layers
         x = self.extract_features(inputs)
         #print(x.shape)

@@ -24,17 +24,17 @@ if __name__ == "__main__":
     print("The rows of D-Matrix is {}".format(dTrain.num_row()))
     ### parameter setting
     num_round = 1000
-    param = {'max_depth': 8,  ## Increasing this value will make the model more complex and more likely to overfit.
-             'eta': 0.04,  ## Step size shrinkage used in update to prevents overfitting. Learning rate
-             "gamma": 0.01,   ## The larger gamma is, the more conservative the algorithm will be
-             "min_child_weight": 6,  ## The larger min_child_weight is, the more conservative the algorithm will be.
-             "lambda": 2,  ### L2 regu for weights.
+    param = {'max_depth': 6,  ## Increasing this value will make the model more complex and more likely to overfit.
+             'eta': 0.033,  ## Step size shrinkage used in update to prevents overfitting. Learning rate
+             "gamma": 0.044,   ## The larger gamma is, the more conservative the algorithm will be
+             "min_child_weight": 6.7,  ## The larger min_child_weight is, the more conservative the algorithm will be.
+             "lambda": 2.7,  ### L2 regu for weights.
              'objective': 'binary:logistic',
              'eval_metric': ['auc', 'aucpr']}
     evallist = [(dVal, 'eval'), (dTrain, 'train')]
 
     ### train
-    bst = xgb.train(param, dTrain, num_round, evallist,early_stopping_rounds=10)
+    bst = xgb.train(param, dTrain, num_round, evallist,early_stopping_rounds=6)
     ypred = bst.predict(dTest)
     #print(ypred)
 

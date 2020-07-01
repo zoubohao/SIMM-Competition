@@ -6,7 +6,6 @@ from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
 import sklearn.metrics as metrics
-from torch_optimizer import AdaBound
 
 
 
@@ -44,12 +43,11 @@ if __name__ == "__main__":
     LR = 1e-3
     ###
     device0 = "cuda:0"
-    model_name = "b6"
-    reg_lambda = 2.5e-4
+    model_name = "b4"
+    reg_lambda = 2.e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
@@ -57,7 +55,6 @@ if __name__ == "__main__":
 
     transformationTest = tv.transforms.Compose([
         tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -146,8 +143,8 @@ if __name__ == "__main__":
                         print(batch_idx)
                         print(probability)
                         print("Val part, " + str(probability) + " , " + str(truth))
-                    fpr, tpr, _ = metrics.roc_curve(y_true=targetsList,y_score=scoreList,pos_label=1)
-                    aucV = metrics.auc(fpr, tpr)
+                    precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList, pos_label=1)
+                    aucV = metrics.auc(recall, precision)
                 torch.save(model.state_dict(), modelSavePath + "Model_EF" + model_name + str(aucV) + ".pth")
                 model = model.train(mode=True)
     torch.save(model.state_dict(), modelSavePath + "Model_EF"+ model_name + "Final" + ".pth")

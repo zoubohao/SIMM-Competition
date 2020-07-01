@@ -6,6 +6,7 @@ from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
 import sklearn.metrics as metrics
+from torch_optimizer import AdaBound
 
 
 
@@ -28,27 +29,26 @@ def randomConcatTensor(t1s, t2s):
 
 if __name__ == "__main__":
     ### config
-    batchSize = 12
+    batchSize = 10
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
-    saveTimes = 3500
+    saveTimes = 2500
     ###
-    loadWeight = True
-    trainModelLoad = "Model_EFb50.9089598708487086.pth"
+    loadWeight = False
+    trainModelLoad = "Model_EFb60.870445110701107.pth"
     ###
     LR = 1e-3
     ###
-    device0 = "cuda:1"
-    model_name = "b5"
-    reg_lambda = 2.e-4
+    device0 = "cuda:0"
+    model_name = "b4"
+    reg_lambda = 1.e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
@@ -56,7 +56,6 @@ if __name__ == "__main__":
 
     transformationTest = tv.transforms.Compose([
         tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop(size=[272, 408]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -72,7 +71,7 @@ if __name__ == "__main__":
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=False).to(device0)
+    model = EfficientNet.from_pretrained("efficientnet-" + model_name,num_classes=labelsNumber,advprop=True).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()
@@ -145,8 +144,8 @@ if __name__ == "__main__":
                         print(batch_idx)
                         print(probability)
                         print("Val part, " + str(probability) + " , " + str(truth))
-                    fpr, tpr, _ = metrics.roc_curve(y_true=targetsList,y_score=scoreList,pos_label=1)
-                    aucV = metrics.auc(fpr, tpr)
+                    precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList, pos_label=1)
+                    aucV = metrics.auc(recall, precision)
                 torch.save(model.state_dict(), modelSavePath + "Model_EF" + model_name + str(aucV) + ".pth")
                 model = model.train(mode=True)
     torch.save(model.state_dict(), modelSavePath + "Model_EF"+ model_name + "Final" + ".pth")

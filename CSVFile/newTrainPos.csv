@@ -1,0 +1,2854 @@
+image_name,sex,age_approx,anatom_site_general_challenge,target
+ISIC_0000002,female,60,upper extremity,1
+ISIC_0000004,male,80,posterior torso,1
+ISIC_0000013,female,30,posterior torso,1
+ISIC_0000022,female,55,lower extremity,1
+ISIC_0000026,female,30,lower extremity,1
+ISIC_0000029,female,45,posterior torso,1
+ISIC_0000030,female,55,lower extremity,1
+ISIC_0000031,male,70,upper extremity,1
+ISIC_0000035,female,25,lower extremity,1
+ISIC_0000036,male,70,upper extremity,1
+ISIC_0000040,female,65,lower extremity,1
+ISIC_0000043,male,35,lower extremity,1
+ISIC_0000046,female,60,upper extremity,1
+ISIC_0000049,female,80,posterior torso,1
+ISIC_0000054,female,25,lower extremity,1
+ISIC_0000056,female,55,lower extremity,1
+ISIC_0000070,male,25,anterior torso,1
+ISIC_0000074,male,25,lower extremity,1
+ISIC_0000076,male,55,posterior torso,1
+ISIC_0000077,male,80,upper extremity,1
+ISIC_0000078,male,85,anterior torso,1
+ISIC_0000139,unknow,-1,unknow,1
+ISIC_0000140,unknow,-1,unknow,1
+ISIC_0000141,unknow,-1,unknow,1
+ISIC_0000142,unknow,-1,unknow,1
+ISIC_0000143,unknow,-1,unknow,1
+ISIC_0000144,unknow,-1,unknow,1
+ISIC_0000145,unknow,-1,unknow,1
+ISIC_0000146,unknow,-1,unknow,1
+ISIC_0000147,unknow,-1,unknow,1
+ISIC_0000148,unknow,-1,unknow,1
+ISIC_0000149,unknow,-1,unknow,1
+ISIC_0000150,unknow,-1,unknow,1
+ISIC_0000151,unknow,-1,unknow,1
+ISIC_0000152,unknow,-1,unknow,1
+ISIC_0000153,unknow,-1,unknow,1
+ISIC_0000154,unknow,-1,unknow,1
+ISIC_0000155,unknow,-1,unknow,1
+ISIC_0000156,unknow,-1,unknow,1
+ISIC_0000157,male,60,upper extremity,1
+ISIC_0000158,female,30,upper extremity,1
+ISIC_0000159,female,15,upper extremity,1
+ISIC_0000160,male,55,lateral torso,1
+ISIC_0000161,male,45,anterior torso,1
+ISIC_0000162,male,40,anterior torso,1
+ISIC_0000163,male,60,upper extremity,1
+ISIC_0000164,male,60,upper extremity,1
+ISIC_0000165,male,15,upper extremity,1
+ISIC_0000166,female,30,upper extremity,1
+ISIC_0000167,male,40,posterior torso,1
+ISIC_0000168,male,70,upper extremity,1
+ISIC_0000169,male,70,upper extremity,1
+ISIC_0000170,male,50,posterior torso,1
+ISIC_0000171,male,45,posterior torso,1
+ISIC_0000172,female,35,posterior torso,1
+ISIC_0000173,male,65,upper extremity,1
+ISIC_0000174,female,50,upper extremity,1
+ISIC_0000175,female,35,upper extremity,1
+ISIC_0000176,female,40,lower extremity,1
+ISIC_0000276,male,70,anterior torso,1
+ISIC_0000277,male,70,anterior torso,1
+ISIC_0000278,female,75,head/neck,1
+ISIC_0000279,male,80,lower extremity,1
+ISIC_0000280,male,70,posterior torso,1
+ISIC_0000281,male,25,posterior torso,1
+ISIC_0000282,female,65,palms/soles,1
+ISIC_0000283,male,50,upper extremity,1
+ISIC_0000284,male,80,head/neck,1
+ISIC_0000285,male,60,lateral torso,1
+ISIC_0000286,male,50,head/neck,1
+ISIC_0000287,male,55,palms/soles,1
+ISIC_0000288,female,70,upper extremity,1
+ISIC_0000289,male,75,head/neck,1
+ISIC_0000290,female,65,palms/soles,1
+ISIC_0000291,female,55,head/neck,1
+ISIC_0000292,female,85,head/neck,1
+ISIC_0000293,male,70,lower extremity,1
+ISIC_0000294,male,80,posterior torso,1
+ISIC_0000295,female,85,upper extremity,1
+ISIC_0000296,female,50,posterior torso,1
+ISIC_0000297,female,35,anterior torso,1
+ISIC_0000298,male,50,lower extremity,1
+ISIC_0000299,male,75,head/neck,1
+ISIC_0000300,female,60,lower extremity,1
+ISIC_0000301,male,60,posterior torso,1
+ISIC_0000302,female,65,posterior torso,1
+ISIC_0000303,male,80,upper extremity,1
+ISIC_0000304,male,45,posterior torso,1
+ISIC_0000305,female,80,lower extremity,1
+ISIC_0000306,male,50,upper extremity,1
+ISIC_0000307,female,65,lower extremity,1
+ISIC_0000308,female,50,lower extremity,1
+ISIC_0000309,male,65,anterior torso,1
+ISIC_0000310,female,85,lower extremity,1
+ISIC_0000311,female,60,lower extremity,1
+ISIC_0000312,female,40,posterior torso,1
+ISIC_0000313,male,60,anterior torso,1
+ISIC_0000314,female,35,lower extremity,1
+ISIC_0000390,unknow,-1,unknow,1
+ISIC_0000393,unknow,-1,unknow,1
+ISIC_0000394,unknow,-1,unknow,1
+ISIC_0000395,unknow,-1,unknow,1
+ISIC_0000398,unknow,-1,unknow,1
+ISIC_0000399,unknow,-1,unknow,1
+ISIC_0000400,unknow,-1,unknow,1
+ISIC_0000401,unknow,-1,unknow,1
+ISIC_0000402,unknow,-1,unknow,1
+ISIC_0000404,unknow,-1,unknow,1
+ISIC_0000405,unknow,-1,unknow,1
+ISIC_0000406,unknow,-1,unknow,1
+ISIC_0000410,unknow,-1,unknow,1
+ISIC_0000411,unknow,-1,unknow,1
+ISIC_0000412,unknow,-1,unknow,1
+ISIC_0000413,unknow,-1,unknow,1
+ISIC_0000414,unknow,-1,unknow,1
+ISIC_0000415,unknow,-1,unknow,1
+ISIC_0000417,unknow,-1,unknow,1
+ISIC_0000420,unknow,-1,unknow,1
+ISIC_0000428,unknow,-1,unknow,1
+ISIC_0000429,unknow,-1,unknow,1
+ISIC_0000432,unknow,-1,unknow,1
+ISIC_0000434,unknow,-1,unknow,1
+ISIC_0000438,unknow,-1,unknow,1
+ISIC_0000440,unknow,-1,unknow,1
+ISIC_0000441,unknow,-1,unknow,1
+ISIC_0000444,unknow,-1,unknow,1
+ISIC_0000445,unknow,-1,unknow,1
+ISIC_0000446,unknow,-1,unknow,1
+ISIC_0000450,unknow,-1,unknow,1
+ISIC_0000459,unknow,-1,anterior torso,1
+ISIC_0000462,unknow,-1,posterior torso,1
+ISIC_0000463,unknow,-1,unknow,1
+ISIC_0000466,unknow,-1,posterior torso,1
+ISIC_0000469,unknow,-1,upper extremity,1
+ISIC_0000482,unknow,-1,lower extremity,1
+ISIC_0000484,unknow,-1,upper extremity,1
+ISIC_0000487,unknow,-1,upper extremity,1
+ISIC_0000502,unknow,-1,upper extremity,1
+ISIC_0000511,unknow,-1,anterior torso,1
+ISIC_0000513,unknow,-1,upper extremity,1
+ISIC_0000516,unknow,-1,posterior torso,1
+ISIC_0000517,unknow,-1,posterior torso,1
+ISIC_0000518,unknow,-1,upper extremity,1
+ISIC_0000519,unknow,-1,posterior torso,1
+ISIC_0000520,unknow,-1,upper extremity,1
+ISIC_0000521,unknow,-1,anterior torso,1
+ISIC_0000522,unknow,-1,lower extremity,1
+ISIC_0000526,unknow,-1,anterior torso,1
+ISIC_0000531,unknow,-1,upper extremity,1
+ISIC_0000533,unknow,-1,unknow,1
+ISIC_0000547,unknow,-1,unknow,1
+ISIC_0000548,unknow,-1,unknow,1
+ISIC_0000549,unknow,-1,unknow,1
+ISIC_0000550,unknow,-1,posterior torso,1
+ISIC_0000551,unknow,-1,posterior torso,1
+ISIC_0000552,unknow,-1,unknow,1
+ISIC_0000553,unknow,-1,unknow,1
+ISIC_0000554,unknow,-1,unknow,1
+ISIC_0000555,unknow,-1,unknow,1
+ISIC_0001100,male,85,upper extremity,1
+ISIC_0001101,female,85,posterior torso,1
+ISIC_0001102,female,50,lower extremity,1
+ISIC_0001103,male,80,upper extremity,1
+ISIC_0001105,male,35,anterior torso,1
+ISIC_0001106,male,70,lower extremity,1
+ISIC_0001108,male,75,posterior torso,1
+ISIC_0001110,male,70,anterior torso,1
+ISIC_0001112,female,80,anterior torso,1
+ISIC_0001116,female,75,lower extremity,1
+ISIC_0001118,male,70,lower extremity,1
+ISIC_0001119,male,55,posterior torso,1
+ISIC_0001120,male,60,posterior torso,1
+ISIC_0001121,male,85,lower extremity,1
+ISIC_0001124,male,60,anterior torso,1
+ISIC_0001125,male,80,lower extremity,1
+ISIC_0001126,male,65,anterior torso,1
+ISIC_0001127,male,65,posterior torso,1
+ISIC_0001128,male,40,lateral torso,1
+ISIC_0001131,male,45,upper extremity,1
+ISIC_0001132,male,50,head/neck,1
+ISIC_0001133,male,65,upper extremity,1
+ISIC_0001134,male,65,lateral torso,1
+ISIC_0001135,female,60,upper extremity,1
+ISIC_0001137,male,60,lower extremity,1
+ISIC_0001138,male,65,head/neck,1
+ISIC_0001140,female,50,lower extremity,1
+ISIC_0001141,female,70,upper extremity,1
+ISIC_0001142,female,70,lower extremity,1
+ISIC_0001143,male,75,upper extremity,1
+ISIC_0001148,male,85,posterior torso,1
+ISIC_0001149,male,60,posterior torso,1
+ISIC_0001151,female,60,upper extremity,1
+ISIC_0001152,male,25,head/neck,1
+ISIC_0001154,female,35,upper extremity,1
+ISIC_0001157,male,75,posterior torso,1
+ISIC_0001159,female,80,head/neck,1
+ISIC_0009868,female,70,posterior torso,1
+ISIC_0009882,female,60,upper extremity,1
+ISIC_0009886,male,70,head/neck,1
+ISIC_0009890,male,70,posterior torso,1
+ISIC_0009894,male,30,anterior torso,1
+ISIC_0009897,female,55,anterior torso,1
+ISIC_0009898,male,85,upper extremity,1
+ISIC_0009905,male,20,upper extremity,1
+ISIC_0009908,male,80,head/neck,1
+ISIC_0009910,female,55,upper extremity,1
+ISIC_0009913,male,80,head/neck,1
+ISIC_0009916,male,75,head/neck,1
+ISIC_0009918,male,80,upper extremity,1
+ISIC_0009924,female,65,head/neck,1
+ISIC_0009927,female,40,head/neck,1
+ISIC_0009934,female,85,head/neck,1
+ISIC_0009950,male,35,anterior torso,1
+ISIC_0009955,female,70,lower extremity,1
+ISIC_0009960,female,50,lower extremity,1
+ISIC_0009971,female,70,lower extremity,1
+ISIC_0009984,female,70,lower extremity,1
+ISIC_0009989,male,60,upper extremity,1
+ISIC_0009992,male,70,anterior torso,1
+ISIC_0009993,female,85,head/neck,1
+ISIC_0010000,female,60,lower extremity,1
+ISIC_0010001,female,60,anterior torso,1
+ISIC_0010007,male,65,head/neck,1
+ISIC_0010011,male,60,upper extremity,1
+ISIC_0010016,male,65,posterior torso,1
+ISIC_0010023,male,80,upper extremity,1
+ISIC_0010024,male,50,upper extremity,1
+ISIC_0010029,female,65,head/neck,1
+ISIC_0010034,female,50,upper extremity,1
+ISIC_0010036,male,75,head/neck,1
+ISIC_0010039,female,65,upper extremity,1
+ISIC_0010049,male,85,posterior torso,1
+ISIC_0010050,male,55,posterior torso,1
+ISIC_0010054,female,70,upper extremity,1
+ISIC_0010056,male,60,posterior torso,1
+ISIC_0010067,male,75,head/neck,1
+ISIC_0010080,female,45,posterior torso,1
+ISIC_0010081,male,60,head/neck,1
+ISIC_0010089,female,45,anterior torso,1
+ISIC_0010094,female,10,anterior torso,1
+ISIC_0010106,male,45,upper extremity,1
+ISIC_0010119,male,70,lower extremity,1
+ISIC_0010120,male,65,upper extremity,1
+ISIC_0010122,female,55,anterior torso,1
+ISIC_0010131,male,25,head/neck,1
+ISIC_0010137,male,45,upper extremity,1
+ISIC_0010140,male,65,posterior torso,1
+ISIC_0010143,male,85,upper extremity,1
+ISIC_0010145,female,55,lower extremity,1
+ISIC_0010148,female,70,posterior torso,1
+ISIC_0010156,female,70,head/neck,1
+ISIC_0010162,female,85,upper extremity,1
+ISIC_0010164,female,85,head/neck,1
+ISIC_0010165,female,85,lower extremity,1
+ISIC_0010171,male,70,lower extremity,1
+ISIC_0010174,male,65,upper extremity,1
+ISIC_0010175,male,50,anterior torso,1
+ISIC_0010181,male,80,head/neck,1
+ISIC_0010189,male,50,upper extremity,1
+ISIC_0010194,male,75,posterior torso,1
+ISIC_0010207,male,70,head/neck,1
+ISIC_0010208,male,70,head/neck,1
+ISIC_0010209,male,65,upper extremity,1
+ISIC_0010210,male,65,lower extremity,1
+ISIC_0010217,male,60,lower extremity,1
+ISIC_0010225,female,30,lower extremity,1
+ISIC_0010231,female,85,posterior torso,1
+ISIC_0010235,male,60,upper extremity,1
+ISIC_0010240,female,70,anterior torso,1
+ISIC_0010241,male,70,lower extremity,1
+ISIC_0010242,female,85,upper extremity,1
+ISIC_0010245,male,80,head/neck,1
+ISIC_0010251,female,60,anterior torso,1
+ISIC_0010265,female,65,posterior torso,1
+ISIC_0010266,female,55,upper extremity,1
+ISIC_0010267,female,65,posterior torso,1
+ISIC_0010271,female,80,upper extremity,1
+ISIC_0010278,female,70,head/neck,1
+ISIC_0010280,female,70,upper extremity,1
+ISIC_0010283,male,85,lower extremity,1
+ISIC_0010288,male,65,anterior torso,1
+ISIC_0010289,male,60,posterior torso,1
+ISIC_0010295,female,35,lower extremity,1
+ISIC_0010299,male,70,lower extremity,1
+ISIC_0010302,male,70,upper extremity,1
+ISIC_0010308,female,80,lower extremity,1
+ISIC_0010313,female,45,lower extremity,1
+ISIC_0010319,female,65,head/neck,1
+ISIC_0010321,female,80,posterior torso,1
+ISIC_0010322,male,70,head/neck,1
+ISIC_0010329,male,60,upper extremity,1
+ISIC_0010349,male,75,upper extremity,1
+ISIC_0010350,female,25,anterior torso,1
+ISIC_0010355,female,85,head/neck,1
+ISIC_0010358,male,40,posterior torso,1
+ISIC_0010359,male,85,head/neck,1
+ISIC_0010360,male,40,posterior torso,1
+ISIC_0010364,male,40,posterior torso,1
+ISIC_0010366,female,85,lower extremity,1
+ISIC_0010369,male,50,upper extremity,1
+ISIC_0010372,male,85,lower extremity,1
+ISIC_0010376,male,80,head/neck,1
+ISIC_0010379,male,80,head/neck,1
+ISIC_0010380,female,75,head/neck,1
+ISIC_0010385,male,55,head/neck,1
+ISIC_0010388,male,70,head/neck,1
+ISIC_0010391,female,85,head/neck,1
+ISIC_0010392,male,75,posterior torso,1
+ISIC_0010393,male,85,posterior torso,1
+ISIC_0010394,male,85,posterior torso,1
+ISIC_0010396,male,55,head/neck,1
+ISIC_0010397,female,50,lower extremity,1
+ISIC_0010398,female,50,upper extremity,1
+ISIC_0010400,male,70,head/neck,1
+ISIC_0010401,female,50,lower extremity,1
+ISIC_0010402,male,70,head/neck,1
+ISIC_0010407,male,85,head/neck,1
+ISIC_0010410,female,70,lower extremity,1
+ISIC_0010411,male,80,posterior torso,1
+ISIC_0010413,male,75,head/neck,1
+ISIC_0010414,male,80,anterior torso,1
+ISIC_0010415,male,85,upper extremity,1
+ISIC_0010416,male,70,posterior torso,1
+ISIC_0010417,male,65,upper extremity,1
+ISIC_0010423,female,80,head/neck,1
+ISIC_0010426,female,70,upper extremity,1
+ISIC_0010432,male,80,lower extremity,1
+ISIC_0010441,male,65,head/neck,1
+ISIC_0010466,male,80,lower extremity,1
+ISIC_0010468,female,45,anterior torso,1
+ISIC_0010469,male,75,head/neck,1
+ISIC_0010470,male,75,head/neck,1
+ISIC_0010476,female,55,lower extremity,1
+ISIC_0010478,male,85,head/neck,1
+ISIC_0010482,female,65,head/neck,1
+ISIC_0010485,male,75,posterior torso,1
+ISIC_0010486,male,75,posterior torso,1
+ISIC_0010495,male,55,head/neck,1
+ISIC_0010503,male,85,upper extremity,1
+ISIC_0010514,female,40,lower extremity,1
+ISIC_0010516,male,65,head/neck,1
+ISIC_0010527,male,70,head/neck,1
+ISIC_0010532,female,80,lower extremity,1
+ISIC_0010533,female,50,posterior torso,1
+ISIC_0010534,female,50,posterior torso,1
+ISIC_0010536,female,45,lower extremity,1
+ISIC_0010537,male,70,posterior torso,1
+ISIC_0010543,female,75,posterior torso,1
+ISIC_0010546,male,80,head/neck,1
+ISIC_0010548,male,80,anterior torso,1
+ISIC_0010550,male,65,posterior torso,1
+ISIC_0010551,male,65,anterior torso,1
+ISIC_0010555,male,65,upper extremity,1
+ISIC_0010559,male,60,head/neck,1
+ISIC_0010564,male,70,head/neck,1
+ISIC_0010576,female,55,anterior torso,1
+ISIC_0010579,male,80,head/neck,1
+ISIC_0010580,female,60,upper extremity,1
+ISIC_0010583,female,80,upper extremity,1
+ISIC_0010587,male,30,posterior torso,1
+ISIC_0010591,male,60,posterior torso,1
+ISIC_0010596,male,60,posterior torso,1
+ISIC_0010597,female,45,lower extremity,1
+ISIC_0010608,male,45,posterior torso,1
+ISIC_0010609,male,50,anterior torso,1
+ISIC_0010610,female,50,upper extremity,1
+ISIC_0010611,female,50,upper extremity,1
+ISIC_0010629,male,75,head/neck,1
+ISIC_0010630,male,85,upper extremity,1
+ISIC_0010631,male,85,upper extremity,1
+ISIC_0010644,female,40,head/neck,1
+ISIC_0010648,female,50,upper extremity,1
+ISIC_0010652,female,50,head/neck,1
+ISIC_0010653,female,25,head/neck,1
+ISIC_0010655,male,65,head/neck,1
+ISIC_0010663,male,80,posterior torso,1
+ISIC_0010664,male,85,upper extremity,1
+ISIC_0010690,female,50,lower extremity,1
+ISIC_0010707,female,60,head/neck,1
+ISIC_0010714,male,85,head/neck,1
+ISIC_0010719,male,85,lower extremity,1
+ISIC_0010723,male,80,anterior torso,1
+ISIC_0010728,male,80,posterior torso,1
+ISIC_0010729,male,75,anterior torso,1
+ISIC_0010730,male,80,upper extremity,1
+ISIC_0010737,male,65,head/neck,1
+ISIC_0010741,female,45,anterior torso,1
+ISIC_0010746,male,65,anterior torso,1
+ISIC_0010749,male,80,upper extremity,1
+ISIC_0010750,male,80,posterior torso,1
+ISIC_0010754,male,80,lower extremity,1
+ISIC_0010757,female,40,lower extremity,1
+ISIC_0010759,male,45,lower extremity,1
+ISIC_0010764,male,60,posterior torso,1
+ISIC_0010765,male,60,lower extremity,1
+ISIC_0010766,male,60,lower extremity,1
+ISIC_0010767,male,55,upper extremity,1
+ISIC_0010770,male,60,lower extremity,1
+ISIC_0010772,male,55,posterior torso,1
+ISIC_0010777,female,30,anterior torso,1
+ISIC_0010778,female,85,posterior torso,1
+ISIC_0010782,female,75,posterior torso,1
+ISIC_0010783,male,70,head/neck,1
+ISIC_0010784,male,70,posterior torso,1
+ISIC_0010785,female,75,lower extremity,1
+ISIC_0010789,male,60,upper extremity,1
+ISIC_0010790,male,85,head/neck,1
+ISIC_0010791,male,65,posterior torso,1
+ISIC_0010792,male,65,head/neck,1
+ISIC_0010796,male,65,posterior torso,1
+ISIC_0010797,male,65,posterior torso,1
+ISIC_0010799,female,85,head/neck,1
+ISIC_0010803,female,30,lower extremity,1
+ISIC_0010808,male,60,lower extremity,1
+ISIC_0010809,male,60,posterior torso,1
+ISIC_0010810,female,80,head/neck,1
+ISIC_0010812,female,75,lower extremity,1
+ISIC_0010834,male,55,lower extremity,1
+ISIC_0010852,female,30,lower extremity,1
+ISIC_0010855,male,75,head/neck,1
+ISIC_0010860,male,50,posterior torso,1
+ISIC_0010862,female,80,lower extremity,1
+ISIC_0010863,male,65,posterior torso,1
+ISIC_0010866,female,85,head/neck,1
+ISIC_0010872,male,80,head/neck,1
+ISIC_0010876,male,60,head/neck,1
+ISIC_0010878,male,60,upper extremity,1
+ISIC_0010883,male,85,posterior torso,1
+ISIC_0010890,male,70,head/neck,1
+ISIC_0010898,male,65,head/neck,1
+ISIC_0010900,male,60,upper extremity,1
+ISIC_0010909,male,40,posterior torso,1
+ISIC_0010912,female,85,upper extremity,1
+ISIC_0010917,female,85,posterior torso,1
+ISIC_0010923,female,80,head/neck,1
+ISIC_0010925,male,65,upper extremity,1
+ISIC_0010934,female,65,head/neck,1
+ISIC_0010938,male,85,upper extremity,1
+ISIC_0010942,male,75,upper extremity,1
+ISIC_0010965,female,65,upper extremity,1
+ISIC_0010971,female,60,upper extremity,1
+ISIC_0010977,female,60,upper extremity,1
+ISIC_0010978,female,60,posterior torso,1
+ISIC_0010979,female,65,head/neck,1
+ISIC_0010982,male,70,head/neck,1
+ISIC_0010990,female,55,anterior torso,1
+ISIC_0010993,male,55,head/neck,1
+ISIC_0010995,female,50,lower extremity,1
+ISIC_0011007,female,55,head/neck,1
+ISIC_0011012,female,30,upper extremity,1
+ISIC_0011013,male,40,upper extremity,1
+ISIC_0011030,male,65,upper extremity,1
+ISIC_0011031,male,65,upper extremity,1
+ISIC_0011032,male,70,upper extremity,1
+ISIC_0011039,male,65,head/neck,1
+ISIC_0011040,male,65,upper extremity,1
+ISIC_0011042,male,70,head/neck,1
+ISIC_0011043,male,70,head/neck,1
+ISIC_0011044,male,70,head/neck,1
+ISIC_0011045,male,70,upper extremity,1
+ISIC_0011052,male,85,head/neck,1
+ISIC_0011056,male,85,upper extremity,1
+ISIC_0011057,female,45,lower extremity,1
+ISIC_0011077,male,65,head/neck,1
+ISIC_0011094,male,80,upper extremity,1
+ISIC_0011095,male,80,lower extremity,1
+ISIC_0011099,male,55,posterior torso,1
+ISIC_0011112,male,50,anterior torso,1
+ISIC_0011118,male,75,anterior torso,1
+ISIC_0011121,male,85,head/neck,1
+ISIC_0011122,male,85,head/neck,1
+ISIC_0011125,male,70,anterior torso,1
+ISIC_0011126,male,45,upper extremity,1
+ISIC_0011128,male,70,head/neck,1
+ISIC_0011130,male,75,posterior torso,1
+ISIC_0011132,male,75,upper extremity,1
+ISIC_0011135,female,75,upper extremity,1
+ISIC_0011136,male,60,head/neck,1
+ISIC_0011137,male,65,posterior torso,1
+ISIC_0011138,male,70,head/neck,1
+ISIC_0011139,male,70,head/neck,1
+ISIC_0011140,female,60,upper extremity,1
+ISIC_0011141,male,75,posterior torso,1
+ISIC_0011142,female,80,lower extremity,1
+ISIC_0011151,female,80,lower extremity,1
+ISIC_0011158,male,60,upper extremity,1
+ISIC_0011161,male,75,posterior torso,1
+ISIC_0011163,female,65,posterior torso,1
+ISIC_0011166,female,45,anterior torso,1
+ISIC_0011169,male,45,posterior torso,1
+ISIC_0011174,male,70,posterior torso,1
+ISIC_0011176,female,55,lower extremity,1
+ISIC_0011178,male,85,head/neck,1
+ISIC_0011181,female,70,head/neck,1
+ISIC_0011185,female,70,upper extremity,1
+ISIC_0011187,male,65,head/neck,1
+ISIC_0011193,female,45,head/neck,1
+ISIC_0011194,female,85,head/neck,1
+ISIC_0011196,male,50,lower extremity,1
+ISIC_0011209,female,55,head/neck,1
+ISIC_0011210,male,55,posterior torso,1
+ISIC_0011222,female,70,head/neck,1
+ISIC_0011238,male,85,anterior torso,1
+ISIC_0011239,male,75,anterior torso,1
+ISIC_0011247,female,75,posterior torso,1
+ISIC_0011256,male,45,anterior torso,1
+ISIC_0011260,male,55,upper extremity,1
+ISIC_0011264,male,65,head/neck,1
+ISIC_0011267,female,35,head/neck,1
+ISIC_0011268,male,85,posterior torso,1
+ISIC_0011269,male,85,upper extremity,1
+ISIC_0011270,male,85,palms/soles,1
+ISIC_0011273,female,85,lower extremity,1
+ISIC_0011276,female,35,head/neck,1
+ISIC_0011277,female,85,head/neck,1
+ISIC_0011285,male,40,head/neck,1
+ISIC_0011286,male,50,head/neck,1
+ISIC_0011288,male,70,upper extremity,1
+ISIC_0011289,male,75,upper extremity,1
+ISIC_0011295,male,75,posterior torso,1
+ISIC_0011305,male,70,head/neck,1
+ISIC_0011308,male,65,posterior torso,1
+ISIC_0011315,male,45,posterior torso,1
+ISIC_0011329,female,50,upper extremity,1
+ISIC_0011334,male,75,upper extremity,1
+ISIC_0011337,male,70,head/neck,1
+ISIC_0011340,male,80,upper extremity,1
+ISIC_0011344,female,25,upper extremity,1
+ISIC_0011348,male,75,posterior torso,1
+ISIC_0011349,male,65,posterior torso,1
+ISIC_0011350,female,70,lower extremity,1
+ISIC_0011356,female,50,posterior torso,1
+ISIC_0011364,male,75,anterior torso,1
+ISIC_0011365,male,80,anterior torso,1
+ISIC_0011366,male,65,posterior torso,1
+ISIC_0011368,male,75,anterior torso,1
+ISIC_0011369,male,80,lower extremity,1
+ISIC_0011370,male,65,head/neck,1
+ISIC_0011371,male,60,anterior torso,1
+ISIC_0011374,male,80,head/neck,1
+ISIC_0011375,male,80,head/neck,1
+ISIC_0011381,male,75,head/neck,1
+ISIC_0011387,female,65,posterior torso,1
+ISIC_0011388,male,55,head/neck,1
+ISIC_0011390,male,70,anterior torso,1
+ISIC_0011391,male,65,palms/soles,1
+ISIC_0011396,male,70,head/neck,1
+ISIC_0011399,male,85,posterior torso,1
+ISIC_0011403,female,55,lower extremity,1
+ISIC_0011404,male,80,head/neck,1
+ISIC_0011405,male,65,head/neck,1
+ISIC_0011428,male,55,lower extremity,1
+ISIC_0011429,female,60,upper extremity,1
+ISIC_0011430,female,60,upper extremity,1
+ISIC_0011434,female,40,upper extremity,1
+ISIC_0011435,female,40,upper extremity,1
+ISIC_0011436,female,40,upper extremity,1
+ISIC_0011437,female,40,upper extremity,1
+ISIC_0011438,male,25,posterior torso,1
+ISIC_0011439,male,25,posterior torso,1
+ISIC_0011456,female,85,upper extremity,1
+ISIC_0011458,male,85,upper extremity,1
+ISIC_0011459,female,40,lower extremity,1
+ISIC_0011460,female,40,lower extremity,1
+ISIC_0011463,male,75,lower extremity,1
+ISIC_0011471,male,60,anterior torso,1
+ISIC_0011473,male,45,posterior torso,1
+ISIC_0011474,male,45,posterior torso,1
+ISIC_0011480,female,75,posterior torso,1
+ISIC_0011481,female,30,upper extremity,1
+ISIC_0011482,male,30,posterior torso,1
+ISIC_0011483,female,55,posterior torso,1
+ISIC_0011484,female,55,posterior torso,1
+ISIC_0011485,male,30,lower extremity,1
+ISIC_0011486,male,30,lower extremity,1
+ISIC_0011487,male,30,lower extremity,1
+ISIC_0011488,female,65,posterior torso,1
+ISIC_0011489,male,65,anterior torso,1
+ISIC_0011490,male,80,upper extremity,1
+ISIC_0011491,female,70,upper extremity,1
+ISIC_0011492,female,40,head/neck,1
+ISIC_0011493,male,75,upper extremity,1
+ISIC_0011494,male,50,posterior torso,1
+ISIC_0011495,female,50,lower extremity,1
+ISIC_0011496,female,75,posterior torso,1
+ISIC_0011497,male,45,posterior torso,1
+ISIC_0011498,male,45,posterior torso,1
+ISIC_0011499,male,55,unknow,1
+ISIC_0011500,male,55,unknow,1
+ISIC_0011501,male,55,unknow,1
+ISIC_0011502,male,60,upper extremity,1
+ISIC_0011503,female,85,lower extremity,1
+ISIC_0011504,male,85,anterior torso,1
+ISIC_0011505,male,65,anterior torso,1
+ISIC_0011506,male,65,anterior torso,1
+ISIC_0011507,male,45,posterior torso,1
+ISIC_0011508,male,45,posterior torso,1
+ISIC_0011509,male,30,lower extremity,1
+ISIC_0011510,male,30,lower extremity,1
+ISIC_0011511,male,75,head/neck,1
+ISIC_0011512,female,85,lower extremity,1
+ISIC_0011513,female,85,lower extremity,1
+ISIC_0011514,female,55,posterior torso,1
+ISIC_0011515,male,65,anterior torso,1
+ISIC_0011516,male,65,anterior torso,1
+ISIC_0011517,male,65,anterior torso,1
+ISIC_0011518,male,65,anterior torso,1
+ISIC_0011519,male,65,anterior torso,1
+ISIC_0011520,female,35,upper extremity,1
+ISIC_0011521,female,35,upper extremity,1
+ISIC_0011524,male,75,head/neck,1
+ISIC_0011526,male,85,upper extremity,1
+ISIC_0011527,male,75,head/neck,1
+ISIC_0011528,male,75,head/neck,1
+ISIC_0011529,male,75,head/neck,1
+ISIC_0011530,male,75,head/neck,1
+ISIC_0011531,male,75,head/neck,1
+ISIC_0011532,male,75,head/neck,1
+ISIC_0011534,male,80,upper extremity,1
+ISIC_0011535,male,75,lower extremity,1
+ISIC_0011536,male,75,lower extremity,1
+ISIC_0011537,male,75,lower extremity,1
+ISIC_0011560,female,70,upper extremity,1
+ISIC_0011566,female,75,head/neck,1
+ISIC_0011579,female,40,posterior torso,1
+ISIC_0011589,male,15,upper extremity,1
+ISIC_0011590,male,15,upper extremity,1
+ISIC_0011591,male,15,upper extremity,1
+ISIC_0011593,female,70,lower extremity,1
+ISIC_0011594,female,85,upper extremity,1
+ISIC_0011598,male,50,lower extremity,1
+ISIC_0011610,male,70,head/neck,1
+ISIC_0011613,female,55,posterior torso,1
+ISIC_0011614,female,55,posterior torso,1
+ISIC_0011615,female,55,posterior torso,1
+ISIC_0011616,female,55,posterior torso,1
+ISIC_0011617,female,55,posterior torso,1
+ISIC_0011618,female,85,head/neck,1
+ISIC_0011626,male,70,posterior torso,1
+ISIC_0011627,male,70,posterior torso,1
+ISIC_0011628,male,85,head/neck,1
+ISIC_0011642,male,85,posterior torso,1
+ISIC_0011645,male,85,anterior torso,1
+ISIC_0011646,male,85,anterior torso,1
+ISIC_0011648,male,55,upper extremity,1
+ISIC_0011649,unknow,85,lower extremity,1
+ISIC_0011659,male,60,lateral torso,1
+ISIC_0011684,female,65,lower extremity,1
+ISIC_0011691,male,50,upper extremity,1
+ISIC_0011692,female,35,posterior torso,1
+ISIC_0011693,female,35,posterior torso,1
+ISIC_0011694,female,35,posterior torso,1
+ISIC_0011695,female,35,posterior torso,1
+ISIC_0011696,female,35,posterior torso,1
+ISIC_0011697,female,35,posterior torso,1
+ISIC_0011698,female,35,posterior torso,1
+ISIC_0011699,female,35,posterior torso,1
+ISIC_0011700,female,35,posterior torso,1
+ISIC_0011701,female,35,posterior torso,1
+ISIC_0011702,female,35,posterior torso,1
+ISIC_0011703,female,35,posterior torso,1
+ISIC_0011704,female,35,posterior torso,1
+ISIC_0011709,male,50,head/neck,1
+ISIC_0011710,male,50,head/neck,1
+ISIC_0011711,female,25,anterior torso,1
+ISIC_0011726,male,80,lower extremity,1
+ISIC_0011728,male,65,anterior torso,1
+ISIC_0011729,male,65,posterior torso,1
+ISIC_0011730,male,85,anterior torso,1
+ISIC_0011733,female,65,upper extremity,1
+ISIC_0011736,male,60,anterior torso,1
+ISIC_0011743,female,65,lower extremity,1
+ISIC_0011744,female,65,lower extremity,1
+ISIC_0011747,male,85,head/neck,1
+ISIC_0011750,female,80,upper extremity,1
+ISIC_0011751,female,80,upper extremity,1
+ISIC_0011752,male,85,anterior torso,1
+ISIC_0011753,male,85,anterior torso,1
+ISIC_0011757,male,85,anterior torso,1
+ISIC_0011758,male,70,anterior torso,1
+ISIC_0011759,male,70,anterior torso,1
+ISIC_0011764,male,50,lower extremity,1
+ISIC_0011770,male,65,head/neck,1
+ISIC_0011771,male,65,head/neck,1
+ISIC_0011772,male,65,head/neck,1
+ISIC_0011773,male,65,head/neck,1
+ISIC_0011774,male,65,head/neck,1
+ISIC_0011778,male,65,head/neck,1
+ISIC_0011780,male,30,upper extremity,1
+ISIC_0011782,male,60,lateral torso,1
+ISIC_0011790,male,85,head/neck,1
+ISIC_0011794,male,70,posterior torso,1
+ISIC_0011797,female,85,lower extremity,1
+ISIC_0011798,female,85,lower extremity,1
+ISIC_0011799,female,85,lower extremity,1
+ISIC_0011801,female,85,upper extremity,1
+ISIC_0011802,female,85,upper extremity,1
+ISIC_0011807,male,30,lower extremity,1
+ISIC_0011808,male,30,lower extremity,1
+ISIC_0011810,female,70,head/neck,1
+ISIC_0011811,male,55,posterior torso,1
+ISIC_0011812,male,55,posterior torso,1
+ISIC_0011829,unknow,85,unknow,1
+ISIC_0011845,male,70,posterior torso,1
+ISIC_0011846,male,70,posterior torso,1
+ISIC_0011848,male,70,upper extremity,1
+ISIC_0011857,female,45,posterior torso,1
+ISIC_0011858,female,45,posterior torso,1
+ISIC_0011862,female,45,lower extremity,1
+ISIC_0011863,female,45,lower extremity,1
+ISIC_0011868,male,65,head/neck,1
+ISIC_0011869,male,85,upper extremity,1
+ISIC_0011870,female,65,anterior torso,1
+ISIC_0011872,female,40,lower extremity,1
+ISIC_0011873,female,40,lower extremity,1
+ISIC_0011874,female,40,lower extremity,1
+ISIC_0011875,female,40,lower extremity,1
+ISIC_0011876,female,40,lower extremity,1
+ISIC_0011877,female,40,lower extremity,1
+ISIC_0011878,female,40,lower extremity,1
+ISIC_0011879,female,40,lower extremity,1
+ISIC_0011892,female,55,lower extremity,1
+ISIC_0011894,male,45,head/neck,1
+ISIC_0011895,female,50,upper extremity,1
+ISIC_0011898,female,85,head/neck,1
+ISIC_0011904,female,85,lower extremity,1
+ISIC_0011921,male,65,anterior torso,1
+ISIC_0011922,male,65,anterior torso,1
+ISIC_0011923,male,50,upper extremity,1
+ISIC_0011929,male,65,upper extremity,1
+ISIC_0011930,male,70,upper extremity,1
+ISIC_0011931,male,70,upper extremity,1
+ISIC_0011933,male,65,posterior torso,1
+ISIC_0011935,unknow,85,lower extremity,1
+ISIC_0011943,female,25,posterior torso,1
+ISIC_0011944,female,25,posterior torso,1
+ISIC_0011947,male,65,upper extremity,1
+ISIC_0011948,male,65,upper extremity,1
+ISIC_0011949,male,65,upper extremity,1
+ISIC_0011950,male,65,upper extremity,1
+ISIC_0011951,male,65,upper extremity,1
+ISIC_0011957,female,50,head/neck,1
+ISIC_0011958,female,50,head/neck,1
+ISIC_0011975,female,85,lower extremity,1
+ISIC_0011987,male,85,posterior torso,1
+ISIC_0011996,female,70,posterior torso,1
+ISIC_0011998,male,85,posterior torso,1
+ISIC_0012000,female,60,anterior torso,1
+ISIC_0012025,male,80,lower extremity,1
+ISIC_0012040,male,70,head/neck,1
+ISIC_0012044,female,55,posterior torso,1
+ISIC_0012047,male,40,upper extremity,1
+ISIC_0012048,female,40,upper extremity,1
+ISIC_0012049,male,45,anterior torso,1
+ISIC_0012054,male,85,upper extremity,1
+ISIC_0012055,male,85,upper extremity,1
+ISIC_0012057,female,85,lower extremity,1
+ISIC_0012060,male,65,anterior torso,1
+ISIC_0012063,unknow,85,lower extremity,1
+ISIC_0012064,unknow,85,lower extremity,1
+ISIC_0012065,unknow,85,lower extremity,1
+ISIC_0012066,unknow,85,lower extremity,1
+ISIC_0012067,unknow,85,lower extremity,1
+ISIC_0012068,unknow,85,lower extremity,1
+ISIC_0012069,unknow,85,lower extremity,1
+ISIC_0012070,male,85,anterior torso,1
+ISIC_0012074,male,75,upper extremity,1
+ISIC_0012075,female,65,head/neck,1
+ISIC_0012079,male,85,lower extremity,1
+ISIC_0012081,female,15,posterior torso,1
+ISIC_0012082,female,15,posterior torso,1
+ISIC_0012083,male,60,head/neck,1
+ISIC_0012099,male,35,unknow,1
+ISIC_0012137,male,65,unknow,1
+ISIC_0012151,male,55,unknow,1
+ISIC_0012208,male,30,unknow,1
+ISIC_0012258,female,55,unknow,1
+ISIC_0012288,male,70,unknow,1
+ISIC_0012290,male,65,unknow,1
+ISIC_0012298,female,65,unknow,1
+ISIC_0012348,female,50,unknow,1
+ISIC_0012356,female,70,unknow,1
+ISIC_0012369,male,55,unknow,1
+ISIC_0012382,male,60,unknow,1
+ISIC_0012391,male,70,unknow,1
+ISIC_0012395,male,50,unknow,1
+ISIC_0012425,male,50,unknow,1
+ISIC_0012434,female,40,unknow,1
+ISIC_0012435,male,50,unknow,1
+ISIC_0012450,male,50,unknow,1
+ISIC_0012512,male,75,unknow,1
+ISIC_0012678,male,70,head/neck,1
+ISIC_0012701,male,70,lateral torso,1
+ISIC_0012715,female,80,head/neck,1
+ISIC_0012749,male,85,head/neck,1
+ISIC_0012756,male,55,anterior torso,1
+ISIC_0012758,male,45,lateral torso,1
+ISIC_0012887,male,45,lateral torso,1
+ISIC_0012930,female,70,posterior torso,1
+ISIC_0012988,male,45,lateral torso,1
+ISIC_0012989,male,45,lateral torso,1
+ISIC_0012990,male,45,lateral torso,1
+ISIC_0013072,female,70,lower extremity,1
+ISIC_0013073,female,70,lower extremity,1
+ISIC_0013079,male,80,upper extremity,1
+ISIC_0013141,male,45,lower extremity,1
+ISIC_0013184,male,55,anterior torso,1
+ISIC_0013198,male,80,head/neck,1
+ISIC_0013232,female,70,posterior torso,1
+ISIC_0013242,male,85,upper extremity,1
+ISIC_0013258,male,65,anterior torso,1
+ISIC_0013277,male,70,posterior torso,1
+ISIC_0013316,female,60,head/neck,1
+ISIC_0013321,female,80,palms/soles,1
+ISIC_0013334,male,80,head/neck,1
+ISIC_0013359,male,70,anterior torso,1
+ISIC_0013365,female,50,lower extremity,1
+ISIC_0013374,female,85,upper extremity,1
+ISIC_0013411,male,70,head/neck,1
+ISIC_0013414,male,70,posterior torso,1
+ISIC_0013427,male,65,upper extremity,1
+ISIC_0013429,female,75,head/neck,1
+ISIC_0013455,male,80,upper extremity,1
+ISIC_0013457,female,50,lower extremity,1
+ISIC_0013459,male,45,head/neck,1
+ISIC_0013472,female,80,anterior torso,1
+ISIC_0013473,male,85,head/neck,1
+ISIC_0013490,male,60,lower extremity,1
+ISIC_0013491,male,60,lower extremity,1
+ISIC_0013497,male,65,head/neck,1
+ISIC_0013499,male,65,posterior torso,1
+ISIC_0013500,male,65,upper extremity,1
+ISIC_0013501,male,65,upper extremity,1
+ISIC_0013518,male,65,anterior torso,1
+ISIC_0013525,male,50,anterior torso,1
+ISIC_0013530,female,55,upper extremity,1
+ISIC_0013549,male,85,upper extremity,1
+ISIC_0013565,male,75,head/neck,1
+ISIC_0013567,female,70,head/neck,1
+ISIC_0013572,male,50,lower extremity,1
+ISIC_0013573,male,60,head/neck,1
+ISIC_0013577,male,60,anterior torso,1
+ISIC_0013578,male,60,unknow,1
+ISIC_0013579,male,60,anterior torso,1
+ISIC_0013581,female,60,upper extremity,1
+ISIC_0013588,female,85,head/neck,1
+ISIC_0013594,male,80,lower extremity,1
+ISIC_0013606,male,85,upper extremity,1
+ISIC_0013610,female,80,lower extremity,1
+ISIC_0013615,male,85,upper extremity,1
+ISIC_0013617,male,60,lateral torso,1
+ISIC_0013618,male,65,posterior torso,1
+ISIC_0013626,male,65,anterior torso,1
+ISIC_0013634,female,75,upper extremity,1
+ISIC_0013636,female,55,head/neck,1
+ISIC_0013639,male,50,upper extremity,1
+ISIC_0013644,female,50,head/neck,1
+ISIC_0013651,male,80,head/neck,1
+ISIC_0013652,female,75,lower extremity,1
+ISIC_0013663,female,55,upper extremity,1
+ISIC_0013671,male,55,anterior torso,1
+ISIC_0013672,male,55,anterior torso,1
+ISIC_0013674,female,60,posterior torso,1
+ISIC_0013678,male,55,upper extremity,1
+ISIC_0013696,male,70,lower extremity,1
+ISIC_0013702,male,40,anterior torso,1
+ISIC_0013733,male,75,upper extremity,1
+ISIC_0013736,male,55,posterior torso,1
+ISIC_0013739,female,50,lower extremity,1
+ISIC_0013740,male,70,posterior torso,1
+ISIC_0013762,male,80,anterior torso,1
+ISIC_0013766,male,65,posterior torso,1
+ISIC_0013767,male,65,upper extremity,1
+ISIC_0013775,male,60,anterior torso,1
+ISIC_0013777,male,75,upper extremity,1
+ISIC_0013783,male,70,upper extremity,1
+ISIC_0013813,male,75,head/neck,1
+ISIC_0013814,male,75,head/neck,1
+ISIC_0013815,female,65,upper extremity,1
+ISIC_0013828,female,70,head/neck,1
+ISIC_0013831,female,50,lateral torso,1
+ISIC_0013832,male,65,posterior torso,1
+ISIC_0013833,male,70,posterior torso,1
+ISIC_0013839,female,55,lower extremity,1
+ISIC_0013840,male,80,head/neck,1
+ISIC_0013842,male,65,lower extremity,1
+ISIC_0013844,male,70,head/neck,1
+ISIC_0013845,male,70,posterior torso,1
+ISIC_0013861,male,80,upper extremity,1
+ISIC_0013865,female,45,lower extremity,1
+ISIC_0013867,female,75,lower extremity,1
+ISIC_0013874,male,60,anterior torso,1
+ISIC_0013908,male,75,posterior torso,1
+ISIC_0013917,male,55,lower extremity,1
+ISIC_0013925,female,75,head/neck,1
+ISIC_0013936,male,25,upper extremity,1
+ISIC_0013948,female,70,upper extremity,1
+ISIC_0013953,male,70,head/neck,1
+ISIC_0013969,female,80,anterior torso,1
+ISIC_0013972,male,70,anterior torso,1
+ISIC_0013975,female,80,head/neck,1
+ISIC_0013984,male,60,lower extremity,1
+ISIC_0013986,female,60,upper extremity,1
+ISIC_0013987,female,60,upper extremity,1
+ISIC_0013988,female,60,upper extremity,1
+ISIC_0013995,male,65,posterior torso,1
+ISIC_0013997,male,65,posterior torso,1
+ISIC_0014013,male,50,unknow,1
+ISIC_0014027,male,55,upper extremity,1
+ISIC_0014037,male,80,head/neck,1
+ISIC_0014044,female,55,upper extremity,1
+ISIC_0014049,male,75,posterior torso,1
+ISIC_0014059,male,50,lateral torso,1
+ISIC_0014061,female,60,posterior torso,1
+ISIC_0014062,female,60,head/neck,1
+ISIC_0014072,male,70,anterior torso,1
+ISIC_0014076,male,70,head/neck,1
+ISIC_0014077,male,70,anterior torso,1
+ISIC_0014079,male,70,head/neck,1
+ISIC_0014082,male,80,head/neck,1
+ISIC_0014088,female,45,upper extremity,1
+ISIC_0014092,female,65,upper extremity,1
+ISIC_0014099,female,85,lower extremity,1
+ISIC_0014103,male,70,head/neck,1
+ISIC_0014108,male,80,posterior torso,1
+ISIC_0014110,male,70,lower extremity,1
+ISIC_0014127,male,50,posterior torso,1
+ISIC_0014129,female,60,anterior torso,1
+ISIC_0014132,male,50,head/neck,1
+ISIC_0014133,male,85,anterior torso,1
+ISIC_0014136,female,75,upper extremity,1
+ISIC_0014144,male,85,head/neck,1
+ISIC_0014148,male,70,head/neck,1
+ISIC_0014151,male,80,lower extremity,1
+ISIC_0014156,male,75,posterior torso,1
+ISIC_0014157,male,55,posterior torso,1
+ISIC_0014160,female,55,upper extremity,1
+ISIC_0014163,male,70,upper extremity,1
+ISIC_0014171,male,70,head/neck,1
+ISIC_0014173,male,55,anterior torso,1
+ISIC_0014181,male,70,upper extremity,1
+ISIC_0014183,male,85,anterior torso,1
+ISIC_0014186,male,75,head/neck,1
+ISIC_0014187,female,80,head/neck,1
+ISIC_0014189,male,85,anterior torso,1
+ISIC_0014190,female,80,posterior torso,1
+ISIC_0014217,male,80,posterior torso,1
+ISIC_0014219,female,65,upper extremity,1
+ISIC_0014221,male,85,upper extremity,1
+ISIC_0014222,male,70,head/neck,1
+ISIC_0014229,female,75,lower extremity,1
+ISIC_0014233,female,80,posterior torso,1
+ISIC_0014238,female,55,posterior torso,1
+ISIC_0014249,male,85,posterior torso,1
+ISIC_0014255,male,65,anterior torso,1
+ISIC_0014270,female,85,lower extremity,1
+ISIC_0014284,male,50,head/neck,1
+ISIC_0014288,female,65,lower extremity,1
+ISIC_0014289,male,60,anterior torso,1
+ISIC_0014290,female,60,upper extremity,1
+ISIC_0014291,male,60,posterior torso,1
+ISIC_0014302,male,85,posterior torso,1
+ISIC_0014308,female,80,upper extremity,1
+ISIC_0014316,female,60,posterior torso,1
+ISIC_0014319,female,70,upper extremity,1
+ISIC_0014324,male,80,head/neck,1
+ISIC_0014325,female,70,upper extremity,1
+ISIC_0014327,female,80,lower extremity,1
+ISIC_0014331,female,60,head/neck,1
+ISIC_0014336,male,80,head/neck,1
+ISIC_0014337,male,85,head/neck,1
+ISIC_0014347,male,65,posterior torso,1
+ISIC_0014349,male,80,posterior torso,1
+ISIC_0014357,male,65,head/neck,1
+ISIC_0014360,male,75,upper extremity,1
+ISIC_0014361,male,70,lower extremity,1
+ISIC_0014366,female,70,posterior torso,1
+ISIC_0014369,male,25,lower extremity,1
+ISIC_0014372,male,80,upper extremity,1
+ISIC_0014385,male,75,head/neck,1
+ISIC_0014395,male,70,head/neck,1
+ISIC_0014422,female,55,lower extremity,1
+ISIC_0014423,female,80,head/neck,1
+ISIC_0014428,female,55,anterior torso,1
+ISIC_0014434,female,35,upper extremity,1
+ISIC_0014454,female,65,upper extremity,1
+ISIC_0014476,male,80,upper extremity,1
+ISIC_0014478,male,65,posterior torso,1
+ISIC_0014480,male,65,posterior torso,1
+ISIC_0014486,female,85,lower extremity,1
+ISIC_0014489,female,60,anterior torso,1
+ISIC_0014501,female,70,upper extremity,1
+ISIC_0014506,female,80,upper extremity,1
+ISIC_0014507,male,65,posterior torso,1
+ISIC_0014513,female,70,upper extremity,1
+ISIC_0014518,male,70,anterior torso,1
+ISIC_0014525,male,75,upper extremity,1
+ISIC_0014527,male,65,upper extremity,1
+ISIC_0014541,male,70,anterior torso,1
+ISIC_0014542,male,70,upper extremity,1
+ISIC_0014543,female,55,lower extremity,1
+ISIC_0014545,female,55,anterior torso,1
+ISIC_0014546,female,65,posterior torso,1
+ISIC_0014548,female,65,anterior torso,1
+ISIC_0014557,male,85,head/neck,1
+ISIC_0014558,male,75,upper extremity,1
+ISIC_0014559,male,75,anterior torso,1
+ISIC_0014663,male,85,upper extremity,1
+ISIC_0014666,male,70,upper extremity,1
+ISIC_0014688,male,70,anterior torso,1
+ISIC_0014695,male,40,posterior torso,1
+ISIC_0014703,male,75,lower extremity,1
+ISIC_0014722,female,40,posterior torso,1
+ISIC_0014727,male,65,head/neck,1
+ISIC_0014735,female,35,lower extremity,1
+ISIC_0014766,male,50,upper extremity,1
+ISIC_0014772,male,75,upper extremity,1
+ISIC_0014784,male,45,anterior torso,1
+ISIC_0014788,unknow,-1,upper extremity,1
+ISIC_0014790,male,85,head/neck,1
+ISIC_0014795,male,65,posterior torso,1
+ISIC_0014800,female,45,lower extremity,1
+ISIC_0014809,female,70,posterior torso,1
+ISIC_0014826,male,45,anterior torso,1
+ISIC_0014832,male,55,upper extremity,1
+ISIC_0014857,male,70,posterior torso,1
+ISIC_0014862,female,25,anterior torso,1
+ISIC_0014872,male,50,upper extremity,1
+ISIC_0014883,unknow,-1,palms/soles,1
+ISIC_0014891,male,40,upper extremity,1
+ISIC_0014897,female,-1,upper extremity,1
+ISIC_0014912,female,-1,lower extremity,1
+ISIC_0014919,unknow,-1,lower extremity,1
+ISIC_0014920,female,25,posterior torso,1
+ISIC_0014922,female,-1,upper extremity,1
+ISIC_0014928,female,30,posterior torso,1
+ISIC_0014931,male,65,anterior torso,1
+ISIC_0014932,unknow,-1,palms/soles,1
+ISIC_0014946,male,65,posterior torso,1
+ISIC_0014951,unknow,-1,lower extremity,1
+ISIC_0014963,male,60,lateral torso,1
+ISIC_0014975,male,70,head/neck,1
+ISIC_0014979,male,70,upper extremity,1
+ISIC_0014982,unknow,-1,upper extremity,1
+ISIC_0014983,male,55,lower extremity,1
+ISIC_0014985,male,60,head/neck,1
+ISIC_0014987,female,40,upper extremity,1
+ISIC_0015004,male,65,anterior torso,1
+ISIC_0015005,female,55,posterior torso,1
+ISIC_0015041,female,50,upper extremity,1
+ISIC_0015045,male,55,posterior torso,1
+ISIC_0015046,unknow,-1,lower extremity,1
+ISIC_0015050,male,50,anterior torso,1
+ISIC_0015071,female,35,upper extremity,1
+ISIC_0015079,unknow,-1,posterior torso,1
+ISIC_0015082,female,55,posterior torso,1
+ISIC_0015109,male,40,posterior torso,1
+ISIC_0015110,male,65,upper extremity,1
+ISIC_0015115,male,60,upper extremity,1
+ISIC_0015119,male,55,unknow,1
+ISIC_0015124,male,45,posterior torso,1
+ISIC_0015127,unknow,-1,lower extremity,1
+ISIC_0015132,male,75,posterior torso,1
+ISIC_0015133,unknow,-1,lower extremity,1
+ISIC_0015136,male,65,upper extremity,1
+ISIC_0015142,unknow,-1,upper extremity,1
+ISIC_0015156,female,65,anterior torso,1
+ISIC_0015163,female,75,head/neck,1
+ISIC_0015166,unknow,-1,posterior torso,1
+ISIC_0015167,unknow,-1,head/neck,1
+ISIC_0015180,male,65,head/neck,1
+ISIC_0015185,male,70,head/neck,1
+ISIC_0015189,male,35,posterior torso,1
+ISIC_0015190,male,80,upper extremity,1
+ISIC_0015193,unknow,-1,lower extremity,1
+ISIC_0015200,unknow,-1,upper extremity,1
+ISIC_0015204,male,30,lower extremity,1
+ISIC_0015206,female,40,lower extremity,1
+ISIC_0015219,male,-1,upper extremity,1
+ISIC_0015229,male,75,lower extremity,1
+ISIC_0015243,male,60,anterior torso,1
+ISIC_0015251,female,45,posterior torso,1
+ISIC_0015256,male,65,upper extremity,1
+ISIC_0015284,male,75,head/neck,1
+ISIC_0024207,female,25,unknow,1
+ISIC_0024208,male,80,unknow,1
+ISIC_0024212,male,85,unknow,1
+ISIC_0024213,male,60,unknow,1
+ISIC_0024214,male,60,unknow,1
+ISIC_0024215,male,60,unknow,1
+ISIC_0024216,male,75,unknow,1
+ISIC_0024217,male,65,unknow,1
+ISIC_0024218,male,65,unknow,1
+ISIC_0024219,male,85,unknow,1
+ISIC_0024220,female,80,unknow,1
+ISIC_0024221,female,70,unknow,1
+ISIC_0024222,female,70,unknow,1
+ISIC_0024223,female,65,unknow,1
+ISIC_0024224,male,50,unknow,1
+ISIC_0024226,male,60,unknow,1
+ISIC_0024227,male,85,unknow,1
+ISIC_0024228,male,85,unknow,1
+ISIC_0024229,male,70,unknow,1
+ISIC_0024232,female,55,unknow,1
+ISIC_0024233,male,60,unknow,1
+ISIC_0024235,female,70,unknow,1
+ISIC_0024236,male,65,unknow,1
+ISIC_0024237,male,80,unknow,1
+ISIC_0024238,female,85,unknow,1
+ISIC_0024239,male,85,unknow,1
+ISIC_0024240,female,80,unknow,1
+ISIC_0024241,male,65,unknow,1
+ISIC_0024244,female,85,unknow,1
+ISIC_0024246,female,50,unknow,1
+ISIC_0024247,female,50,unknow,1
+ISIC_0024249,male,70,unknow,1
+ISIC_0024250,female,85,unknow,1
+ISIC_0024251,female,85,unknow,1
+ISIC_0024252,male,30,unknow,1
+ISIC_0024253,female,40,unknow,1
+ISIC_0024254,female,70,unknow,1
+ISIC_0024255,male,65,unknow,1
+ISIC_0024256,male,65,unknow,1
+ISIC_0024257,male,65,unknow,1
+ISIC_0024258,male,45,unknow,1
+ISIC_0024259,male,75,unknow,1
+ISIC_0024260,male,55,unknow,1
+ISIC_0024261,male,85,unknow,1
+ISIC_0024263,male,45,unknow,1
+ISIC_0024264,male,85,unknow,1
+ISIC_0024265,female,60,unknow,1
+ISIC_0024266,male,70,unknow,1
+ISIC_0024267,female,50,unknow,1
+ISIC_0024268,female,45,unknow,1
+ISIC_0024269,female,75,unknow,1
+ISIC_0024270,female,50,unknow,1
+ISIC_0024271,male,55,unknow,1
+ISIC_0024272,male,55,unknow,1
+ISIC_0024273,male,70,unknow,1
+ISIC_0024274,female,55,unknow,1
+ISIC_0024275,male,65,unknow,1
+ISIC_0024276,male,40,unknow,1
+ISIC_0024277,male,75,unknow,1
+ISIC_0024278,male,65,unknow,1
+ISIC_0024279,female,35,unknow,1
+ISIC_0024280,male,80,unknow,1
+ISIC_0024281,male,85,unknow,1
+ISIC_0024282,male,85,unknow,1
+ISIC_0024283,male,85,unknow,1
+ISIC_0024284,male,75,unknow,1
+ISIC_0024285,male,75,unknow,1
+ISIC_0024286,male,85,unknow,1
+ISIC_0024287,male,85,unknow,1
+ISIC_0024288,male,60,unknow,1
+ISIC_0024289,male,55,unknow,1
+ISIC_0024290,female,80,unknow,1
+ISIC_0024291,male,75,unknow,1
+ISIC_0024292,male,75,unknow,1
+ISIC_0024293,male,75,unknow,1
+ISIC_0024294,male,30,unknow,1
+ISIC_0024295,male,30,unknow,1
+ISIC_0024296,female,85,unknow,1
+ISIC_0024297,male,85,unknow,1
+ISIC_0024298,male,40,unknow,1
+ISIC_0024299,female,80,unknow,1
+ISIC_0024300,female,55,unknow,1
+ISIC_0024301,female,55,unknow,1
+ISIC_0024302,female,25,unknow,1
+ISIC_0024303,male,60,unknow,1
+ISIC_0024304,male,70,unknow,1
+ISIC_0024305,male,85,unknow,1
+ISIC_0024310,male,60,anterior torso,1
+ISIC_0024313,female,50,posterior torso,1
+ISIC_0024315,male,55,unknow,1
+ISIC_0024323,male,50,lower extremity,1
+ISIC_0024333,male,85,lower extremity,1
+ISIC_0024351,female,70,lower extremity,1
+ISIC_0024367,female,35,posterior torso,1
+ISIC_0024400,female,75,unknow,1
+ISIC_0024410,male,30,anterior torso,1
+ISIC_0024449,male,55,posterior torso,1
+ISIC_0024459,male,80,posterior torso,1
+ISIC_0024481,female,50,unknow,1
+ISIC_0024482,male,50,posterior torso,1
+ISIC_0024496,female,60,lower extremity,1
+ISIC_0024516,male,40,posterior torso,1
+ISIC_0024525,male,65,upper extremity,1
+ISIC_0024537,male,85,upper extremity,1
+ISIC_0024545,female,60,anterior torso,1
+ISIC_0024546,female,80,lower extremity,1
+ISIC_0024552,female,60,lower extremity,1
+ISIC_0024554,female,65,head/neck,1
+ISIC_0024571,male,65,head/neck,1
+ISIC_0024586,female,60,lower extremity,1
+ISIC_0024624,female,75,head/neck,1
+ISIC_0024630,male,85,lower extremity,1
+ISIC_0024640,female,55,posterior torso,1
+ISIC_0024644,female,85,lower extremity,1
+ISIC_0024647,female,85,lower extremity,1
+ISIC_0024652,female,85,upper extremity,1
+ISIC_0024675,female,65,lower extremity,1
+ISIC_0024679,male,50,posterior torso,1
+ISIC_0024688,female,40,lower extremity,1
+ISIC_0024700,female,35,unknow,1
+ISIC_0024701,female,55,posterior torso,1
+ISIC_0024702,male,60,posterior torso,1
+ISIC_0024729,female,55,lower extremity,1
+ISIC_0024732,female,50,upper extremity,1
+ISIC_0024733,male,50,head/neck,1
+ISIC_0024739,male,55,upper extremity,1
+ISIC_0024756,male,60,lower extremity,1
+ISIC_0024767,male,80,posterior torso,1
+ISIC_0024792,male,50,posterior torso,1
+ISIC_0024805,male,75,upper extremity,1
+ISIC_0024806,female,70,posterior torso,1
+ISIC_0024823,male,35,posterior torso,1
+ISIC_0024853,male,70,unknow,1
+ISIC_0024864,female,40,lower extremity,1
+ISIC_0024865,male,55,upper extremity,1
+ISIC_0024875,female,85,head/neck,1
+ISIC_0024886,female,55,head/neck,1
+ISIC_0024898,male,80,lower extremity,1
+ISIC_0024900,female,65,posterior torso,1
+ISIC_0024911,female,45,posterior torso,1
+ISIC_0024918,male,30,anterior torso,1
+ISIC_0024929,male,55,posterior torso,1
+ISIC_0024930,male,60,posterior torso,1
+ISIC_0024932,female,55,lower extremity,1
+ISIC_0024940,male,80,head/neck,1
+ISIC_0024951,male,70,posterior torso,1
+ISIC_0024952,male,60,posterior torso,1
+ISIC_0024958,male,45,lower extremity,1
+ISIC_0024961,male,75,anterior torso,1
+ISIC_0024962,male,35,posterior torso,1
+ISIC_0024967,male,60,posterior torso,1
+ISIC_0024972,female,75,head/neck,1
+ISIC_0024987,male,75,unknow,1
+ISIC_0024999,male,50,upper extremity,1
+ISIC_0025018,male,45,unknow,1
+ISIC_0025035,female,70,lower extremity,1
+ISIC_0025081,female,30,anterior torso,1
+ISIC_0025085,male,75,upper extremity,1
+ISIC_0025097,male,55,anterior torso,1
+ISIC_0025105,male,65,posterior torso,1
+ISIC_0025121,female,50,upper extremity,1
+ISIC_0025127,male,60,upper extremity,1
+ISIC_0025128,female,80,lower extremity,1
+ISIC_0025132,male,80,posterior torso,1
+ISIC_0025145,female,80,lower extremity,1
+ISIC_0025153,female,45,lower extremity,1
+ISIC_0025155,male,80,lower extremity,1
+ISIC_0025188,male,55,head/neck,1
+ISIC_0025195,female,60,posterior torso,1
+ISIC_0025219,female,80,lower extremity,1
+ISIC_0025234,male,70,posterior torso,1
+ISIC_0025235,female,45,lower extremity,1
+ISIC_0025238,male,55,lower extremity,1
+ISIC_0025248,male,70,posterior torso,1
+ISIC_0025265,male,30,posterior torso,1
+ISIC_0025268,male,65,upper extremity,1
+ISIC_0025277,male,75,head/neck,1
+ISIC_0025303,male,55,posterior torso,1
+ISIC_0025313,female,35,lower extremity,1
+ISIC_0025316,female,45,lower extremity,1
+ISIC_0025317,male,80,upper extremity,1
+ISIC_0025324,female,45,lower extremity,1
+ISIC_0025363,male,70,anterior torso,1
+ISIC_0025391,male,55,posterior torso,1
+ISIC_0025394,male,45,unknow,1
+ISIC_0025409,female,80,posterior torso,1
+ISIC_0025413,male,50,posterior torso,1
+ISIC_0025414,male,55,lower extremity,1
+ISIC_0025439,male,55,anterior torso,1
+ISIC_0025450,female,60,lower extremity,1
+ISIC_0025451,female,25,lower extremity,1
+ISIC_0025472,male,55,posterior torso,1
+ISIC_0025489,male,30,posterior torso,1
+ISIC_0025500,female,55,upper extremity,1
+ISIC_0025512,male,50,upper extremity,1
+ISIC_0025520,male,65,posterior torso,1
+ISIC_0025524,female,50,upper extremity,1
+ISIC_0025531,male,80,head/neck,1
+ISIC_0025543,female,85,head/neck,1
+ISIC_0025546,male,55,upper extremity,1
+ISIC_0025550,female,80,lower extremity,1
+ISIC_0025573,male,80,anterior torso,1
+ISIC_0025589,female,55,head/neck,1
+ISIC_0025592,female,55,lower extremity,1
+ISIC_0025603,male,75,unknow,1
+ISIC_0025611,male,65,posterior torso,1
+ISIC_0025616,female,70,upper extremity,1
+ISIC_0025651,male,70,posterior torso,1
+ISIC_0025663,female,75,upper extremity,1
+ISIC_0025674,male,85,head/neck,1
+ISIC_0025708,female,30,posterior torso,1
+ISIC_0025709,male,65,head/neck,1
+ISIC_0025724,female,45,anterior torso,1
+ISIC_0025732,male,85,upper extremity,1
+ISIC_0025744,male,70,anterior torso,1
+ISIC_0025748,male,70,lower extremity,1
+ISIC_0025751,male,65,posterior torso,1
+ISIC_0025755,female,60,posterior torso,1
+ISIC_0025766,male,50,lower extremity,1
+ISIC_0025783,male,65,posterior torso,1
+ISIC_0025791,male,80,lower extremity,1
+ISIC_0025800,male,65,posterior torso,1
+ISIC_0025814,male,65,posterior torso,1
+ISIC_0025832,male,65,posterior torso,1
+ISIC_0025835,male,75,lower extremity,1
+ISIC_0025891,female,65,lower extremity,1
+ISIC_0025904,male,70,posterior torso,1
+ISIC_0025927,female,50,upper extremity,1
+ISIC_0025941,male,55,posterior torso,1
+ISIC_0025955,male,45,lower extremity,1
+ISIC_0025963,female,50,upper extremity,1
+ISIC_0025964,female,40,anterior torso,1
+ISIC_0025987,female,25,lower extremity,1
+ISIC_0025996,male,60,posterior torso,1
+ISIC_0026009,female,80,lower extremity,1
+ISIC_0026045,male,65,upper extremity,1
+ISIC_0026081,female,50,posterior torso,1
+ISIC_0026086,male,55,upper extremity,1
+ISIC_0026089,male,60,posterior torso,1
+ISIC_0026094,male,20,posterior torso,1
+ISIC_0026105,male,65,posterior torso,1
+ISIC_0026113,male,50,anterior torso,1
+ISIC_0026115,male,70,anterior torso,1
+ISIC_0026120,male,55,posterior torso,1
+ISIC_0026131,female,75,upper extremity,1
+ISIC_0026150,female,50,posterior torso,1
+ISIC_0026158,male,75,upper extremity,1
+ISIC_0026167,male,50,head/neck,1
+ISIC_0026188,male,70,unknow,1
+ISIC_0026207,female,45,lower extremity,1
+ISIC_0026229,male,65,anterior torso,1
+ISIC_0026236,male,70,upper extremity,1
+ISIC_0026239,male,55,anterior torso,1
+ISIC_0026247,male,85,posterior torso,1
+ISIC_0026258,female,45,lower extremity,1
+ISIC_0026266,male,60,upper extremity,1
+ISIC_0026268,male,80,head/neck,1
+ISIC_0026281,male,70,anterior torso,1
+ISIC_0026296,male,45,unknow,1
+ISIC_0026314,male,45,upper extremity,1
+ISIC_0026352,female,40,lower extremity,1
+ISIC_0026360,male,60,posterior torso,1
+ISIC_0026369,female,30,lower extremity,1
+ISIC_0026420,male,80,upper extremity,1
+ISIC_0026430,female,60,posterior torso,1
+ISIC_0026438,female,30,unknow,1
+ISIC_0026458,female,80,lower extremity,1
+ISIC_0026475,female,40,posterior torso,1
+ISIC_0026489,male,80,lower extremity,1
+ISIC_0026500,female,75,posterior torso,1
+ISIC_0026506,female,40,unknow,1
+ISIC_0026516,female,45,anterior torso,1
+ISIC_0026531,male,55,anterior torso,1
+ISIC_0026545,female,55,posterior torso,1
+ISIC_0026558,male,65,posterior torso,1
+ISIC_0026571,female,40,anterior torso,1
+ISIC_0026586,male,85,upper extremity,1
+ISIC_0026596,male,85,posterior torso,1
+ISIC_0026604,male,70,head/neck,1
+ISIC_0026622,male,80,unknow,1
+ISIC_0026647,male,75,lower extremity,1
+ISIC_0026652,male,65,posterior torso,1
+ISIC_0026664,female,65,posterior torso,1
+ISIC_0026690,male,50,lower extremity,1
+ISIC_0026694,female,50,posterior torso,1
+ISIC_0026697,male,75,head/neck,1
+ISIC_0026735,female,85,head/neck,1
+ISIC_0026738,female,85,head/neck,1
+ISIC_0026745,female,80,head/neck,1
+ISIC_0026746,female,65,posterior torso,1
+ISIC_0026754,female,65,head/neck,1
+ISIC_0026770,male,65,upper extremity,1
+ISIC_0026774,female,70,upper extremity,1
+ISIC_0026796,male,70,posterior torso,1
+ISIC_0026802,male,85,posterior torso,1
+ISIC_0026811,male,55,head/neck,1
+ISIC_0026823,male,55,head/neck,1
+ISIC_0026847,male,65,posterior torso,1
+ISIC_0026853,male,65,posterior torso,1
+ISIC_0026868,male,75,lower extremity,1
+ISIC_0026870,female,75,posterior torso,1
+ISIC_0026877,male,70,anterior torso,1
+ISIC_0026892,male,75,unknow,1
+ISIC_0026897,male,75,posterior torso,1
+ISIC_0026909,female,30,lower extremity,1
+ISIC_0026916,male,55,posterior torso,1
+ISIC_0026930,male,60,anterior torso,1
+ISIC_0026950,female,85,head/neck,1
+ISIC_0026954,male,50,unknow,1
+ISIC_0026963,male,65,head/neck,1
+ISIC_0026976,male,60,posterior torso,1
+ISIC_0026989,male,55,posterior torso,1
+ISIC_0026993,female,45,lower extremity,1
+ISIC_0026996,female,45,lower extremity,1
+ISIC_0027021,male,55,upper extremity,1
+ISIC_0027030,female,65,lower extremity,1
+ISIC_0027033,male,85,head/neck,1
+ISIC_0027043,male,50,anterior torso,1
+ISIC_0027060,female,40,lower extremity,1
+ISIC_0027063,male,80,anterior torso,1
+ISIC_0027065,female,85,upper extremity,1
+ISIC_0027067,male,80,lower extremity,1
+ISIC_0027069,male,75,posterior torso,1
+ISIC_0027071,female,50,head/neck,1
+ISIC_0027076,male,75,anterior torso,1
+ISIC_0027089,male,55,anterior torso,1
+ISIC_0027100,male,75,head/neck,1
+ISIC_0027101,male,65,posterior torso,1
+ISIC_0027102,female,35,anterior torso,1
+ISIC_0027105,male,45,lower extremity,1
+ISIC_0027125,female,85,unknow,1
+ISIC_0027126,male,80,lower extremity,1
+ISIC_0027130,male,70,anterior torso,1
+ISIC_0027144,female,40,posterior torso,1
+ISIC_0027149,male,80,upper extremity,1
+ISIC_0027155,male,65,head/neck,1
+ISIC_0027163,female,60,lower extremity,1
+ISIC_0027171,female,45,lower extremity,1
+ISIC_0027174,male,50,anterior torso,1
+ISIC_0027179,male,85,lower extremity,1
+ISIC_0027187,male,65,upper extremity,1
+ISIC_0027190,male,80,upper extremity,1
+ISIC_0027204,male,70,head/neck,1
+ISIC_0027234,male,65,upper extremity,1
+ISIC_0027238,female,55,upper extremity,1
+ISIC_0027253,male,75,unknow,1
+ISIC_0027260,male,70,upper extremity,1
+ISIC_0027261,male,75,head/neck,1
+ISIC_0027263,male,85,posterior torso,1
+ISIC_0027277,male,40,lower extremity,1
+ISIC_0027282,female,60,posterior torso,1
+ISIC_0027300,male,60,anterior torso,1
+ISIC_0027302,female,35,lower extremity,1
+ISIC_0027306,male,60,anterior torso,1
+ISIC_0027327,female,55,head/neck,1
+ISIC_0027328,male,65,head/neck,1
+ISIC_0027350,male,60,anterior torso,1
+ISIC_0027352,male,75,upper extremity,1
+ISIC_0027359,female,45,lower extremity,1
+ISIC_0027387,female,45,posterior torso,1
+ISIC_0027402,male,60,lower extremity,1
+ISIC_0027407,female,70,posterior torso,1
+ISIC_0027420,male,60,upper extremity,1
+ISIC_0027436,male,50,lower extremity,1
+ISIC_0027442,male,80,head/neck,1
+ISIC_0027480,female,55,lower extremity,1
+ISIC_0027487,female,35,lower extremity,1
+ISIC_0027502,male,45,lower extremity,1
+ISIC_0027507,male,60,posterior torso,1
+ISIC_0027517,male,70,head/neck,1
+ISIC_0027552,male,40,head/neck,1
+ISIC_0027560,female,25,head/neck,1
+ISIC_0027561,female,70,upper extremity,1
+ISIC_0027573,male,55,head/neck,1
+ISIC_0027590,female,85,lower extremity,1
+ISIC_0027604,male,70,upper extremity,1
+ISIC_0027616,female,55,posterior torso,1
+ISIC_0027620,male,80,lower extremity,1
+ISIC_0027622,female,40,upper extremity,1
+ISIC_0027651,male,50,head/neck,1
+ISIC_0027659,male,70,posterior torso,1
+ISIC_0027663,male,40,posterior torso,1
+ISIC_0027669,male,65,lower extremity,1
+ISIC_0027673,female,70,upper extremity,1
+ISIC_0027693,female,45,posterior torso,1
+ISIC_0027702,female,70,posterior torso,1
+ISIC_0027721,male,75,head/neck,1
+ISIC_0027742,male,60,posterior torso,1
+ISIC_0027769,male,70,unknow,1
+ISIC_0027776,female,70,head/neck,1
+ISIC_0027793,female,35,head/neck,1
+ISIC_0027797,female,50,posterior torso,1
+ISIC_0027822,male,85,head/neck,1
+ISIC_0027832,male,75,lower extremity,1
+ISIC_0027838,female,35,anterior torso,1
+ISIC_0027863,male,55,posterior torso,1
+ISIC_0027872,female,55,lower extremity,1
+ISIC_0027900,female,40,lower extremity,1
+ISIC_0027904,female,55,upper extremity,1
+ISIC_0027956,female,50,upper extremity,1
+ISIC_0027964,male,60,lower extremity,1
+ISIC_0028003,male,30,lower extremity,1
+ISIC_0028017,female,50,posterior torso,1
+ISIC_0028022,female,70,upper extremity,1
+ISIC_0028026,female,55,upper extremity,1
+ISIC_0028029,female,75,head/neck,1
+ISIC_0028033,male,55,anterior torso,1
+ISIC_0028041,male,60,unknow,1
+ISIC_0028051,male,45,posterior torso,1
+ISIC_0028056,male,85,posterior torso,1
+ISIC_0028065,male,60,posterior torso,1
+ISIC_0028069,female,35,head/neck,1
+ISIC_0028075,male,55,head/neck,1
+ISIC_0028082,female,40,anterior torso,1
+ISIC_0028086,male,60,anterior torso,1
+ISIC_0028087,female,65,posterior torso,1
+ISIC_0028103,female,70,upper extremity,1
+ISIC_0028109,male,65,posterior torso,1
+ISIC_0028114,female,70,upper extremity,1
+ISIC_0028126,female,30,unknow,1
+ISIC_0028127,female,70,posterior torso,1
+ISIC_0028148,male,85,anterior torso,1
+ISIC_0028156,male,55,upper extremity,1
+ISIC_0028173,male,45,posterior torso,1
+ISIC_0028198,female,40,posterior torso,1
+ISIC_0028211,male,65,head/neck,1
+ISIC_0028215,female,75,lower extremity,1
+ISIC_0028218,male,60,posterior torso,1
+ISIC_0028219,male,45,upper extremity,1
+ISIC_0028220,male,60,head/neck,1
+ISIC_0028225,female,70,lower extremity,1
+ISIC_0028227,male,55,upper extremity,1
+ISIC_0028228,female,75,posterior torso,1
+ISIC_0028285,male,80,head/neck,1
+ISIC_0028288,male,65,posterior torso,1
+ISIC_0028291,male,65,posterior torso,1
+ISIC_0028306,male,55,upper extremity,1
+ISIC_0028317,female,65,head/neck,1
+ISIC_0028325,male,85,upper extremity,1
+ISIC_0028326,female,40,lower extremity,1
+ISIC_0028352,male,55,posterior torso,1
+ISIC_0028361,male,45,posterior torso,1
+ISIC_0028410,male,45,upper extremity,1
+ISIC_0028412,male,55,posterior torso,1
+ISIC_0028415,male,60,unknow,1
+ISIC_0028418,female,45,head/neck,1
+ISIC_0028442,male,75,unknow,1
+ISIC_0028445,male,75,anterior torso,1
+ISIC_0028460,male,65,posterior torso,1
+ISIC_0028463,female,60,posterior torso,1
+ISIC_0028465,male,65,upper extremity,1
+ISIC_0028467,male,85,posterior torso,1
+ISIC_0028481,male,70,lower extremity,1
+ISIC_0028489,male,70,upper extremity,1
+ISIC_0028493,male,85,anterior torso,1
+ISIC_0028505,male,75,head/neck,1
+ISIC_0028508,male,75,posterior torso,1
+ISIC_0028512,male,60,anterior torso,1
+ISIC_0028519,male,80,posterior torso,1
+ISIC_0028520,male,75,posterior torso,1
+ISIC_0028537,male,35,posterior torso,1
+ISIC_0028543,female,55,upper extremity,1
+ISIC_0028548,female,60,posterior torso,1
+ISIC_0028565,female,55,upper extremity,1
+ISIC_0028567,female,65,lower extremity,1
+ISIC_0028579,female,35,head/neck,1
+ISIC_0028582,male,60,anterior torso,1
+ISIC_0028584,female,70,posterior torso,1
+ISIC_0028642,male,40,lower extremity,1
+ISIC_0028655,male,55,head/neck,1
+ISIC_0028666,male,75,upper extremity,1
+ISIC_0028685,male,55,posterior torso,1
+ISIC_0028696,male,75,anterior torso,1
+ISIC_0028709,male,50,posterior torso,1
+ISIC_0028718,female,35,upper extremity,1
+ISIC_0028746,male,70,posterior torso,1
+ISIC_0028760,female,30,anterior torso,1
+ISIC_0028764,female,65,posterior torso,1
+ISIC_0028773,male,70,anterior torso,1
+ISIC_0028777,male,60,lower extremity,1
+ISIC_0028847,male,75,anterior torso,1
+ISIC_0028860,male,65,posterior torso,1
+ISIC_0028878,male,55,posterior torso,1
+ISIC_0028897,female,75,posterior torso,1
+ISIC_0028898,female,60,lower extremity,1
+ISIC_0028899,male,70,posterior torso,1
+ISIC_0028900,male,70,head/neck,1
+ISIC_0028901,female,35,head/neck,1
+ISIC_0028915,male,50,upper extremity,1
+ISIC_0028916,female,60,head/neck,1
+ISIC_0028929,female,65,posterior torso,1
+ISIC_0028930,female,55,lower extremity,1
+ISIC_0028965,male,50,unknow,1
+ISIC_0028968,male,55,upper extremity,1
+ISIC_0028969,male,75,anterior torso,1
+ISIC_0028984,male,50,head/neck,1
+ISIC_0029000,male,45,lower extremity,1
+ISIC_0029013,female,45,anterior torso,1
+ISIC_0029017,female,45,posterior torso,1
+ISIC_0029021,female,65,posterior torso,1
+ISIC_0029028,female,85,unknow,1
+ISIC_0029033,female,30,upper extremity,1
+ISIC_0029056,male,85,posterior torso,1
+ISIC_0029081,male,70,anterior torso,1
+ISIC_0029089,male,70,posterior torso,1
+ISIC_0029092,female,65,upper extremity,1
+ISIC_0029094,female,45,upper extremity,1
+ISIC_0029146,male,65,head/neck,1
+ISIC_0029157,male,60,posterior torso,1
+ISIC_0029163,male,80,head/neck,1
+ISIC_0029170,female,65,lower extremity,1
+ISIC_0029172,male,70,lower extremity,1
+ISIC_0029209,male,50,upper extremity,1
+ISIC_0029212,female,75,lower extremity,1
+ISIC_0029216,male,80,lower extremity,1
+ISIC_0029238,male,65,posterior torso,1
+ISIC_0029241,male,70,head/neck,1
+ISIC_0029242,male,85,posterior torso,1
+ISIC_0029265,male,85,upper extremity,1
+ISIC_0029271,female,60,upper extremity,1
+ISIC_0029272,female,60,posterior torso,1
+ISIC_0029281,female,35,posterior torso,1
+ISIC_0029316,female,45,head/neck,1
+ISIC_0029318,female,60,posterior torso,1
+ISIC_0029319,male,85,posterior torso,1
+ISIC_0029343,male,75,anterior torso,1
+ISIC_0029353,male,60,posterior torso,1
+ISIC_0029363,male,80,posterior torso,1
+ISIC_0029370,female,85,upper extremity,1
+ISIC_0029397,male,5,posterior torso,1
+ISIC_0029434,male,70,upper extremity,1
+ISIC_0029453,female,40,upper extremity,1
+ISIC_0029454,male,80,posterior torso,1
+ISIC_0029473,male,70,anterior torso,1
+ISIC_0029480,female,55,lower extremity,1
+ISIC_0029495,female,70,upper extremity,1
+ISIC_0029502,female,50,upper extremity,1
+ISIC_0029512,female,55,lower extremity,1
+ISIC_0029513,male,70,unknow,1
+ISIC_0029538,male,80,lower extremity,1
+ISIC_0029547,male,80,unknow,1
+ISIC_0029558,male,75,upper extremity,1
+ISIC_0029562,female,40,upper extremity,1
+ISIC_0029570,female,50,lower extremity,1
+ISIC_0029571,female,55,upper extremity,1
+ISIC_0029574,male,60,posterior torso,1
+ISIC_0029575,male,45,posterior torso,1
+ISIC_0029591,female,65,upper extremity,1
+ISIC_0029606,female,40,lower extremity,1
+ISIC_0029630,male,80,head/neck,1
+ISIC_0029632,male,55,posterior torso,1
+ISIC_0029642,female,60,lower extremity,1
+ISIC_0029651,male,65,posterior torso,1
+ISIC_0029652,male,50,upper extremity,1
+ISIC_0029660,female,60,lower extremity,1
+ISIC_0029698,female,70,lower extremity,1
+ISIC_0029705,male,80,anterior torso,1
+ISIC_0029726,male,75,head/neck,1
+ISIC_0029740,male,65,head/neck,1
+ISIC_0029744,female,35,anterior torso,1
+ISIC_0029780,female,50,head/neck,1
+ISIC_0029819,female,70,upper extremity,1
+ISIC_0029839,male,65,posterior torso,1
+ISIC_0029843,male,70,head/neck,1
+ISIC_0029859,male,75,anterior torso,1
+ISIC_0029884,male,70,head/neck,1
+ISIC_0029885,male,35,posterior torso,1
+ISIC_0029893,male,65,head/neck,1
+ISIC_0029909,female,75,head/neck,1
+ISIC_0029913,female,30,lower extremity,1
+ISIC_0029914,male,60,lower extremity,1
+ISIC_0029933,female,45,upper extremity,1
+ISIC_0029937,male,40,anterior torso,1
+ISIC_0029958,female,65,head/neck,1
+ISIC_0029995,male,65,posterior torso,1
+ISIC_0030002,male,65,posterior torso,1
+ISIC_0030014,male,50,head/neck,1
+ISIC_0030031,male,55,head/neck,1
+ISIC_0030032,male,75,upper extremity,1
+ISIC_0030034,female,50,posterior torso,1
+ISIC_0030047,female,70,upper extremity,1
+ISIC_0030060,female,80,posterior torso,1
+ISIC_0030080,male,75,upper extremity,1
+ISIC_0030083,male,65,posterior torso,1
+ISIC_0030089,female,55,posterior torso,1
+ISIC_0030106,male,70,posterior torso,1
+ISIC_0030107,female,20,head/neck,1
+ISIC_0030110,female,50,upper extremity,1
+ISIC_0030119,female,75,lower extremity,1
+ISIC_0030122,male,55,posterior torso,1
+ISIC_0030129,male,55,posterior torso,1
+ISIC_0030134,female,30,anterior torso,1
+ISIC_0030150,female,80,head/neck,1
+ISIC_0030165,female,70,posterior torso,1
+ISIC_0030171,male,65,posterior torso,1
+ISIC_0030183,male,70,anterior torso,1
+ISIC_0030187,male,35,upper extremity,1
+ISIC_0030192,male,70,anterior torso,1
+ISIC_0030211,female,80,posterior torso,1
+ISIC_0030223,male,70,posterior torso,1
+ISIC_0030238,male,45,posterior torso,1
+ISIC_0030246,male,60,upper extremity,1
+ISIC_0030255,female,70,upper extremity,1
+ISIC_0030277,female,55,upper extremity,1
+ISIC_0030281,female,50,unknow,1
+ISIC_0030324,male,85,head/neck,1
+ISIC_0030333,male,80,upper extremity,1
+ISIC_0030356,male,45,lower extremity,1
+ISIC_0030360,male,65,upper extremity,1
+ISIC_0030366,female,60,posterior torso,1
+ISIC_0030382,male,60,head/neck,1
+ISIC_0030390,female,55,posterior torso,1
+ISIC_0030391,female,50,posterior torso,1
+ISIC_0030417,male,70,head/neck,1
+ISIC_0030423,female,65,upper extremity,1
+ISIC_0030440,female,50,upper extremity,1
+ISIC_0030443,female,85,lower extremity,1
+ISIC_0030445,male,75,posterior torso,1
+ISIC_0030486,male,80,head/neck,1
+ISIC_0030501,male,50,posterior torso,1
+ISIC_0030507,male,65,posterior torso,1
+ISIC_0030512,male,50,upper extremity,1
+ISIC_0030521,female,30,lower extremity,1
+ISIC_0030539,female,65,head/neck,1
+ISIC_0030552,male,75,posterior torso,1
+ISIC_0030564,male,45,head/neck,1
+ISIC_0030575,male,25,posterior torso,1
+ISIC_0030604,male,45,lower extremity,1
+ISIC_0030616,female,80,upper extremity,1
+ISIC_0030623,female,40,anterior torso,1
+ISIC_0030653,female,65,posterior torso,1
+ISIC_0030681,female,55,head/neck,1
+ISIC_0030689,female,80,lower extremity,1
+ISIC_0030695,male,80,lower extremity,1
+ISIC_0030747,female,35,upper extremity,1
+ISIC_0030754,female,50,lower extremity,1
+ISIC_0030756,male,85,anterior torso,1
+ISIC_0030759,female,55,head/neck,1
+ISIC_0030760,female,55,upper extremity,1
+ISIC_0030784,male,85,upper extremity,1
+ISIC_0030795,male,60,posterior torso,1
+ISIC_0030798,male,80,upper extremity,1
+ISIC_0030818,female,65,lower extremity,1
+ISIC_0030824,male,60,anterior torso,1
+ISIC_0030828,male,75,lower extremity,1
+ISIC_0030843,female,60,lower extremity,1
+ISIC_0030883,female,75,posterior torso,1
+ISIC_0030898,male,50,posterior torso,1
+ISIC_0030901,male,55,upper extremity,1
+ISIC_0030910,male,65,posterior torso,1
+ISIC_0030925,male,45,lower extremity,1
+ISIC_0030929,female,55,upper extremity,1
+ISIC_0030932,female,70,lower extremity,1
+ISIC_0030950,female,70,upper extremity,1
+ISIC_0030951,female,85,lower extremity,1
+ISIC_0030970,female,50,lower extremity,1
+ISIC_0030995,male,55,upper extremity,1
+ISIC_0031005,male,65,posterior torso,1
+ISIC_0031013,female,65,head/neck,1
+ISIC_0031023,male,60,anterior torso,1
+ISIC_0031025,female,60,posterior torso,1
+ISIC_0031034,male,75,upper extremity,1
+ISIC_0031077,female,65,unknow,1
+ISIC_0031087,male,65,upper extremity,1
+ISIC_0031118,male,75,upper extremity,1
+ISIC_0031146,female,20,anterior torso,1
+ISIC_0031170,female,85,upper extremity,1
+ISIC_0031177,female,40,posterior torso,1
+ISIC_0031186,male,70,head/neck,1
+ISIC_0031189,male,60,upper extremity,1
+ISIC_0031203,male,80,lower extremity,1
+ISIC_0031208,female,55,posterior torso,1
+ISIC_0031233,male,45,posterior torso,1
+ISIC_0031239,male,60,posterior torso,1
+ISIC_0031295,male,50,upper extremity,1
+ISIC_0031303,male,65,head/neck,1
+ISIC_0031310,female,50,lower extremity,1
+ISIC_0031339,male,60,posterior torso,1
+ISIC_0031350,male,60,posterior torso,1
+ISIC_0031368,male,55,lower extremity,1
+ISIC_0031369,male,85,head/neck,1
+ISIC_0031377,male,65,posterior torso,1
+ISIC_0031386,male,65,posterior torso,1
+ISIC_0031389,female,55,lower extremity,1
+ISIC_0031401,male,50,posterior torso,1
+ISIC_0031406,male,55,anterior torso,1
+ISIC_0031408,male,65,unknow,1
+ISIC_0031410,female,35,anterior torso,1
+ISIC_0031417,female,35,upper extremity,1
+ISIC_0031479,female,75,lower extremity,1
+ISIC_0031494,male,55,upper extremity,1
+ISIC_0031498,male,65,posterior torso,1
+ISIC_0031499,female,85,lower extremity,1
+ISIC_0031517,female,70,upper extremity,1
+ISIC_0031529,female,40,anterior torso,1
+ISIC_0031543,female,60,upper extremity,1
+ISIC_0031545,female,75,posterior torso,1
+ISIC_0031550,female,80,anterior torso,1
+ISIC_0031554,male,55,posterior torso,1
+ISIC_0031557,male,80,lower extremity,1
+ISIC_0031561,male,55,posterior torso,1
+ISIC_0031565,male,45,lower extremity,1
+ISIC_0031586,female,55,lower extremity,1
+ISIC_0031598,female,45,lower extremity,1
+ISIC_0031642,female,50,posterior torso,1
+ISIC_0031666,male,55,anterior torso,1
+ISIC_0031670,female,80,upper extremity,1
+ISIC_0031709,male,65,head/neck,1
+ISIC_0031711,female,55,lower extremity,1
+ISIC_0031718,male,70,posterior torso,1
+ISIC_0031741,female,45,posterior torso,1
+ISIC_0031745,female,55,lower extremity,1
+ISIC_0031746,male,85,anterior torso,1
+ISIC_0031778,male,75,lower extremity,1
+ISIC_0031779,female,75,head/neck,1
+ISIC_0031784,female,50,lower extremity,1
+ISIC_0031795,male,65,lower extremity,1
+ISIC_0031821,female,65,posterior torso,1
+ISIC_0031844,female,45,lower extremity,1
+ISIC_0031890,male,85,head/neck,1
+ISIC_0031900,male,55,posterior torso,1
+ISIC_0031908,male,75,posterior torso,1
+ISIC_0031915,male,60,posterior torso,1
+ISIC_0031931,female,70,head/neck,1
+ISIC_0031941,male,55,unknow,1
+ISIC_0031953,male,55,anterior torso,1
+ISIC_0031957,female,70,lower extremity,1
+ISIC_0031958,female,85,upper extremity,1
+ISIC_0031972,female,65,head/neck,1
+ISIC_0031977,male,85,posterior torso,1
+ISIC_0031999,male,40,head/neck,1
+ISIC_0032017,male,70,head/neck,1
+ISIC_0032019,male,50,unknow,1
+ISIC_0032036,female,65,lower extremity,1
+ISIC_0032044,male,65,posterior torso,1
+ISIC_0032046,male,75,unknow,1
+ISIC_0032070,female,60,posterior torso,1
+ISIC_0032072,female,65,posterior torso,1
+ISIC_0032079,female,60,anterior torso,1
+ISIC_0032081,male,85,upper extremity,1
+ISIC_0032095,male,55,anterior torso,1
+ISIC_0032098,female,35,head/neck,1
+ISIC_0032110,female,75,posterior torso,1
+ISIC_0032134,female,70,upper extremity,1
+ISIC_0032149,male,50,head/neck,1
+ISIC_0032152,male,50,lower extremity,1
+ISIC_0032182,female,70,posterior torso,1
+ISIC_0032187,male,70,posterior torso,1
+ISIC_0032190,male,60,upper extremity,1
+ISIC_0032192,male,80,lower extremity,1
+ISIC_0032197,male,50,head/neck,1
+ISIC_0032204,male,55,anterior torso,1
+ISIC_0032207,female,35,upper extremity,1
+ISIC_0032214,male,70,head/neck,1
+ISIC_0032219,male,85,posterior torso,1
+ISIC_0032220,female,70,posterior torso,1
+ISIC_0032232,male,85,posterior torso,1
+ISIC_0032244,female,75,head/neck,1
+ISIC_0032245,male,85,posterior torso,1
+ISIC_0032248,male,75,head/neck,1
+ISIC_0032258,female,70,posterior torso,1
+ISIC_0032265,male,50,anterior torso,1
+ISIC_0032269,male,60,posterior torso,1
+ISIC_0032287,male,80,lower extremity,1
+ISIC_0032308,male,75,head/neck,1
+ISIC_0032313,male,70,unknow,1
+ISIC_0032331,male,80,anterior torso,1
+ISIC_0032372,male,60,lower extremity,1
+ISIC_0032389,male,65,head/neck,1
+ISIC_0032396,male,55,anterior torso,1
+ISIC_0032400,female,60,anterior torso,1
+ISIC_0032408,female,60,upper extremity,1
+ISIC_0032420,female,65,head/neck,1
+ISIC_0032424,female,70,posterior torso,1
+ISIC_0032425,female,70,lower extremity,1
+ISIC_0032430,male,55,head/neck,1
+ISIC_0032433,female,55,lower extremity,1
+ISIC_0032441,male,75,anterior torso,1
+ISIC_0032447,male,70,anterior torso,1
+ISIC_0032450,male,70,posterior torso,1
+ISIC_0032462,male,70,upper extremity,1
+ISIC_0032466,male,60,lower extremity,1
+ISIC_0032476,male,60,posterior torso,1
+ISIC_0032504,female,50,upper extremity,1
+ISIC_0032509,female,70,lower extremity,1
+ISIC_0032511,male,70,head/neck,1
+ISIC_0032517,male,50,posterior torso,1
+ISIC_0032522,male,70,head/neck,1
+ISIC_0032526,female,40,lower extremity,1
+ISIC_0032531,male,45,posterior torso,1
+ISIC_0032532,male,80,posterior torso,1
+ISIC_0032533,female,30,upper extremity,1
+ISIC_0032535,male,65,posterior torso,1
+ISIC_0032537,male,55,anterior torso,1
+ISIC_0032544,male,60,posterior torso,1
+ISIC_0032547,male,55,upper extremity,1
+ISIC_0032550,male,45,posterior torso,1
+ISIC_0032552,female,55,lower extremity,1
+ISIC_0032559,female,45,lower extremity,1
+ISIC_0032564,male,70,posterior torso,1
+ISIC_0032569,male,30,posterior torso,1
+ISIC_0032583,male,70,posterior torso,1
+ISIC_0032586,male,85,anterior torso,1
+ISIC_0032592,male,80,lower extremity,1
+ISIC_0032596,male,70,upper extremity,1
+ISIC_0032597,female,25,posterior torso,1
+ISIC_0032598,female,50,posterior torso,1
+ISIC_0032602,female,50,posterior torso,1
+ISIC_0032603,female,30,lower extremity,1
+ISIC_0032604,male,75,anterior torso,1
+ISIC_0032610,male,40,upper extremity,1
+ISIC_0032617,male,75,posterior torso,1
+ISIC_0032622,female,65,lower extremity,1
+ISIC_0032624,female,70,upper extremity,1
+ISIC_0032626,female,35,upper extremity,1
+ISIC_0032629,male,70,lower extremity,1
+ISIC_0032630,male,70,posterior torso,1
+ISIC_0032637,female,35,anterior torso,1
+ISIC_0032638,male,35,posterior torso,1
+ISIC_0032645,male,50,head/neck,1
+ISIC_0032653,male,20,posterior torso,1
+ISIC_0032656,male,80,lower extremity,1
+ISIC_0032662,male,70,anterior torso,1
+ISIC_0032672,female,55,lower extremity,1
+ISIC_0032684,male,50,anterior torso,1
+ISIC_0032685,male,75,posterior torso,1
+ISIC_0032687,male,45,posterior torso,1
+ISIC_0032690,male,50,head/neck,1
+ISIC_0032695,male,80,upper extremity,1
+ISIC_0032698,male,65,head/neck,1
+ISIC_0032699,male,65,head/neck,1
+ISIC_0032709,female,80,head/neck,1
+ISIC_0032716,female,55,lower extremity,1
+ISIC_0032718,male,65,anterior torso,1
+ISIC_0032722,male,45,anterior torso,1
+ISIC_0032723,female,25,posterior torso,1
+ISIC_0032724,female,50,posterior torso,1
+ISIC_0032726,male,65,head/neck,1
+ISIC_0032730,female,80,head/neck,1
+ISIC_0032733,male,70,posterior torso,1
+ISIC_0032736,male,65,anterior torso,1
+ISIC_0032750,female,50,lower extremity,1
+ISIC_0032751,female,25,posterior torso,1
+ISIC_0032766,male,55,upper extremity,1
+ISIC_0032774,male,75,lower extremity,1
+ISIC_0032782,male,70,head/neck,1
+ISIC_0032790,male,65,posterior torso,1
+ISIC_0032797,male,70,upper extremity,1
+ISIC_0032806,male,65,anterior torso,1
+ISIC_0032807,male,50,head/neck,1
+ISIC_0032810,male,70,upper extremity,1
+ISIC_0032812,male,50,unknow,1
+ISIC_0032823,male,55,posterior torso,1
+ISIC_0032833,male,55,unknow,1
+ISIC_0032836,male,50,anterior torso,1
+ISIC_0032840,male,55,lower extremity,1
+ISIC_0032841,female,60,anterior torso,1
+ISIC_0032844,male,60,posterior torso,1
+ISIC_0032845,female,70,lower extremity,1
+ISIC_0032847,male,45,anterior torso,1
+ISIC_0032856,male,70,upper extremity,1
+ISIC_0032862,male,65,upper extremity,1
+ISIC_0032869,male,85,posterior torso,1
+ISIC_0032870,male,85,upper extremity,1
+ISIC_0032872,male,55,posterior torso,1
+ISIC_0032873,male,85,unknow,1
+ISIC_0032875,male,75,anterior torso,1
+ISIC_0032879,male,80,head/neck,1
+ISIC_0032887,male,40,upper extremity,1
+ISIC_0032888,male,55,lower extremity,1
+ISIC_0032892,female,85,posterior torso,1
+ISIC_0032903,male,75,posterior torso,1
+ISIC_0032913,male,85,anterior torso,1
+ISIC_0032915,male,75,lower extremity,1
+ISIC_0032917,male,40,posterior torso,1
+ISIC_0032918,male,50,head/neck,1
+ISIC_0032921,male,70,anterior torso,1
+ISIC_0032922,female,80,upper extremity,1
+ISIC_0032925,male,40,posterior torso,1
+ISIC_0032927,male,55,upper extremity,1
+ISIC_0032936,male,25,upper extremity,1
+ISIC_0032938,male,70,unknow,1
+ISIC_0032940,male,70,head/neck,1
+ISIC_0032955,female,30,lower extremity,1
+ISIC_0032958,male,70,lower extremity,1
+ISIC_0032960,male,50,head/neck,1
+ISIC_0032965,female,45,upper extremity,1
+ISIC_0032968,male,85,upper extremity,1
+ISIC_0032970,male,45,posterior torso,1
+ISIC_0032975,female,70,posterior torso,1
+ISIC_0032976,female,80,head/neck,1
+ISIC_0032981,male,55,posterior torso,1
+ISIC_0032982,male,20,posterior torso,1
+ISIC_0032984,male,70,posterior torso,1
+ISIC_0032985,male,25,upper extremity,1
+ISIC_0032987,male,70,head/neck,1
+ISIC_0032988,female,70,head/neck,1
+ISIC_0032993,female,35,anterior torso,1
+ISIC_0033004,female,30,upper extremity,1
+ISIC_0033017,male,65,anterior torso,1
+ISIC_0033023,male,80,upper extremity,1
+ISIC_0033024,male,75,lower extremity,1
+ISIC_0033027,male,70,head/neck,1
+ISIC_0033029,male,60,anterior torso,1
+ISIC_0033034,female,70,posterior torso,1
+ISIC_0033037,male,70,posterior torso,1
+ISIC_0033038,female,70,lower extremity,1
+ISIC_0033042,female,60,head/neck,1
+ISIC_0033047,female,25,lower extremity,1
+ISIC_0033050,female,75,posterior torso,1
+ISIC_0033051,female,25,lower extremity,1
+ISIC_0033055,male,45,posterior torso,1
+ISIC_0033061,female,25,lower extremity,1
+ISIC_0033063,male,70,upper extremity,1
+ISIC_0033068,male,80,upper extremity,1
+ISIC_0033073,male,65,upper extremity,1
+ISIC_0033074,male,45,anterior torso,1
+ISIC_0033081,female,55,upper extremity,1
+ISIC_0033089,male,60,head/neck,1
+ISIC_0033099,female,40,lower extremity,1
+ISIC_0033103,male,65,lower extremity,1
+ISIC_0033114,female,45,lower extremity,1
+ISIC_0033117,female,45,upper extremity,1
+ISIC_0033120,male,45,upper extremity,1
+ISIC_0033122,male,55,unknow,1
+ISIC_0033125,male,70,upper extremity,1
+ISIC_0033129,female,50,posterior torso,1
+ISIC_0033141,male,55,upper extremity,1
+ISIC_0033152,female,65,posterior torso,1
+ISIC_0033154,male,30,unknow,1
+ISIC_0033166,female,40,lower extremity,1
+ISIC_0033171,male,50,anterior torso,1
+ISIC_0033174,male,70,unknow,1
+ISIC_0033175,male,60,lower extremity,1
+ISIC_0033178,male,55,posterior torso,1
+ISIC_0033180,female,30,upper extremity,1
+ISIC_0033183,male,70,posterior torso,1
+ISIC_0033186,male,55,lower extremity,1
+ISIC_0033192,male,30,unknow,1
+ISIC_0033193,male,70,upper extremity,1
+ISIC_0033196,male,20,posterior torso,1
+ISIC_0033198,male,65,posterior torso,1
+ISIC_0033204,male,55,posterior torso,1
+ISIC_0033206,female,80,head/neck,1
+ISIC_0033209,male,65,head/neck,1
+ISIC_0033216,female,30,posterior torso,1
+ISIC_0033217,male,70,posterior torso,1
+ISIC_0033226,male,65,upper extremity,1
+ISIC_0033232,male,25,upper extremity,1
+ISIC_0033238,male,70,head/neck,1
+ISIC_0033239,male,70,unknow,1
+ISIC_0033240,male,70,head/neck,1
+ISIC_0033241,female,50,posterior torso,1
+ISIC_0033245,male,65,posterior torso,1
+ISIC_0033258,male,80,upper extremity,1
+ISIC_0033261,male,55,upper extremity,1
+ISIC_0033267,female,65,posterior torso,1
+ISIC_0033268,female,50,lower extremity,1
+ISIC_0033269,female,55,posterior torso,1
+ISIC_0033272,male,65,head/neck,1
+ISIC_0033274,female,80,head/neck,1
+ISIC_0033275,female,60,anterior torso,1
+ISIC_0033278,male,85,anterior torso,1
+ISIC_0033279,male,40,upper extremity,1
+ISIC_0033286,male,85,anterior torso,1
+ISIC_0033287,male,55,anterior torso,1
+ISIC_0033299,male,85,unknow,1
+ISIC_0033300,female,40,lower extremity,1
+ISIC_0033302,female,40,upper extremity,1
+ISIC_0033304,female,60,lower extremity,1
+ISIC_0033310,male,60,posterior torso,1
+ISIC_0033312,male,35,posterior torso,1
+ISIC_0033317,male,80,head/neck,1
+ISIC_0033320,female,40,lower extremity,1
+ISIC_0033323,male,75,posterior torso,1
+ISIC_0033324,male,85,upper extremity,1
+ISIC_0033325,male,60,anterior torso,1
+ISIC_0033333,female,60,lower extremity,1
+ISIC_0033336,male,70,upper extremity,1
+ISIC_0033337,male,50,posterior torso,1
+ISIC_0033344,female,70,head/neck,1
+ISIC_0033362,female,85,posterior torso,1
+ISIC_0033368,female,40,anterior torso,1
+ISIC_0033369,male,70,anterior torso,1
+ISIC_0033377,female,55,upper extremity,1
+ISIC_0033387,female,55,lower extremity,1
+ISIC_0033392,male,85,unknow,1
+ISIC_0033393,male,60,upper extremity,1
+ISIC_0033394,male,50,unknow,1
+ISIC_0033399,male,70,posterior torso,1
+ISIC_0033405,male,70,upper extremity,1
+ISIC_0033415,male,70,anterior torso,1
+ISIC_0033416,male,70,anterior torso,1
+ISIC_0033424,female,50,head/neck,1
+ISIC_0033426,male,55,posterior torso,1
+ISIC_0033428,male,75,anterior torso,1
+ISIC_0033429,male,75,anterior torso,1
+ISIC_0033431,female,65,upper extremity,1
+ISIC_0033432,male,55,unknow,1
+ISIC_0033440,male,70,unknow,1
+ISIC_0033444,male,50,anterior torso,1
+ISIC_0033452,male,70,anterior torso,1
+ISIC_0033454,male,75,head/neck,1
+ISIC_0033469,female,65,head/neck,1
+ISIC_0033470,female,55,upper extremity,1
+ISIC_0033473,male,65,posterior torso,1
+ISIC_0033476,female,25,lower extremity,1
+ISIC_0033477,male,65,upper extremity,1
+ISIC_0033479,female,40,posterior torso,1
+ISIC_0033485,male,60,lower extremity,1
+ISIC_0033487,male,60,posterior torso,1
+ISIC_0033496,male,55,upper extremity,1
+ISIC_0033498,female,50,lower extremity,1
+ISIC_0033500,male,80,posterior torso,1
+ISIC_0033518,male,80,upper extremity,1
+ISIC_0033520,male,55,head/neck,1
+ISIC_0033522,female,40,posterior torso,1
+ISIC_0033524,male,85,posterior torso,1
+ISIC_0033526,female,75,posterior torso,1
+ISIC_0033533,female,65,lower extremity,1
+ISIC_0033534,female,35,upper extremity,1
+ISIC_0033538,male,70,lower extremity,1
+ISIC_0033545,male,45,upper extremity,1
+ISIC_0033546,female,40,posterior torso,1
+ISIC_0033559,female,80,upper extremity,1
+ISIC_0033560,female,55,upper extremity,1
+ISIC_0033562,male,60,head/neck,1
+ISIC_0033568,male,45,posterior torso,1
+ISIC_0033569,male,65,posterior torso,1
+ISIC_0033570,male,55,lower extremity,1
+ISIC_0033573,male,50,posterior torso,1
+ISIC_0033578,male,65,head/neck,1
+ISIC_0033586,male,65,upper extremity,1
+ISIC_0033593,male,65,head/neck,1
+ISIC_0033594,male,50,posterior torso,1
+ISIC_0033595,male,70,upper extremity,1
+ISIC_0033603,female,30,upper extremity,1
+ISIC_0033607,male,45,posterior torso,1
+ISIC_0033611,male,65,upper extremity,1
+ISIC_0033612,female,55,upper extremity,1
+ISIC_0033616,female,40,lower extremity,1
+ISIC_0033619,male,50,unknow,1
+ISIC_0033624,male,70,head/neck,1
+ISIC_0033630,male,80,head/neck,1
+ISIC_0033636,male,75,unknow,1
+ISIC_0033638,female,40,upper extremity,1
+ISIC_0033643,male,70,lower extremity,1
+ISIC_0033644,male,55,upper extremity,1
+ISIC_0033651,female,60,lower extremity,1
+ISIC_0033653,female,70,head/neck,1
+ISIC_0033654,male,45,anterior torso,1
+ISIC_0033655,male,70,anterior torso,1
+ISIC_0033662,female,70,lower extremity,1
+ISIC_0033663,male,50,posterior torso,1
+ISIC_0033668,male,50,head/neck,1
+ISIC_0033670,male,65,head/neck,1
+ISIC_0033678,female,75,posterior torso,1
+ISIC_0033679,male,85,anterior torso,1
+ISIC_0033687,male,35,posterior torso,1
+ISIC_0033696,male,65,upper extremity,1
+ISIC_0033700,male,45,posterior torso,1
+ISIC_0033704,male,60,posterior torso,1
+ISIC_0033708,male,50,head/neck,1
+ISIC_0033710,male,85,upper extremity,1
+ISIC_0033713,male,55,unknow,1
+ISIC_0033717,female,60,lower extremity,1
+ISIC_0033725,male,55,anterior torso,1
+ISIC_0033728,male,80,posterior torso,1
+ISIC_0033730,female,70,posterior torso,1
+ISIC_0033752,female,50,head/neck,1
+ISIC_0033754,male,70,unknow,1
+ISIC_0033773,male,70,posterior torso,1
+ISIC_0033779,male,35,posterior torso,1
+ISIC_0033801,female,30,posterior torso,1
+ISIC_0033802,male,75,anterior torso,1
+ISIC_0033804,female,30,posterior torso,1
+ISIC_0033805,female,40,upper extremity,1
+ISIC_0033806,male,85,anterior torso,1
+ISIC_0033807,female,65,lower extremity,1
+ISIC_0033812,female,70,head/neck,1
+ISIC_0033813,male,55,lower extremity,1
+ISIC_0033814,male,70,head/neck,1
+ISIC_0033819,male,60,posterior torso,1
+ISIC_0033820,male,70,head/neck,1
+ISIC_0033831,male,70,anterior torso,1
+ISIC_0033834,female,75,posterior torso,1
+ISIC_0033843,male,80,upper extremity,1
+ISIC_0033848,female,65,lower extremity,1
+ISIC_0033856,female,85,lower extremity,1
+ISIC_0033863,female,65,posterior torso,1
+ISIC_0033871,female,30,lower extremity,1
+ISIC_0033872,male,75,posterior torso,1
+ISIC_0033874,male,65,anterior torso,1
+ISIC_0033878,female,80,head/neck,1
+ISIC_0033881,female,40,head/neck,1
+ISIC_0033883,male,55,posterior torso,1
+ISIC_0033885,female,60,lower extremity,1
+ISIC_0033886,male,60,lower extremity,1
+ISIC_0033893,male,60,posterior torso,1
+ISIC_0033901,male,40,posterior torso,1
+ISIC_0033902,male,75,lower extremity,1
+ISIC_0033905,female,45,upper extremity,1
+ISIC_0033911,male,35,posterior torso,1
+ISIC_0033925,female,65,upper extremity,1
+ISIC_0033931,male,70,upper extremity,1
+ISIC_0033938,female,60,anterior torso,1
+ISIC_0033942,male,65,posterior torso,1
+ISIC_0033946,male,70,anterior torso,1
+ISIC_0033947,female,40,head/neck,1
+ISIC_0033953,male,55,posterior torso,1
+ISIC_0033956,male,80,head/neck,1
+ISIC_0033957,male,60,upper extremity,1
+ISIC_0033962,female,30,upper extremity,1
+ISIC_0033967,female,25,lower extremity,1
+ISIC_0033968,male,55,lower extremity,1
+ISIC_0033975,male,85,anterior torso,1
+ISIC_0033977,female,70,upper extremity,1
+ISIC_0033980,female,30,upper extremity,1
+ISIC_0033981,female,45,upper extremity,1
+ISIC_0033985,male,70,unknow,1
+ISIC_0033986,female,30,upper extremity,1
+ISIC_0033995,male,60,posterior torso,1
+ISIC_0033999,female,85,lower extremity,1
+ISIC_0034000,male,75,posterior torso,1
+ISIC_0034002,female,70,upper extremity,1
+ISIC_0034005,male,75,lower extremity,1
+ISIC_0034006,female,45,lower extremity,1
+ISIC_0034012,male,85,posterior torso,1
+ISIC_0034022,male,65,anterior torso,1
+ISIC_0034028,male,55,head/neck,1
+ISIC_0034034,male,70,posterior torso,1
+ISIC_0034036,male,35,anterior torso,1
+ISIC_0034046,male,45,posterior torso,1
+ISIC_0034048,female,45,upper extremity,1
+ISIC_0034049,male,70,posterior torso,1
+ISIC_0034050,female,45,lower extremity,1
+ISIC_0034051,female,55,upper extremity,1
+ISIC_0034052,male,50,anterior torso,1
+ISIC_0034059,male,70,upper extremity,1
+ISIC_0034061,female,55,lower extremity,1
+ISIC_0034062,female,80,head/neck,1
+ISIC_0034064,male,30,posterior torso,1
+ISIC_0034065,male,50,unknow,1
+ISIC_0034068,female,70,lower extremity,1
+ISIC_0034071,male,50,posterior torso,1
+ISIC_0034074,male,65,head/neck,1
+ISIC_0034076,female,55,lower extremity,1
+ISIC_0034085,male,35,posterior torso,1
+ISIC_0034087,male,45,anterior torso,1
+ISIC_0034089,male,70,head/neck,1
+ISIC_0034092,male,65,upper extremity,1
+ISIC_0034094,female,55,upper extremity,1
+ISIC_0034100,male,65,head/neck,1
+ISIC_0034101,male,80,upper extremity,1
+ISIC_0034104,male,55,upper extremity,1
+ISIC_0034106,male,65,lower extremity,1
+ISIC_0034107,female,40,anterior torso,1
+ISIC_0034117,male,70,anterior torso,1
+ISIC_0034118,female,25,lower extremity,1
+ISIC_0034120,female,60,lower extremity,1
+ISIC_0034132,female,70,lower extremity,1
+ISIC_0034134,male,75,lower extremity,1
+ISIC_0034140,male,70,posterior torso,1
+ISIC_0034141,male,70,lower extremity,1
+ISIC_0034145,male,55,posterior torso,1
+ISIC_0034150,male,85,posterior torso,1
+ISIC_0034159,female,55,lower extremity,1
+ISIC_0034162,male,70,posterior torso,1
+ISIC_0034170,female,80,head/neck,1
+ISIC_0034172,male,60,upper extremity,1
+ISIC_0034173,male,75,head/neck,1
+ISIC_0034180,female,65,posterior torso,1
+ISIC_0034183,male,50,anterior torso,1
+ISIC_0034188,male,70,upper extremity,1
+ISIC_0034202,female,70,posterior torso,1
+ISIC_0034205,female,55,upper extremity,1
+ISIC_0034208,male,60,anterior torso,1
+ISIC_0034211,male,45,upper extremity,1
+ISIC_0034216,male,35,anterior torso,1
+ISIC_0034218,male,80,upper extremity,1
+ISIC_0034222,male,30,posterior torso,1
+ISIC_0034233,male,50,unknow,1
+ISIC_0034236,male,55,unknow,1
+ISIC_0034239,male,85,lower extremity,1
+ISIC_0034242,female,45,upper extremity,1
+ISIC_0034243,female,45,lower extremity,1
+ISIC_0034246,female,65,lower extremity,1
+ISIC_0034253,male,60,anterior torso,1
+ISIC_0034256,male,70,posterior torso,1
+ISIC_0034262,male,65,lower extremity,1
+ISIC_0034263,male,80,upper extremity,1
+ISIC_0034269,male,80,head/neck,1
+ISIC_0034275,male,70,unknow,1
+ISIC_0034284,male,50,posterior torso,1
+ISIC_0034287,male,85,lower extremity,1
+ISIC_0034289,female,50,posterior torso,1
+ISIC_0034294,female,70,posterior torso,1
+ISIC_0034313,male,55,lower extremity,1
+ISIC_0034316,male,85,upper extremity,1
+ISIC_0034317,female,70,lower extremity,1
+ISIC_0036065,male,80,unknow,1
+ISIC_0149568,female,55,upper extremity,1
+ISIC_0188432,female,50,upper extremity,1
+ISIC_0207268,male,55,torso,1
+ISIC_0232101,male,65,torso,1
+ISIC_0247330,female,65,lower extremity,1
+ISIC_0250839,male,75,head/neck,1
+ISIC_0272509,female,35,lower extremity,1
+ISIC_0273046,male,80,torso,1
+ISIC_0274382,male,65,torso,1
+ISIC_0275828,male,30,lower extremity,1
+ISIC_0280912,male,70,torso,1
+ISIC_0286360,male,60,upper extremity,1
+ISIC_0327406,male,40,upper extremity,1
+ISIC_0333091,male,25,lower extremity,1
+ISIC_0337631,female,55,torso,1
+ISIC_0351666,male,80,head/neck,1
+ISIC_0369831,male,80,upper extremity,1
+ISIC_0489267,female,60,lower extremity,1
+ISIC_0502582,male,65,lower extremity,1
+ISIC_0504165,female,60,lower extremity,1
+ISIC_0528044,male,65,torso,1
+ISIC_0533122,male,75,lower extremity,1
+ISIC_0559335,male,60,torso,1
+ISIC_0572205,male,20,torso,1
+ISIC_0599605,male,70,upper extremity,1
+ISIC_0624498,female,80,torso,1
+ISIC_0639769,male,65,head/neck,1
+ISIC_0645454,male,90,upper extremity,1
+ISIC_0647224,male,30,lower extremity,1
+ISIC_0662000,male,40,torso,1
+ISIC_0744013,female,65,upper extremity,1
+ISIC_0779920,female,75,upper extremity,1
+ISIC_0833889,female,65,torso,1
+ISIC_0844312,male,75,head/neck,1
+ISIC_0862745,female,75,head/neck,1
+ISIC_0911264,male,65,lower extremity,1
+ISIC_0914168,female,50,torso,1
+ISIC_0924427,male,65,head/neck,1
+ISIC_0946787,female,90,lower extremity,1
+ISIC_0952472,male,90,lower extremity,1
+ISIC_0953317,male,65,torso,1
+ISIC_0961235,female,45,torso,1
+ISIC_0981639,male,45,torso,1
+ISIC_0986600,male,45,torso,1
+ISIC_1009042,male,70,torso,1
+ISIC_1037315,male,60,lower extremity,1
+ISIC_1068686,male,55,torso,1
+ISIC_1071355,male,75,upper extremity,1
+ISIC_1110583,male,40,torso,1
+ISIC_1113490,male,65,head/neck,1
+ISIC_1116483,male,70,head/neck,1
+ISIC_1124434,female,50,lower extremity,1
+ISIC_1132496,male,70,torso,1
+ISIC_1157032,female,55,torso,1
+ISIC_1159891,female,50,torso,1
+ISIC_1162337,male,45,palms/soles,1
+ISIC_1177153,male,65,torso,1
+ISIC_1177505,female,75,head/neck,1
+ISIC_1200192,male,35,torso,1
+ISIC_1210011,male,75,torso,1
+ISIC_1231419,male,50,lower extremity,1
+ISIC_1241817,male,60,head/neck,1
+ISIC_1247683,male,30,torso,1
+ISIC_1255336,female,65,lower extremity,1
+ISIC_1330008,female,45,lower extremity,1
+ISIC_1356715,female,30,torso,1
+ISIC_1369967,male,35,lower extremity,1
+ISIC_1375476,female,35,torso,1
+ISIC_1388552,female,80,torso,1
+ISIC_1393771,female,70,torso,1
+ISIC_1412843,male,35,lower extremity,1
+ISIC_1440985,male,65,head/neck,1
+ISIC_1460932,male,55,lower extremity,1
+ISIC_1473522,female,75,torso,1
+ISIC_1474461,female,55,torso,1
+ISIC_1484659,female,30,lower extremity,1
+ISIC_1566428,female,60,torso,1
+ISIC_1569119,male,65,torso,1
+ISIC_1589997,male,75,upper extremity,1
+ISIC_1605629,female,55,upper extremity,1
+ISIC_1616031,male,50,torso,1
+ISIC_1620401,female,65,lower extremity,1
+ISIC_1630301,female,75,upper extremity,1
+ISIC_1654342,female,65,lower extremity,1
+ISIC_1684127,male,30,torso,1
+ISIC_1698942,male,75,torso,1
+ISIC_1706912,female,60,lower extremity,1
+ISIC_1728564,male,60,lower extremity,1
+ISIC_1729223,male,60,torso,1
+ISIC_1752943,male,30,head/neck,1
+ISIC_1785627,female,40,upper extremity,1
+ISIC_1797795,male,40,torso,1
+ISIC_1834920,female,70,torso,1
+ISIC_1866770,male,60,upper extremity,1
+ISIC_1870415,male,25,upper extremity,1
+ISIC_1881133,male,30,lower extremity,1
+ISIC_1948545,male,70,torso,1
+ISIC_1952749,male,55,upper extremity,1
+ISIC_1956504,female,55,upper extremity,1
+ISIC_1959939,male,60,head/neck,1
+ISIC_1968421,male,20,lower extremity,1
+ISIC_1975042,female,50,head/neck,1
+ISIC_2027582,female,45,upper extremity,1
+ISIC_2033237,female,55,torso,1
+ISIC_2071966,female,80,lower extremity,1
+ISIC_2072219,male,30,torso,1
+ISIC_2077116,female,35,torso,1
+ISIC_2101624,male,70,torso,1
+ISIC_2105563,female,65,unknow,1
+ISIC_2141237,female,85,torso,1
+ISIC_2153401,female,40,lower extremity,1
+ISIC_2153686,female,55,upper extremity,1
+ISIC_2176112,male,55,head/neck,1
+ISIC_2182856,female,50,upper extremity,1
+ISIC_2200197,male,65,torso,1
+ISIC_2212473,male,25,head/neck,1
+ISIC_2221217,male,75,torso,1
+ISIC_2232442,male,60,lower extremity,1
+ISIC_2255411,male,65,upper extremity,1
+ISIC_2268341,male,90,upper extremity,1
+ISIC_2272218,male,65,torso,1
+ISIC_2306349,male,80,head/neck,1
+ISIC_2309744,male,55,torso,1
+ISIC_2311665,female,70,torso,1
+ISIC_2320481,male,65,torso,1
+ISIC_2337907,female,55,upper extremity,1
+ISIC_2341875,male,45,torso,1
+ISIC_2342769,female,65,head/neck,1
+ISIC_2351999,male,80,head/neck,1
+ISIC_2358454,female,55,lower extremity,1
+ISIC_2364150,female,70,upper extremity,1
+ISIC_2406492,male,45,lower extremity,1
+ISIC_2408815,female,65,upper extremity,1
+ISIC_2412113,female,45,upper extremity,1
+ISIC_2437633,male,65,unknow,1
+ISIC_2447578,female,50,upper extremity,1
+ISIC_2448123,male,40,lower extremity,1
+ISIC_2481044,female,50,torso,1
+ISIC_2525084,male,25,upper extremity,1
+ISIC_2535541,male,80,head/neck,1
+ISIC_2565206,male,65,upper extremity,1
+ISIC_2607827,male,60,upper extremity,1
+ISIC_2609984,female,45,torso,1
+ISIC_2637608,male,60,upper extremity,1
+ISIC_2646829,male,80,head/neck,1
+ISIC_2668481,male,70,torso,1
+ISIC_2685593,male,75,torso,1
+ISIC_2697083,male,60,torso,1
+ISIC_2700320,male,55,torso,1
+ISIC_2720971,female,50,torso,1
+ISIC_2724529,male,45,upper extremity,1
+ISIC_2739449,male,50,lower extremity,1
+ISIC_2750230,male,55,torso,1
+ISIC_2757355,male,60,torso,1
+ISIC_2776906,male,70,torso,1
+ISIC_2787702,male,70,head/neck,1
+ISIC_2797353,male,65,torso,1
+ISIC_2822718,male,50,upper extremity,1
+ISIC_2823287,male,75,torso,1
+ISIC_2837581,female,90,head/neck,1
+ISIC_2844539,female,80,lower extremity,1
+ISIC_2871230,male,70,lower extremity,1
+ISIC_2895555,male,60,lower extremity,1
+ISIC_2937642,female,55,lower extremity,1
+ISIC_2957732,male,45,lower extremity,1
+ISIC_2967024,male,70,torso,1
+ISIC_2974214,male,45,upper extremity,1
+ISIC_2975580,male,70,head/neck,1
+ISIC_2979268,male,50,torso,1
+ISIC_2987613,male,30,lower extremity,1
+ISIC_3002956,male,50,torso,1
+ISIC_3009877,female,35,lower extremity,1
+ISIC_3023646,male,80,head/neck,1
+ISIC_3025889,male,60,torso,1
+ISIC_3028754,female,30,torso,1
+ISIC_3065032,male,30,upper extremity,1
+ISIC_3068885,male,50,upper extremity,1
+ISIC_3084312,female,75,lower extremity,1
+ISIC_3093026,female,35,lower extremity,1
+ISIC_3097354,male,75,upper extremity,1
+ISIC_3144222,male,80,unknow,1
+ISIC_3159924,male,45,upper extremity,1
+ISIC_3203344,male,60,torso,1
+ISIC_3207651,male,70,torso,1
+ISIC_3241636,male,75,lower extremity,1
+ISIC_3244067,male,50,head/neck,1
+ISIC_3253484,female,90,torso,1
+ISIC_3286186,male,60,lower extremity,1
+ISIC_3301933,female,55,lower extremity,1
+ISIC_3319229,female,50,torso,1
+ISIC_3338629,male,55,head/neck,1
+ISIC_3341710,male,40,torso,1
+ISIC_3343475,male,80,head/neck,1
+ISIC_3359880,female,55,torso,1
+ISIC_3372750,male,25,upper extremity,1
+ISIC_3391427,male,60,torso,1
+ISIC_3394520,female,15,torso,1
+ISIC_3399306,male,90,upper extremity,1
+ISIC_3408231,male,65,head/neck,1
+ISIC_3416107,male,60,lower extremity,1
+ISIC_3435596,female,85,torso,1
+ISIC_3436033,male,60,lower extremity,1
+ISIC_3440759,male,50,upper extremity,1
+ISIC_3446357,male,65,upper extremity,1
+ISIC_3464344,female,65,head/neck,1
+ISIC_3475660,male,75,torso,1
+ISIC_3517311,female,70,upper extremity,1
+ISIC_3561065,female,75,upper extremity,1
+ISIC_3590167,male,40,upper extremity,1
+ISIC_3673080,male,35,lower extremity,1
+ISIC_3684488,female,55,unknow,1
+ISIC_3696488,female,90,upper extremity,1
+ISIC_3697702,female,45,torso,1
+ISIC_3733653,male,75,head/neck,1
+ISIC_3738751,male,60,torso,1
+ISIC_3775417,male,30,lower extremity,1
+ISIC_3778192,female,35,torso,1
+ISIC_3817719,male,75,head/neck,1
+ISIC_3821242,female,65,head/neck,1
+ISIC_3824206,female,35,torso,1
+ISIC_3909039,male,50,lower extremity,1
+ISIC_3915890,male,80,upper extremity,1
+ISIC_3936223,male,80,torso,1
+ISIC_3941123,male,75,head/neck,1
+ISIC_3944634,male,55,torso,1
+ISIC_3963183,female,55,upper extremity,1
+ISIC_3965087,male,50,torso,1
+ISIC_3969411,male,60,torso,1
+ISIC_3976496,female,80,torso,1
+ISIC_3979826,male,60,torso,1
+ISIC_3985031,female,65,torso,1
+ISIC_3993924,female,70,upper extremity,1
+ISIC_3996796,male,70,torso,1
+ISIC_4000481,male,60,upper extremity,1
+ISIC_4009870,male,75,head/neck,1
+ISIC_4012047,female,35,oral/genital,1
+ISIC_4120174,female,55,lower extremity,1
+ISIC_4163686,female,45,upper extremity,1
+ISIC_4170698,male,50,torso,1
+ISIC_4223155,female,25,lower extremity,1
+ISIC_4229473,female,75,torso,1
+ISIC_4230049,female,45,torso,1
+ISIC_4266533,female,55,lower extremity,1
+ISIC_4276255,male,25,torso,1
+ISIC_4346693,male,75,torso,1
+ISIC_4362713,female,75,torso,1
+ISIC_4377208,male,75,torso,1
+ISIC_4378189,male,85,lower extremity,1
+ISIC_4398011,female,55,torso,1
+ISIC_4404772,female,85,lower extremity,1
+ISIC_4408559,male,40,torso,1
+ISIC_4425322,female,65,lower extremity,1
+ISIC_4425657,male,70,torso,1
+ISIC_4439054,male,80,torso,1
+ISIC_4469476,male,30,torso,1
+ISIC_4493482,male,50,upper extremity,1
+ISIC_4508878,male,75,upper extremity,1
+ISIC_4517738,male,65,palms/soles,1
+ISIC_4523238,female,60,torso,1
+ISIC_4523382,female,60,torso,1
+ISIC_4525317,male,70,torso,1
+ISIC_4584265,female,50,lower extremity,1
+ISIC_4619789,male,55,torso,1
+ISIC_4619903,male,55,lower extremity,1
+ISIC_4649440,female,45,torso,1
+ISIC_4653503,male,50,torso,1
+ISIC_4676270,female,55,torso,1
+ISIC_4730066,female,60,lower extremity,1
+ISIC_4810142,male,60,torso,1
+ISIC_4842587,male,70,lower extremity,1
+ISIC_4851366,male,75,torso,1
+ISIC_4874581,female,80,lower extremity,1
+ISIC_4916704,male,70,head/neck,1
+ISIC_4936662,female,45,upper extremity,1
+ISIC_4938994,male,55,upper extremity,1
+ISIC_4960784,female,75,upper extremity,1
+ISIC_4960802,female,45,torso,1
+ISIC_4967564,male,75,upper extremity,1
+ISIC_4967586,male,60,upper extremity,1
+ISIC_4980656,male,70,upper extremity,1
+ISIC_5021861,female,45,upper extremity,1
+ISIC_5037784,female,90,lower extremity,1
+ISIC_5044438,female,65,lower extremity,1
+ISIC_5045600,female,60,head/neck,1
+ISIC_5046082,male,55,torso,1
+ISIC_5084113,male,60,unknow,1
+ISIC_5086349,female,80,head/neck,1
+ISIC_5137933,female,65,head/neck,1
+ISIC_5140952,female,65,lower extremity,1
+ISIC_5147292,male,40,lower extremity,1
+ISIC_5166798,male,25,torso,1
+ISIC_5167209,female,45,lower extremity,1
+ISIC_5191344,female,40,upper extremity,1
+ISIC_5216586,male,60,torso,1
+ISIC_5247508,female,45,lower extremity,1
+ISIC_5247560,male,75,torso,1
+ISIC_5258657,female,75,lower extremity,1
+ISIC_5260050,male,45,head/neck,1
+ISIC_5267208,female,55,torso,1
+ISIC_5272223,female,65,upper extremity,1
+ISIC_5315062,female,70,upper extremity,1
+ISIC_5331102,male,55,lower extremity,1
+ISIC_5343231,female,65,head/neck,1
+ISIC_5365617,female,50,torso,1
+ISIC_5369000,male,70,head/neck,1
+ISIC_5388184,male,80,head/neck,1
+ISIC_5391758,male,45,lower extremity,1
+ISIC_5415761,male,60,torso,1
+ISIC_5425721,male,65,torso,1
+ISIC_5434661,male,35,lower extremity,1
+ISIC_5495413,male,45,torso,1
+ISIC_5527224,male,70,head/neck,1
+ISIC_5533992,male,45,lower extremity,1
+ISIC_5561003,male,45,lower extremity,1
+ISIC_5576354,female,90,torso,1
+ISIC_5581297,male,60,torso,1
+ISIC_5581931,male,85,head/neck,1
+ISIC_5602826,female,60,upper extremity,1
+ISIC_5642824,male,75,head/neck,1
+ISIC_5667461,female,55,lower extremity,1
+ISIC_5673518,male,45,upper extremity,1
+ISIC_5714411,female,55,torso,1
+ISIC_5732201,female,45,torso,1
+ISIC_5733748,male,40,lower extremity,1
+ISIC_5747486,male,20,torso,1
+ISIC_5747942,male,45,upper extremity,1
+ISIC_5758388,female,45,torso,1
+ISIC_5797062,male,70,lower extremity,1
+ISIC_5829938,male,80,upper extremity,1
+ISIC_5867911,male,55,upper extremity,1
+ISIC_5868291,female,75,torso,1
+ISIC_5869480,male,45,torso,1
+ISIC_5891384,female,55,upper extremity,1
+ISIC_5922588,male,60,upper extremity,1
+ISIC_5983500,female,85,upper extremity,1
+ISIC_6017985,female,50,lower extremity,1
+ISIC_6024335,male,60,torso,1
+ISIC_6056121,male,75,torso,1
+ISIC_6089318,female,65,torso,1
+ISIC_6110888,male,75,torso,1
+ISIC_6124481,female,20,upper extremity,1
+ISIC_6125652,male,70,head/neck,1
+ISIC_6220625,female,55,upper extremity,1
+ISIC_6228963,male,90,torso,1
+ISIC_6248008,female,40,oral/genital,1
+ISIC_6251753,male,50,torso,1
+ISIC_6255113,female,75,upper extremity,1
+ISIC_6269166,female,75,upper extremity,1
+ISIC_6278273,male,65,torso,1
+ISIC_6285925,male,30,torso,1
+ISIC_6303107,female,45,torso,1
+ISIC_6313487,male,70,torso,1
+ISIC_6348638,male,60,torso,1
+ISIC_6352565,female,65,lower extremity,1
+ISIC_6355353,male,60,lower extremity,1
+ISIC_6392461,male,70,upper extremity,1
+ISIC_6398283,male,75,lower extremity,1
+ISIC_6398669,male,70,torso,1
+ISIC_6404049,female,65,lower extremity,1
+ISIC_6450034,male,70,torso,1
+ISIC_6496251,female,35,upper extremity,1
+ISIC_6496370,female,60,upper extremity,1
+ISIC_6509682,male,45,upper extremity,1
+ISIC_6512653,male,65,torso,1
+ISIC_6516710,female,60,upper extremity,1
+ISIC_6526489,male,50,torso,1
+ISIC_6535558,female,65,torso,1
+ISIC_6539127,female,65,torso,1
+ISIC_6541615,male,50,torso,1
+ISIC_6555290,male,60,torso,1
+ISIC_6561111,male,70,torso,1
+ISIC_6581411,male,60,torso,1
+ISIC_6584579,female,65,lower extremity,1
+ISIC_6613150,male,25,torso,1
+ISIC_6620377,male,25,lower extremity,1
+ISIC_6625102,female,60,upper extremity,1
+ISIC_6634951,male,70,torso,1
+ISIC_6671773,female,20,torso,1
+ISIC_6688417,male,45,unknow,1
+ISIC_6692344,male,50,torso,1
+ISIC_6695831,female,65,torso,1
+ISIC_6713432,male,45,torso,1
+ISIC_6714082,female,55,torso,1
+ISIC_6767569,male,70,head/neck,1
+ISIC_6784593,female,40,torso,1
+ISIC_6785680,female,55,torso,1
+ISIC_6786198,male,55,unknow,1
+ISIC_6809586,male,70,upper extremity,1
+ISIC_6829008,female,50,lower extremity,1
+ISIC_6841294,male,65,torso,1
+ISIC_6851408,male,65,head/neck,1
+ISIC_6904082,male,25,torso,1
+ISIC_6927840,female,40,oral/genital,1
+ISIC_6931277,male,90,torso,1
+ISIC_6945634,female,55,lower extremity,1
+ISIC_6961503,male,65,torso,1
+ISIC_6966001,male,30,lower extremity,1
+ISIC_6971606,female,25,torso,1
+ISIC_6982386,female,65,torso,1
+ISIC_7035246,male,55,torso,1
+ISIC_7070020,male,75,torso,1
+ISIC_7074321,female,50,torso,1
+ISIC_7075474,female,45,torso,1
+ISIC_7079349,male,80,torso,1
+ISIC_7084553,male,65,head/neck,1
+ISIC_7098141,female,60,torso,1
+ISIC_7100755,female,65,upper extremity,1
+ISIC_7101732,male,60,torso,1
+ISIC_7130929,female,60,lower extremity,1
+ISIC_7181296,male,50,torso,1
+ISIC_7183212,male,75,lower extremity,1
+ISIC_7190243,female,45,torso,1
+ISIC_7205745,female,40,torso,1
+ISIC_7218890,male,50,lower extremity,1
+ISIC_7233368,male,25,torso,1
+ISIC_7242384,male,45,torso,1
+ISIC_7253401,female,40,upper extremity,1
+ISIC_7261174,female,15,head/neck,1
+ISIC_7265673,male,50,upper extremity,1
+ISIC_7287303,male,65,lower extremity,1
+ISIC_7293518,male,65,lower extremity,1
+ISIC_7295035,male,35,oral/genital,1
+ISIC_7312977,male,55,lower extremity,1
+ISIC_7320371,male,60,torso,1
+ISIC_7327423,male,65,torso,1
+ISIC_7346228,female,75,head/neck,1
+ISIC_7346739,female,60,upper extremity,1
+ISIC_7349772,male,35,torso,1
+ISIC_7371801,male,80,torso,1
+ISIC_7372719,male,75,torso,1
+ISIC_7410175,female,90,lower extremity,1
+ISIC_7460887,female,30,torso,1
+ISIC_7466678,male,55,lower extremity,1
+ISIC_7489564,male,70,torso,1
+ISIC_7503950,male,45,torso,1
+ISIC_7520843,male,50,upper extremity,1
+ISIC_7536704,male,75,torso,1
+ISIC_7546219,female,80,upper extremity,1
+ISIC_7577395,female,40,torso,1
+ISIC_7612992,male,75,torso,1
+ISIC_7614221,male,30,torso,1
+ISIC_7626256,male,65,torso,1
+ISIC_7658729,female,25,lower extremity,1
+ISIC_7662910,male,60,head/neck,1
+ISIC_7680948,female,70,upper extremity,1
+ISIC_7693611,male,65,upper extremity,1
+ISIC_7724762,female,70,torso,1
+ISIC_7730937,female,25,torso,1
+ISIC_7748311,male,75,upper extremity,1
+ISIC_7763042,female,45,lower extremity,1
+ISIC_7785723,female,50,lower extremity,1
+ISIC_7788318,male,50,lower extremity,1
+ISIC_7800750,female,80,upper extremity,1
+ISIC_7844825,male,55,torso,1
+ISIC_7872595,male,75,torso,1
+ISIC_7897925,male,45,upper extremity,1
+ISIC_7914631,male,40,lower extremity,1
+ISIC_7927525,male,50,upper extremity,1
+ISIC_7936755,male,75,lower extremity,1
+ISIC_7939816,male,75,torso,1
+ISIC_7948290,male,40,upper extremity,1
+ISIC_7960321,male,75,torso,1
+ISIC_7960869,male,45,torso,1
+ISIC_7961365,male,45,lower extremity,1
+ISIC_7973598,male,35,torso,1
+ISIC_8002875,male,55,head/neck,1
+ISIC_8006211,male,70,lower extremity,1
+ISIC_8009536,male,65,torso,1
+ISIC_8011058,female,30,lower extremity,1
+ISIC_8027899,male,30,lower extremity,1
+ISIC_8040024,female,55,torso,1
+ISIC_8052769,male,50,upper extremity,1
+ISIC_8066110,male,50,lower extremity,1
+ISIC_8068693,female,45,torso,1
+ISIC_8106899,male,70,torso,1
+ISIC_8124900,male,50,torso,1
+ISIC_8133350,female,85,head/neck,1
+ISIC_8145348,male,75,torso,1
+ISIC_8157654,male,70,torso,1
+ISIC_8167374,male,80,torso,1
+ISIC_8175453,female,30,torso,1
+ISIC_8194835,female,60,lower extremity,1
+ISIC_8207974,female,45,torso,1
+ISIC_8230318,male,90,torso,1
+ISIC_8231999,male,60,head/neck,1
+ISIC_8249854,male,55,upper extremity,1
+ISIC_8252406,male,85,palms/soles,1
+ISIC_8263489,male,60,torso,1
+ISIC_8281208,female,40,torso,1
+ISIC_8306697,male,65,torso,1
+ISIC_8325226,male,75,torso,1
+ISIC_8355446,female,65,torso,1
+ISIC_8379956,female,70,unknow,1
+ISIC_8381531,male,70,upper extremity,1
+ISIC_8397285,male,50,torso,1
+ISIC_8414609,male,25,torso,1
+ISIC_8417873,male,75,torso,1
+ISIC_8437493,male,50,torso,1
+ISIC_8450656,female,30,palms/soles,1
+ISIC_8483382,male,70,torso,1
+ISIC_8485716,male,35,lower extremity,1
+ISIC_8493108,male,80,upper extremity,1
+ISIC_8496052,female,55,torso,1
+ISIC_8497457,female,70,torso,1
+ISIC_8509577,male,70,torso,1
+ISIC_8521610,male,70,torso,1
+ISIC_8527092,male,55,head/neck,1
+ISIC_8545949,male,45,lower extremity,1
+ISIC_8564474,male,75,torso,1
+ISIC_8566006,male,65,torso,1
+ISIC_8609756,female,65,lower extremity,1
+ISIC_8615491,male,60,head/neck,1
+ISIC_8617277,female,40,torso,1
+ISIC_8621568,female,65,lower extremity,1
+ISIC_8672524,female,55,torso,1
+ISIC_8677053,female,55,head/neck,1
+ISIC_8692218,male,75,lower extremity,1
+ISIC_8702237,female,50,lower extremity,1
+ISIC_8724944,female,45,torso,1
+ISIC_8732757,male,50,torso,1
+ISIC_8737794,male,80,torso,1
+ISIC_8789051,female,80,upper extremity,1
+ISIC_8838753,female,65,lower extremity,1
+ISIC_8859274,male,80,unknow,1
+ISIC_8866651,male,75,torso,1
+ISIC_8872158,male,90,head/neck,1
+ISIC_8882374,female,35,torso,1
+ISIC_8892236,female,35,lower extremity,1
+ISIC_8922893,male,50,upper extremity,1
+ISIC_8951909,female,20,lower extremity,1
+ISIC_8985109,male,45,torso,1
+ISIC_9000234,male,40,palms/soles,1
+ISIC_9000824,male,80,torso,1
+ISIC_9001948,male,50,torso,1
+ISIC_9012513,male,70,torso,1
+ISIC_9022005,female,55,upper extremity,1
+ISIC_9038318,male,70,torso,1
+ISIC_9048507,female,55,lower extremity,1
+ISIC_9052500,male,85,torso,1
+ISIC_9053910,male,80,torso,1
+ISIC_9124447,male,30,torso,1
+ISIC_9130157,male,35,lower extremity,1
+ISIC_9164054,male,75,torso,1
+ISIC_9174306,male,70,head/neck,1
+ISIC_9193127,male,45,head/neck,1
+ISIC_9199429,male,50,head/neck,1
+ISIC_9210255,male,55,torso,1
+ISIC_9228573,male,45,lower extremity,1
+ISIC_9268487,male,75,torso,1
+ISIC_9286292,female,75,upper extremity,1
+ISIC_9312164,female,65,torso,1
+ISIC_9317483,female,50,torso,1
+ISIC_9351516,male,30,upper extremity,1
+ISIC_9367522,female,55,lower extremity,1
+ISIC_9402324,male,45,upper extremity,1
+ISIC_9509757,male,80,head/neck,1
+ISIC_9544832,male,80,torso,1
+ISIC_9547725,female,35,torso,1
+ISIC_9548821,male,55,torso,1
+ISIC_9556334,male,50,upper extremity,1
+ISIC_9571842,female,60,head/neck,1
+ISIC_9579703,male,50,torso,1
+ISIC_9583969,female,90,torso,1
+ISIC_9585329,male,55,head/neck,1
+ISIC_9593940,male,70,torso,1
+ISIC_9596721,male,60,torso,1
+ISIC_9612481,male,70,head/neck,1
+ISIC_9626843,male,35,lower extremity,1

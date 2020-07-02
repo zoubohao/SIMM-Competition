@@ -28,6 +28,8 @@ def randomConcatTensor(t1s, t2s):
 
 if __name__ == "__main__":
     ### config
+    ## The value of alpha must less than 0.5
+    alpha = 0.1
     batchSize = 10
     labelsNumber = 1
     epoch = 50
@@ -35,7 +37,7 @@ if __name__ == "__main__":
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
-    saveTimes = 2500
+    saveTimes = 1
     ###
     loadWeight = False
     trainModelLoad = "Model_EFb60.870445110701107.pth"
@@ -43,12 +45,12 @@ if __name__ == "__main__":
     LR = 1e-3
     ###
     device0 = "cuda:0"
-    model_name = "b4"
-    reg_lambda = 2.e-4
+    model_name = "b5"
+    reg_lambda = 2e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=90)], p=0.5),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.5),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
@@ -60,11 +62,11 @@ if __name__ == "__main__":
     ])
 
     trainNegDataSet = SIMM_DataSet(root="./NegTrainAugResize",csvFile="./CSVFile/augNeg.csv",
-                                   transforms=transformationTrain,train=True)
+                                   transforms=transformationTrain,train=True,alpha = alpha)
     trainPosDataSet = SIMM_DataSet(root="./PosTrainAugResize", csvFile="./CSVFile/augPos.csv",
-                                   transforms=transformationTrain, train=True)
+                                   transforms=transformationTrain, train=True,alpha = alpha)
     testDataSet = SIMM_DataSet(root="./train",csvFile="./CSVFile/val.csv",
-                               transforms=transformationTest,train=True)
+                               transforms=transformationTest,train=True, alpha = alpha)
 
     trainNegDataLoader = DataLoader(trainNegDataSet,batch_size=batchSize // 2,shuffle=True,pin_memory=True)
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True)
@@ -133,16 +135,18 @@ if __name__ == "__main__":
                     scoreList = list()
                     for batch_idx, (imgsTe, targetsTe) in enumerate(testloader):
                         imgsTeCuda = imgsTe.to(device0,non_blocking=True)
-
                         ## img, sex, age_approx, anatom
                         probability = torch.sigmoid(model(imgsTeCuda)).squeeze()
                         probability = probability.detach().cpu().numpy()
                         scoreList.append(probability)
                         truth = targetsTe.numpy().squeeze()
-                        targetsList.append(truth)
+                        print("######")
                         print(batch_idx)
-                        print(probability)
-                        print("Val part, " + str(probability) + " , " + str(truth))
+                        if truth >= 0.5:
+                            targetsList.append(1)
+                        else:
+                            targetsList.append(0)
+                        print("Val part, predict: {}, truth: {}".format(probability, truth))
                     precision, recall, _ = metrics.precision_recall_curve(y_true=targetsList, probas_pred=scoreList,
                                                                           pos_label=1)
                     aucPR = round(metrics.auc(recall, precision), 4)

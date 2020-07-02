@@ -137,6 +137,7 @@ print(previousJ)
 
 print(round(0.62131232112321312321112,4))
 
+print(0.9 == (1. - 0.1))
 
 
 

@@ -94,8 +94,12 @@ if __name__ == "__main__":
     testDataSet = SIMM_DataSet(root="./train",csvFile="./CSVFile/train.csv",transforms=transformationTrain,train=True)
     testDataLoader = DataLoader(testDataSet,batch_size=1,shuffle=False)
     for i ,(imgs, targ) in enumerate(testDataLoader):
+        print(i)
         print(imgs.shape)
         print(targ)
+        if targ == 0.9:
+            break
+
 
     # from Tools import get_mean_and_std
     # ## tensor([0.8060, 0.6204, 0.5902]), tensor([0.0823, 0.0963, 0.1085])

@@ -12,6 +12,7 @@ class DropBlock2D(nn.Module):
     def __init__(self, *args):
         super().__init__()
         self.prob = args[0]
+        #print(self.prob)
 
     def forward(self,x):
         if self.training and self.prob > 0.:
@@ -32,6 +33,8 @@ class SplAtConv2d(Module):
                  radix=2, reduction_factor=4,  norm_layer=None,
                  dropblock_prob=0.25):
         super(SplAtConv2d, self).__init__()
+        #print("groups : {}".format(groups))
+        #print("radix : {}".format(radix))
         padding = _pair(padding)
         inter_channels = max(in_channels*radix//reduction_factor, 32)
         self.radix = radix

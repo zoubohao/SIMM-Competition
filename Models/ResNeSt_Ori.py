@@ -5,7 +5,7 @@ from Models.SplAtConv2d import SplAtConv2d
 import torch.nn.functional as F
 from Tools import MemoryEfficientSwish
 
-__all__ = ['ResNet', 'Bottleneck', "resnest101"]
+__all__ = ['ResNet', 'Bottleneck', "resnest50"]
 
 class DropBlock2D(nn.Module):
 
@@ -23,6 +23,7 @@ class DropBlock2D(nn.Module):
             x.mul_(mask)
         return x
 
+from Tools import SeparableConvBlock
 
 class Bottleneck(nn.Module):
     """ResNet Bottleneck
@@ -33,7 +34,7 @@ class Bottleneck(nn.Module):
                  norm_layer=None, dropblock_prob=0.25, last_gamma=False):
         super(Bottleneck, self).__init__()
         group_width = int(planes * (bottleneck_width / 64.)) * cardinality
-        self.conv1 = nn.Conv2d(inplanes, group_width, kernel_size=1, bias=False)
+        self.conv1 = SeparableConvBlock(inplanes, group_width, norm=False, activation=False)
         self.bn1 = norm_layer(group_width,eps=1e-3, momentum=1-0.99)
         self.dropblock_prob = dropblock_prob
         self.expansion = 4
@@ -48,8 +49,7 @@ class Bottleneck(nn.Module):
                 norm_layer=norm_layer,
                 dropblock_prob=dropblock_prob,radix=radix)
 
-        self.conv3 = nn.Conv2d(
-            group_width, planes * self.expansion , kernel_size=1, bias=False)
+        self.conv3 = SeparableConvBlock(group_width, planes * self.expansion, norm=False, activation=False)
         self.bn3 = norm_layer(planes * self.expansion,eps=1e-3, momentum=1-0.99)
 
         if last_gamma:
@@ -147,9 +147,6 @@ class ResNet(nn.Module):
                                            norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
 
-        self._conv_head = nn.Conv2d(2048, 2048, kernel_size=1, bias=False)
-        self._bn1 = nn.BatchNorm2d(num_features=2048, momentum=1-0.99, eps=1e-3)
-        self._swish = MemoryEfficientSwish()
 
         self.dropout = nn.Dropout(0.5,True)
         self.fc1 = nn.Linear(2048, num_classes)
@@ -203,21 +200,20 @@ class ResNet(nn.Module):
         #print(x.shape)
         x = self.layer4(x)
         #print(x.shape)
-        x = self._swish(self._bn1(self._conv_head(x)))
 
         fc1 = self.fc1(self.dropout(F.adaptive_avg_pool2d(x,[1,1]).view([-1,2048])))
 
         return fc1
 
-def resnest101(number_classes, drop_connect_ratio):
-    model = ResNet(Bottleneck, [3, 4, 14, 3], groups=2, radix = 2, bottleneck_width=64,
-                   deep_stem=True, stem_width=64, avg_down=True,
-                   dropblock_prob=drop_connect_ratio,
-                   num_classes=number_classes,last_gamma=True)
+def resnest50(number_classes, drop_connect_ratio):
+    model = ResNet(Bottleneck, [3, 4, 8, 3], groups = 2, radix = 2, bottleneck_width=64,
+                   deep_stem = True, stem_width = 64, avg_down = True,
+                   dropblock_prob = drop_connect_ratio,
+                   num_classes = number_classes,last_gamma = True)
     return model
 
 if __name__ == "__main__":
     imgs = torch.rand(size=[10,3,272, 408])
-    testModule = resnest101(2, 0.4)
+    testModule = resnest50(2, 0.4)
     outputs = testModule(imgs)
     print(outputs)

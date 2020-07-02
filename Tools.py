@@ -216,10 +216,8 @@ class DynamicConv2d(nn.Module):
 
 class SeparableConvBlock(nn.Module):
 
-    def __init__(self, in_channels, out_channels=None, norm=True, activation=False):
+    def __init__(self, in_channels, out_channels, norm= False, activation=False):
         super(SeparableConvBlock, self).__init__()
-        if out_channels is None:
-            out_channels = in_channels
 
         # Q: whether separate conv
         #  share bias between depthwise_conv and pointwise_conv

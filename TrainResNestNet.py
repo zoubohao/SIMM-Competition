@@ -1,11 +1,11 @@
-import torch
-import torchvision as tv
-from torch.utils.data import DataLoader
-from Models.ResNeSt_Ori import resnest101
-from DataSet import SIMM_DataSet
-import torch.nn as nn
 import numpy as np
 import sklearn.metrics as metrics
+import torch
+import torch.nn as nn
+import torchvision as tv
+from torch.utils.data import DataLoader
+from Models.ResNeSt_Ori import  resnest50
+from DataSet import SIMM_DataSet
 
 
 def generator(data_loader):
@@ -32,9 +32,9 @@ if __name__ == "__main__":
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
-    reg_lambda = 2.8e-4
+    reg_lambda = 2e-4
     reduction = 'mean'
-    drop_rate = 0.42
+    drop_rate = 0.25
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
@@ -71,7 +71,7 @@ if __name__ == "__main__":
                                     pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    model = resnest101(number_classes=labelsNumber,drop_connect_ratio=drop_rate).to(device0)
+    model = resnest50(number_classes=labelsNumber,drop_connect_ratio=drop_rate).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()

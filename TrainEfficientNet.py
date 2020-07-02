@@ -29,7 +29,7 @@ def randomConcatTensor(t1s, t2s):
 if __name__ == "__main__":
     ### config
     ## The value of alpha must less than 0.5
-    alpha = 0.1
+    alpha = 1e-3
     batchSize = 10
     labelsNumber = 1
     epoch = 50
@@ -37,16 +37,16 @@ if __name__ == "__main__":
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
-    saveTimes = 1
+    saveTimes = 2500
     ###
     loadWeight = False
-    trainModelLoad = "Model_EFb60.870445110701107.pth"
+    trainModelLoad = "Model_EF_b5AUC0.8222_AUCPR0.1034.pth"
     ###
     LR = 1e-3
     ###
     device0 = "cuda:0"
     model_name = "b5"
-    reg_lambda = 2e-4
+    reg_lambda = 1.e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([

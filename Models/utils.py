@@ -475,21 +475,21 @@ def efficientnet_params(model_name):
         'efficientnet-b1': (1.0, 1.1, 240, 0.2),
         'efficientnet-b2': (1.1, 1.2, 260, 0.3),
         'efficientnet-b3': (1.2, 1.4, 300, 0.3),
-        'efficientnet-b4': (1.4, 1.8, 380, 0.6),
-        'efficientnet-b5': (1.6, 2.2, 456, 0.65),
-        'efficientnet-b6': (1.8, 2.6, 528, 0.65),
-        'efficientnet-b7': (2.0, 3.1, 600, 0.7),
-        'efficientnet-b8': (2.2, 3.6, 672, 0.65),
-        'efficientnet-l2': (4.3, 5.3, 800, 0.7),
+        'efficientnet-b4': (1.4, 1.8, 380, 0.4),
+        'efficientnet-b5': (1.6, 2.2, 456, 0.55),
+        'efficientnet-b6': (1.8, 2.6, 528, 0.6),
+        'efficientnet-b7': (2.0, 3.1, 600, 0.65),
+        'efficientnet-b8': (2.2, 3.6, 672, 0.5),
+        'efficientnet-l2': (4.3, 5.3, 800, 0.5),
     }
     return params_dict[model_name]
 
-### b4 : 0.25
-### b5 : 0.35
-### b6 : 0.45
+### b4 : 0.2
+### b5 : 0.4
+### b6 : 0.5
 ### b7 : 0.55
 def efficientnet(width_coefficient=None, depth_coefficient=None, image_size=None,
-                 dropout_rate=0.5, drop_connect_rate=0.35, num_classes=1000):
+                 dropout_rate=0.5, drop_connect_rate=0.4, num_classes=1000):
     """Create BlockArgs and GlobalParams for efficientnet model.
 
     Args:

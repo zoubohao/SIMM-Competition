@@ -4,6 +4,7 @@ import pandas as pd
 from PIL import Image
 import torch
 import torchvision as tv
+import numpy as np
 
 
 def convertStringToFloat(vec,mappingFile):
@@ -20,18 +21,14 @@ def convertStringToFloat(vec,mappingFile):
 
 class SIMM_DataSet(Dataset):
 
-    def __init__(self,root,csvFile,transforms = None,train = True):
+    def __init__(self,root,csvFile,transforms = None,train = True, alpha = 0.1):
         super().__init__()
-        # Index(['image_name', 'patient_id', 'sex', 'age_approx',
-        #        'anatom_site_general_challenge'],
         self.root = root
         dataInfor = pd.read_csv(csvFile)
         self.imgs = list(dataInfor["image_name"])
-        # self.sex = convertStringToFloat(dataInfor["sex"],"E:\\SIIM\\sexMapping.txt")
-        # self.age_approx = convertStringToFloat(dataInfor["age_approx"],"E:\\SIIM\\ageMapping.txt")
-        # self.anatom = convertStringToFloat(dataInfor["anatom_site_general_challenge"],"E:\\SIIM\\anatomMapping.txt")
         if train:
-            self.labels = dataInfor["target"]
+            labels = np.array(dataInfor["target"], dtype=np.float32)
+            self.labels = np.where(labels == 1, 1 - alpha, alpha)
         self.if_train = train
         self.transforms = transforms
 
@@ -41,16 +38,12 @@ class SIMM_DataSet(Dataset):
         img = Image.open(img_path).convert("RGB")
         if self.transforms is not None:
             img = self.transforms(img)
-        # sex = torch.as_tensor(self.sex[idx]).long()
-        # age_approx = torch.as_tensor(self.age_approx[idx]).long()
-        # anatom = torch.as_tensor(self.anatom[idx]).long()
-        ### img, sex, age_approx, anatom, target
         if self.if_train:
-            target = torch.as_tensor(self.labels[idx]).long()
-            #return img, sex, age_approx, anatom, target
+            target = torch.as_tensor(self.labels[idx]).float()
+
             return img, target
         else:
-            #return img, sex, age_approx, anatom, name
+
             return img, self.imgs[idx]
 
 
@@ -98,15 +91,12 @@ if __name__ == "__main__":
         tv.transforms.Resize([512,512]),
         tv.transforms.ToTensor(),
     ])
-    testDataSet = SIMM_DataSet(root="./train",csvFile="./train.csv",transforms=transformationTrain,train=True)
+    testDataSet = SIMM_DataSet(root="./train",csvFile="./CSVFile/train.csv",transforms=transformationTrain,train=True)
     testDataLoader = DataLoader(testDataSet,batch_size=1,shuffle=False)
-    for i ,(imgs, sexs, ages, anatoms, names) in enumerate(testDataLoader):
+    for i ,(imgs, targ) in enumerate(testDataLoader):
         print(imgs.shape)
-        print(sexs)
-        print(ages)
-        print(anatoms)
-        print(names)
-        break
+        print(targ)
+
     # from Tools import get_mean_and_std
     # ## tensor([0.8060, 0.6204, 0.5902]), tensor([0.0823, 0.0963, 0.1085])
     # print(get_mean_and_std(testDataSet))

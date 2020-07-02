@@ -68,10 +68,10 @@ def CutMix(image1, image2):
 
 
 if __name__ == "__main__":
-    dataInfor = pd.read_csv("./CSVFile/newTrainPos.csv")
-    savePath = "./PosTrainAugResize"
-    if_pos = True
-    csvName = "augPos.csv"
+    dataInfor = pd.read_csv("./CSVFile/trainNeg.csv")
+    savePath = "./NegTrainAugResize"
+    if_pos = False
+    csvName = "augNeg.csv"
     if_part = False
 
     imgsNames = np.array(dataInfor["image_name"])
@@ -232,9 +232,17 @@ if __name__ == "__main__":
             augAge.append(ages[i])
             augAtom.append(anatom[i])
 
+            if np.random.rand(1) <= 0.1:
+                imgMicro = microAug(resizePIL)
+                imgMicro.save(os.path.join(savePath, imgName + "_Micro.jpg"))
+                augNames.append(imgName + "_Micro")
+                augSex.append(sexs[i])
+                augAge.append(ages[i])
+                augAtom.append(anatom[i])
 
+            ### cut up
             if i not in [0,1,2,3]:
-                if np.random.rand(1) <= 0.36:
+                if np.random.rand(1) <= 0.1:
                     j = np.random.randint(0, i)
                     currentImageName = imgsNames[j]
                     currentSex = sexs[j]
@@ -249,6 +257,33 @@ if __name__ == "__main__":
                     augSex.append(currentSex)
                     augAge.append(currentAge)
                     augAtom.append(currentAnatom)
+
+            ### mix up
+            if i not in [0,1,2,3]:
+                if np.random.rand(1) <= 0.1:
+                    j = np.random.randint(0, i)
+                    currentImageName = imgsNames[j]
+                    currentSex = sexs[j]
+                    currentAge = ages[j]
+                    currentAnatom = anatom[j]
+                    currentImgPIL = Image.open(os.path.join(savePath, currentImageName + ".jpg")).convert(
+                        "RGB")
+                    mixImage = mixUp(resizePIL, tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])(currentImgPIL))
+                    mixImage.save(
+                        os.path.join(savePath, imgName + "_" + currentImageName + "_MixUp" + ".jpg"))
+                    augNames.append(imgName + "_" + currentImageName + "_MixUp")
+                    augSex.append(currentSex)
+                    augAge.append(currentAge)
+                    augAtom.append(currentAnatom)
+
+            if np.random.rand(1) <= 0.1:
+                ### hairs aug
+                imgHair = hairsAug(cv2.imread(os.path.join("./train", imgName + ".jpg")))
+                cv2.imwrite(os.path.join(savePath, imgName + "_Hair.jpg"), imgHair)
+                augNames.append(imgName + "_Hair")
+                augSex.append(sexs[i])
+                augAge.append(ages[i])
+                augAtom.append(anatom[i])
 
     if if_pos:
         targets = [1 for _ in range(len(augNames))]

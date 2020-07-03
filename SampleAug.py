@@ -8,22 +8,22 @@ import cv2
 def mixUp(image1, image2):
     im1Re = tv.transforms.ToTensor()(image1)
     im2Re = tv.transforms.ToTensor()(image2)
-    return tv.transforms.ToPILImage()(0.5 * im1Re + 0.5 * im2Re)
+    return tv.transforms.ToPILImage()(0.4 * im1Re + 0.6 * im2Re)
 
 def microAug(pilResize):
     img = tv.transforms.ToTensor()(pilResize)
     #print(img.shape)
     circle = cv2.circle((np.ones([img.shape[1], img.shape[2]]) * 255).astype(np.uint8),
-                        (np.random.randint(img.shape[2]//2 - 25, img.shape[2]//2 + 25),
-                         np.random.randint(img.shape[1]//2 - 25, img.shape[1]//2 + 25)),
-                        np.random.randint(img.shape[2]//2 - 25, img.shape[2]//2 + 25),
+                        (np.random.randint(img.shape[2]//2 - 40, img.shape[2]//2 + 40),
+                         np.random.randint(img.shape[1]//2 - 40, img.shape[1]//2 + 40)),
+                        np.random.randint(img.shape[2]//2 - 40, img.shape[2]//2 + 40),
                         (0, 0, 0),-1)
     mask = circle - 255
     img = np.multiply(img, mask)
     return tv.transforms.ToPILImage()(img)
 
 def hairsAug(img):
-    n_hairs = np.random.randint(80, 160)
+    n_hairs = np.random.randint(15, 20)
     height, width, _ = img.shape  # target image width and height
     hair_images = [im for im in os.listdir("./hair") if 'png' in im]
 
@@ -68,10 +68,10 @@ def CutMix(image1, image2):
 
 
 if __name__ == "__main__":
-    dataInfor = pd.read_csv("./CSVFile/trainNeg.csv")
-    savePath = "./NegTrainAugResize"
-    if_pos = False
-    csvName = "augNeg.csv"
+    dataInfor = pd.read_csv("./CSVFile/trainPos.csv")
+    savePath = "./PosTrainAugResize"
+    if_pos = True
+    csvName = "augPos.csv"
     if_part = False
 
     imgsNames = np.array(dataInfor["image_name"])
@@ -148,19 +148,20 @@ if __name__ == "__main__":
 
             ### microAug
             curList = [resizePIL, imgHF, imgVF, imgVFHF]
-            imgMicro = microAug(curList[np.random.randint(0, 4)])
-            imgMicro.save(os.path.join(savePath, imgName + "_Micro.jpg"))
-            augNames.append(imgName + "_Micro")
-            augSex.append(sexs[i])
-            augAge.append(ages[i])
-            augAtom.append(anatom[i])
+            for k,cur in enumerate(curList):
+                imgMicro = microAug(cur)
+                imgMicro.save(os.path.join(savePath, imgName + "_Micro" + str(k) + ".jpg"))
+                augNames.append(imgName + "_Micro" + str(k))
+                augSex.append(sexs[i])
+                augAge.append(ages[i])
+                augAtom.append(anatom[i])
 
             ### Random Corp
             randomCrop = tv.transforms.Compose([
-                tv.transforms.Resize([500, 700]),
+                tv.transforms.Resize([550, 750]),
                 tv.transforms.RandomCrop([int(272 * 1.118), int(408 * 1.118)])
             ])
-            for t in range(2):
+            for t in range(12):
                 imgRandomCorp = randomCrop(curList[np.random.randint(0, 4)])
                 imgRandomCorp.save(os.path.join(savePath, imgName + "_RandomCorp" + str(t) + ".jpg"))
                 augNames.append(imgName + "_RandomCorp" + str(t))
@@ -170,56 +171,52 @@ if __name__ == "__main__":
 
 
             ### cut mix
-            if i not in [0,1,2,3]:
-                previousJ = []
-                for t in range(3):
-                    j = np.random.randint(0, i)
-                    while j in previousJ:
-                        j = np.random.randint(0, i)
-                    previousJ.append(j)
-                    currentImageName = imgsNames[j]
-                    currentSex = sexs[j]
-                    currentAge = ages[j]
-                    currentAnatom = anatom[j]
-                    currentImgPIL = Image.open(os.path.join(savePath, currentImageName + ".jpg")).convert(
-                        "RGB")
-                    cutMixImage = CutMix(resizePIL, tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])(currentImgPIL))
-                    cutMixImage.save(
-                        os.path.join(savePath, imgName + "_" + currentImageName + "_CutUp" + ".jpg"))
-                    augNames.append(imgName + "_" + currentImageName + "_CutUp")
-                    augSex.append(currentSex)
-                    augAge.append(currentAge)
-                    augAtom.append(currentAnatom)
+            for t in range(38):
+                j = np.random.randint(0, len(imgsNames))
+                while j == i:
+                    j = np.random.randint(0, len(imgsNames))
+                currentImageName = imgsNames[j]
+                currentSex = sexs[j]
+                currentAge = ages[j]
+                currentAnatom = anatom[j]
+                currentImgPIL = Image.open(os.path.join("./train", currentImageName + ".jpg")).convert(
+                    "RGB")
+                cutMixImage = CutMix(resizePIL, tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])(currentImgPIL))
+                cutMixImage.save(
+                    os.path.join(savePath, imgName + "_" + currentImageName + "_CutUp" + str(t) + ".jpg"))
+                augNames.append(imgName + "_" + currentImageName + "_CutUp" + str(t))
+                augSex.append(currentSex)
+                augAge.append(currentAge)
+                augAtom.append(currentAnatom)
 
             ### mix up
-            if i not in [0,1,2,3]:
-                previousJ = []
-                for t in range(3):
-                    j = np.random.randint(0, i)
-                    while j in previousJ:
-                        j = np.random.randint(0, i)
-                    previousJ.append(j)
-                    currentImageName = imgsNames[j]
-                    currentSex = sexs[j]
-                    currentAge = ages[j]
-                    currentAnatom = anatom[j]
-                    currentImgPIL = Image.open(os.path.join(savePath, currentImageName + ".jpg")).convert(
-                        "RGB")
-                    mixImage = mixUp(resizePIL, tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])(currentImgPIL))
-                    mixImage.save(
-                        os.path.join(savePath, imgName + "_" + currentImageName + "_MixUp" + ".jpg"))
-                    augNames.append(imgName + "_" + currentImageName + "_MixUp")
-                    augSex.append(currentSex)
-                    augAge.append(currentAge)
-                    augAtom.append(currentAnatom)
+            for t in range(15):
+                j = np.random.randint(0, len(imgsNames))
+                while j == i:
+                    j = np.random.randint(0, len(imgsNames))
+                currentImageName = imgsNames[j]
+                currentSex = sexs[j]
+                currentAge = ages[j]
+                currentAnatom = anatom[j]
+                currentImgPIL = Image.open(os.path.join("./train", currentImageName + ".jpg")).convert(
+                    "RGB")
+                mixImage = mixUp(resizePIL, tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])(currentImgPIL))
+                mixImage.save(
+                    os.path.join(savePath, imgName + "_" + currentImageName + "_MixUp" + str(t) + ".jpg"))
+                augNames.append(imgName + "_" + currentImageName + "_MixUp" + str(t))
+                augSex.append(currentSex)
+                augAge.append(currentAge)
+                augAtom.append(currentAnatom)
 
+            fourList = ["", "_VerFlip", "_HorFlip", "_VerHorFlip"]
             ### hairs aug
-            imgHair = hairsAug(cv2.imread(os.path.join("./train", imgName + ".jpg")))
-            cv2.imwrite(os.path.join(savePath, imgName + "_Hair.jpg"), imgHair)
-            augNames.append(imgName + "_Hair")
-            augSex.append(sexs[i])
-            augAge.append(ages[i])
-            augAtom.append(anatom[i])
+            for k in range(4):
+                imgHair = hairsAug(cv2.imread(os.path.join(savePath, imgName + fourList[k] + ".jpg")))
+                cv2.imwrite(os.path.join(savePath, imgName + "_Hair" + str(k) + ".jpg"), imgHair)
+                augNames.append(imgName + "_Hair" + str(k))
+                augSex.append(sexs[i])
+                augAge.append(ages[i])
+                augAtom.append(anatom[i])
 
 
         else:

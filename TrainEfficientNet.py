@@ -30,8 +30,9 @@ def randomConcatTensor(t1s, t2s):
 if __name__ == "__main__":
     ### config
     ## The value of alpha must less than 0.5
-    alpha = 0
-    batchSize = 10
+    ### label smooth 0.05
+    alpha = 0.05
+    batchSize = 12
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
@@ -40,24 +41,25 @@ if __name__ == "__main__":
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
     ###
-    loadWeight = True
-    trainModelLoad = "Model_EF_b5AUC0.8688_AUCPR0.2704.pth"
+    loadWeight = False
+    trainModelLoad = "Model_EF_b5AUC0.8829_AUCPR0.276.pth"
     ###
-    LR = 1e-3
+    LR = 5e-4
     ###
     device0 = "cuda:0"
     model_name = "b5"
-    reg_lambda = 1.5e-4
+    reg_lambda = 2e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.5),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
         tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+        tv.transforms.CenterCrop([272, 408]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])

@@ -30,13 +30,13 @@ if __name__ == "__main__":
     ## The value of alpha must less than 0.5
     alpha = 0
     ### config
-    batchSize = 18
+    batchSize = 16
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
     reg_lambda = 1.5e-4
     reduction = 'mean'
-    drop_rate = 0.25
+    drop_rate = 0.2
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
@@ -44,19 +44,20 @@ if __name__ == "__main__":
     loadWeight = False
     trainModelLoad = "Model_Oth_AUC0.6531_AUCPR0.0406.pth"
     ###
-    LR = 1.e-3
+    LR = 1e-3
     ###
     device0 = "cuda:1"
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.5),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
         tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+        tv.transforms.CenterCrop([272, 408]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -73,8 +74,8 @@ if __name__ == "__main__":
                                     pin_memory=True)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
 
-    ### DenseNet-121
-    model = DenseNet(growth_rate=48, block_config=(6, 12, 24, 16),drop_rate=drop_rate,
+    ### DenseNet-169
+    model = DenseNet(growth_rate=48, block_config=(6, 12, 32, 32),drop_rate=drop_rate,
                      num_classes=labelsNumber,memory_efficient=False).to(device0)
     print(model)
 

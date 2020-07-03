@@ -56,10 +56,10 @@ if __name__ == "__main__":
 
     transformationTest = tv.transforms.Compose([
         tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+        tv.transforms.CenterCrop([272, 408]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
-
     trainNegDataSet = SIMM_DataSet(root="./NegTrainAugResize", csvFile="./CSVFile/augNeg.csv",
                                    transforms=transformationTrain, train=True, alpha = alpha)
     trainPosDataSet = SIMM_DataSet(root="./PosTrainAugResize", csvFile="./CSVFile/augPos.csv",

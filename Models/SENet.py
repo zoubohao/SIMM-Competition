@@ -5,7 +5,7 @@ import math
 import torch.nn as nn
 import torch.nn.functional as F
 
-__all__ = ['se_resnext50_32x4d', 'se_resnext101_32x4d']
+__all__ = [ 'se_resnext101_32x4d', "senet154"]
 
 
 class SEModule(nn.Module):
@@ -267,14 +267,11 @@ class SENet(nn.Module):
         x = self.logits(x)
         return x
 
-
-def se_resnext50_32x4d(num_classes=1000, dropout = 0.5):
-    model = SENet(SEResNeXtBottleneck, [3, 4, 6, 3], groups=32, reduction=16,
-                  dropout_p=dropout, inplanes=64, input_3x3=False,
-                  downsample_kernel_size=3, downsample_padding=1,
-                  num_classes=num_classes)
+def senet154(num_classes=1000, dropout = 0.5):
+    model = SENet(SEBottleneck, [3, 8, 36, 3], groups=64, reduction=16,
+                  dropout_p=dropout, num_classes=num_classes,
+                  downsample_kernel_size=3, downsample_padding=1)
     return model
-
 
 def se_resnext101_32x4d(num_classes=1000, dropout = 0.5):
     model = SENet(SEResNeXtBottleneck, [3, 4, 23, 3], groups=32, reduction=16,

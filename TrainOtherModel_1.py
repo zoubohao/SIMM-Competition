@@ -6,6 +6,8 @@ import torchvision as tv
 from torch.utils.data import DataLoader
 from Models.SENet import se_resnext101_32x4d
 from DataSet import SIMM_DataSet
+from WarmUpSch import GradualWarmupScheduler
+
 
 def generator(data_loader):
     while True:
@@ -27,39 +29,45 @@ def randomConcatTensor(t1s, t2s):
 
 if __name__ == "__main__":
     ## The value of alpha must less than 0.5
-    alpha = 1e-3
+    alpha = 0.0
     ### config
-    batchSize = 10
+    batchSize = 12
     labelsNumber = 1
-    epoch = 50
+    epoch = 10
     displayTimes = 20
-    reg_lambda = 1.e-4
+    reg_lambda = 2.5e-4
     reduction = 'mean'
-    drop_rate = 0.5
+    drop_rate = 0.6
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
     ###
-    loadWeight = False
-    trainModelLoad = "Model_Re_AUC0.8165_AUCPR0.1591.pth"
+    loadWeight = True
+    trainModelLoad = "Model_Oth_AUC0.8943_AUCPR0.1564.pth"
+    if_Ori = False
     ###
-    LR = 1.e-3
+    LR = 1e-4
+    warmEpoch = 2
+    multiplier = 5
     ###
     device0 = "cuda:0"
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.5),
+        tv.transforms.RandomCrop([224, 224]),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
-        tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop([272, 408]),
+        tv.transforms.Resize([256, 256]),
+        tv.transforms.CenterCrop([224, 224]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
+
+
     trainNegDataSet = SIMM_DataSet(root="./NegTrainAugResize", csvFile="./CSVFile/augNeg.csv",
                                    transforms=transformationTrain, train=True, alpha = alpha)
     trainPosDataSet = SIMM_DataSet(root="./PosTrainAugResize", csvFile="./CSVFile/augPos.csv",
@@ -67,12 +75,11 @@ if __name__ == "__main__":
     testDataSet = SIMM_DataSet(root="./train", csvFile="./CSVFile/val.csv",
                                transforms=transformationTest, train=True, alpha = alpha)
 
-    trainNegDataLoader = DataLoader(trainNegDataSet, batch_size=batchSize // 2, shuffle=True, pin_memory=True)
-    trainPosDataLoader = DataLoader(trainPosDataSet, batch_size=batchSize - batchSize // 2, shuffle=True,
-                                    pin_memory=True)
-    testloader = DataLoader(testDataSet, batch_size=1, shuffle=False)
+    trainNegDataLoader = DataLoader(trainNegDataSet,batch_size=batchSize // 2,shuffle=True,pin_memory=True, num_workers=2)
+    trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True, num_workers=2)
+    testloader = DataLoader(testDataSet, batch_size=1, shuffle=False, num_workers=2)
 
-    ### se_resnext50_32x4d
+    ### DenseNet-169
     model = se_resnext101_32x4d(num_classes=labelsNumber,dropout=drop_rate).to(device0)
     print(model)
 
@@ -85,9 +92,21 @@ if __name__ == "__main__":
     lossCri = nn.BCELoss(reduction=reduction).to(device0)
 
     optimizer = torch.optim.SGD(model.parameters(),lr=LR,momentum=0.9, weight_decay=reg_lambda,nesterov=True)
+    #optimizer = torch.optim.Adam(model.parameters(), lr=LR,  weight_decay=reg_lambda)
+    cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epoch, eta_min=0, last_epoch=-1)
+    scheduler = GradualWarmupScheduler(optimizer, multiplier=multiplier, total_epoch=warmEpoch, after_scheduler=cosine_scheduler)
 
     if loadWeight:
-        model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
+        if if_Ori:
+            currentDict = torch.load(modelSavePath + trainModelLoad)
+            newDict = {}
+            for key, value in currentDict.items():
+                if key != "layer2.0.downsample.0.weight" and key != "layer3.0.downsample.0.weight" \
+                        and key != "layer4.0.downsample.0.weight" and key != "last_linear.weight" and key != "last_linear.bias":
+                    newDict[key] = value
+            model.load_state_dict(newDict, strict=False)
+        else:
+            model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
 
     negGene = generator(trainNegDataLoader)
     posGene = generator(trainPosDataLoader)
@@ -152,10 +171,11 @@ if __name__ == "__main__":
                     aucPR = round(metrics.auc(recall, precision), 4)
                     fpr, tpr, thresholds = metrics.roc_curve(y_true=targetsList, y_score=scoreList, pos_label=1)
                     auc = round(metrics.auc(fpr, tpr), 4)
-                torch.save(model.state_dict(), modelSavePath + "Model_Oth_1" + "AUC" + str(auc)
+                torch.save(model.state_dict(), modelSavePath + "Model_Oth_" + "AUC" + str(auc)
                                + "_AUCPR" + str(aucPR) + ".pth")
                 model = model.train(mode=True)
-    torch.save(model.state_dict(), modelSavePath + "Model_OthF_1" + ".pth")
+        scheduler.step()
+    torch.save(model.state_dict(), modelSavePath + "Model_OthF" + ".pth")
 
 
 

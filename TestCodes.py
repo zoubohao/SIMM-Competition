@@ -126,20 +126,71 @@ from PIL import Image
 # print([1,2,3] + [3,4,5,6])
 
 
-previousJ = []
-for t in range(3):
-    j = np.random.randint(0, 3)
-    while j in previousJ:
-        j = np.random.randint(0, 3)
-    previousJ.append(j)
-print(previousJ)
+# previousJ = []
+# for t in range(3):
+#     j = np.random.randint(0, 3)
+#     while j in previousJ:
+#         j = np.random.randint(0, 3)
+#     previousJ.append(j)
+# print(previousJ)
+#
+#
+# print(round(0.62131232112321312321112,4))
+#
+# print(0.9 == (1. - 0.1))
+#
+# print(torch.sigmoid(torch.as_tensor(8.)))
+
+# from Models.MyEffiNet import ETNet
+# # testInput = torch.randn(size=[5, 3, 224, 224]).float()
+# # testModule = ETNet(1.5, 1.5 ,3, 0.5, 1, [224, 224])
+# # print(testModule)
+# # print(testModule(testInput).shape)
 
 
-print(round(0.62131232112321312321112,4))
+from Models.ETNet import ETNet
+from Models.EfficientNet import EfficientNet
+import torch
+from torch.utils.tensorboard import SummaryWriter
 
-print(0.9 == (1. - 0.1))
+writer = SummaryWriter()
+#model = EfficientNet.from_pretrained("efficientnet-b5",num_classes=1)
+model = ETNet(2, 1.8, 2, 0.5, 1, [224, 224])
+model = model.train(True)
+testInput = torch.randn(size=[8,3,224,224]).float()
+writer.add_graph(model,testInput)
+writer.close()
+print(model(testInput).shape)
 
-print(torch.sigmoid(torch.as_tensor(8.)))
 
+import torch.nn as nn
+import torch.nn.functional as F
+# testInput = torch.tensor(data=[-3,-2,-1,0,1,2,3,4,5,6]).float()
+# print(torch.clamp(testInput, min= -1, max=5))
+#
+# testInput = torch.randn(size=[3,14,512]).float()
+# testMo = nn.LayerNorm(512)
+# result = testMo(testInput)
+#
+# print(result.shape)
+# print((torch.abs(result) <= 0.1).float().sum())
 
+# testInput1 = torch.randn(size=[1, 1, 5 , 5]).float()
+# testInput2 = torch.randn(size=[1, 9, 1 , 1]).float()
+# print((testInput1 * testInput2).shape)
+
+# from Models.ETNet import PositionEncoding2D
+# i = 7
+# testM = PositionEncoding2D(i,i)
+# print(testM.pe)
+# pe = testM.pe.detach().cpu().numpy()
+# print(len(np.unique(pe.reshape(i*i))))
+# print(i * i)
+
+# test1 = torch.tensor([[1,2],[3,4]]).float().view([1,1,2,2])
+# test2 = torch.tensor([5,6]).float().view([1,2,1,1])
+#
+# print(test1)
+# print(test2)
+# print(test1 * test2)
 

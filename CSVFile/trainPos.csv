@@ -1,13 +1,4 @@
 image_name,sex,age_approx,anatom_site_general_challenge,target
-ISIC_0149568,female,55,upper extremity,1
-ISIC_0188432,female,50,upper extremity,1
-ISIC_0207268,male,55,torso,1
-ISIC_0232101,male,65,torso,1
-ISIC_0247330,female,65,lower extremity,1
-ISIC_0250839,male,75,head/neck,1
-ISIC_0272509,female,35,lower extremity,1
-ISIC_0273046,male,80,torso,1
-ISIC_0274382,male,65,torso,1
 ISIC_0275828,male,30,lower extremity,1
 ISIC_0280912,male,70,torso,1
 ISIC_0286360,male,60,upper extremity,1

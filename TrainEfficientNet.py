@@ -6,6 +6,7 @@ from Models.EfficientNet import EfficientNet
 from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
+from WarmUpSch import GradualWarmupScheduler
 
 
 
@@ -30,9 +31,9 @@ def randomConcatTensor(t1s, t2s):
 if __name__ == "__main__":
     ### config
     ## The value of alpha must less than 0.5
-    ### label smooth 0.05
-    alpha = 0.05
-    batchSize = 12
+    ### label smooth 0.01
+    alpha = 0.0
+    batchSize = 28
     labelsNumber = 1
     epoch = 50
     displayTimes = 20
@@ -41,28 +42,32 @@ if __name__ == "__main__":
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
     ###
-    loadWeight = False
-    trainModelLoad = "Model_EF_b5AUC0.8829_AUCPR0.276.pth"
+    loadWeight = True
+    trainModelLoad = "Model_EF_b5AUC0.892_AUCPR0.0622.pth"
     ###
-    LR = 5e-4
+    LR = 1e-4
+    warmEpoch = 5
+    multiplier = 10
     ###
     device0 = "cuda:0"
     model_name = "b5"
-    reg_lambda = 2e-4
+    reg_lambda = 1e-5
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
+        tv.transforms.RandomCrop([224, 224]),
         tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
-        tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop([272, 408]),
+        tv.transforms.Resize([256, 256]),
+        tv.transforms.CenterCrop([224, 224]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
+
 
     trainNegDataSet = SIMM_DataSet(root="./NegTrainAugResize",csvFile="./CSVFile/augNeg.csv",
                                    transforms=transformationTrain,train=True,alpha = alpha)
@@ -87,6 +92,8 @@ if __name__ == "__main__":
     lossCri = nn.BCELoss(reduction=reduction).to(device0)
 
     optimizer = torch.optim.SGD(model.parameters(),lr=LR,momentum=0.9, weight_decay=reg_lambda,nesterov=True)
+    cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epoch, eta_min=0, last_epoch=-1)
+    scheduler = GradualWarmupScheduler(optimizer, multiplier=multiplier, total_epoch=warmEpoch, after_scheduler=cosine_scheduler)
 
     if loadWeight :
         model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
@@ -158,6 +165,7 @@ if __name__ == "__main__":
                 torch.save(model.state_dict(), modelSavePath + "Model_EF_" + model_name + "AUC" + str(auc)
                            + "_AUCPR" + str(aucPR) + ".pth")
                 model = model.train(mode=True)
+        scheduler.step()
     torch.save(model.state_dict(), modelSavePath + modelSavePath + "Model_EFF_.pth")
 
 

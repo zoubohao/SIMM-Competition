@@ -8,7 +8,7 @@ import cv2
 # def mixUp(image1, image2):
 #     im1Re = tv.transforms.ToTensor()(image1)
 #     im2Re = tv.transforms.ToTensor()(image2)
-#     return tv.transforms.ToPILImage()(0.4 * im1Re + 0.6 * im2Re)
+#     return tv.transforms.ToPILImage()(0.5 * im1Re + 0.5 * im2Re)
 
 # def microAug(pilResize):
 #     img = tv.transforms.ToTensor()(pilResize)
@@ -52,9 +52,53 @@ import cv2
 ### Center crop  ---> 387
 ### Resize -----> 430
 
+def histEqu(img, saveName):
+    rChannels = img[:, :, 0]
+    gChannels = img[:, :, 1]
+    bChannels = img[:, :, 2]
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    rHist = cv2.equalizeHist(rChannels)
+    gHist = cv2.equalizeHist(gChannels)
+    bHist = cv2.equalizeHist(bChannels)
+    grayHist = cv2.equalizeHist(gray)
+    ##
+    cv2.imwrite(saveName + "rHist" + ".jpg",rHist)
+    augNames.append(imgName + "rHist")
+    augSex.append(sexs[i])
+    augAge.append(ages[i])
+    augAtom.append(anatom[i])
+    ##
+    cv2.imwrite(saveName + "gHist" + ".jpg",gHist)
+    augNames.append(imgName + "gHist")
+    augSex.append(sexs[i])
+    augAge.append(ages[i])
+    augAtom.append(anatom[i])
+    ##
+    cv2.imwrite(saveName + "bHist" + ".jpg",bHist)
+    augNames.append(imgName + "bHist")
+    augSex.append(sexs[i])
+    augAge.append(ages[i])
+    augAtom.append(anatom[i])
+    ##
+    cv2.imwrite(saveName + "grayHist" + ".jpg",grayHist)
+    augNames.append(imgName + "grayHist")
+    augSex.append(sexs[i])
+    augAge.append(ages[i])
+    augAtom.append(anatom[i])
+    ##
+    rgbHist = np.stack([rHist, gHist, bHist], axis= -1)
+    #print(rgbHist.shape)
+    cv2.imwrite(saveName + "rgbHist" + ".jpg",rgbHist)
+    augNames.append(imgName + "rgbHist")
+    augSex.append(sexs[i])
+    augAge.append(ages[i])
+    augAtom.append(anatom[i])
+
+
+
 def CutMix(image1, image2):
-    imageW = 408
-    imageH = 272
+    imageW = 256
+    imageH = 256
     ##
     la = np.random.randint(2,4)
     ##
@@ -72,11 +116,10 @@ def CutMix(image1, image2):
 
 
 if __name__ == "__main__":
-    dataInfor = pd.read_csv("./CSVFile/trainNeg.csv")
-    savePath = "./NegTrainAugResize"
-    if_pos = False
-    csvName = "augNeg.csv"
-    if_part = False
+    dataInfor = pd.read_csv("./CSVFile/trainPos.csv")
+    savePath = "./PosTrainAugResize"
+    if_pos = True
+    csvName = "augPos.csv"
 
     imgsNames = np.array(dataInfor["image_name"])
     sexs = np.array(dataInfor["sex"])
@@ -88,29 +131,14 @@ if __name__ == "__main__":
     print(len(ages))
     print(len(anatom))
 
-    length = 28000
-
-    if if_part:
-        index = list(range(length))
-        np.random.shuffle(index)
-        imgsNames = imgsNames[index][0: length]
-        sexs = sexs[index][0: length]
-        ages = ages[index][0: length]
-        anatom = anatom[index][0: length]
-
-    print(len(imgsNames))
-    print(len(sexs))
-    print(len(ages))
-    print(len(anatom))
-
     augNames = []
     augSex = []
     augAge = []
     augAtom = []
 
-    centerCrop = tv.transforms.CenterCrop([272, 408])
-    resize = tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)])
-    randomCrop = tv.transforms.RandomCrop([272, 408])
+    centerCrop = tv.transforms.CenterCrop([256, 256])
+    resize = tv.transforms.Resize([288, 288])
+    randomCrop = tv.transforms.RandomCrop([256, 256])
 
     for i, imgName in enumerate(imgsNames):
         thisAnatom = anatom[i]
@@ -118,7 +146,7 @@ if __name__ == "__main__":
         if if_pos:
             imgPIL = Image.open(os.path.join("./train", imgName + ".jpg")).convert("RGB")
             resizePIL = resize(imgPIL)
-            ### ori 272, 408
+            ### ori 272, 408 int(272 * 1.118), int(408 * 1.118)
             centerCropPIL = centerCrop(resizePIL)
             centerCropPIL.save(os.path.join(savePath, imgName + ".jpg"))
             augNames.append(imgName)
@@ -151,26 +179,9 @@ if __name__ == "__main__":
             augAge.append(ages[i])
             augAtom.append(anatom[i])
 
-            ### random crop
-            op = [tv.transforms.Compose([
-                tv.transforms.RandomVerticalFlip(p=1.),
-                tv.transforms.RandomHorizontalFlip(p=1.)
-                                        ]),
-                tv.transforms.RandomVerticalFlip(p=1.),
-                tv.transforms.RandomHorizontalFlip(p=1.),
-                tv.transforms.CenterCrop([int(272 * 1.118), int(408 * 1.118)])
-            ]
-            for t in range(31):
-                randCropPIL = randomCrop(op[np.random.randint(0,4)](resizePIL))
-                randCropPIL.save(os.path.join(savePath, imgName + "_RandomCrop" + str(t) + ".jpg"))
-                augNames.append(imgName + "_RandomCrop" + str(t))
-                augSex.append(sexs[i])
-                augAge.append(ages[i])
-                augAtom.append(anatom[i])
-
             cutMixList = [centerCropPIL, imgHF, imgVF, imgVFHF]
             ### cut mix
-            for t in range(35):
+            for t in range(28):
                 j = np.random.randint(0, len(imgsNames))
                 while j == i:
                     j = np.random.randint(0, len(imgsNames))
@@ -188,6 +199,27 @@ if __name__ == "__main__":
                 augAge.append(currentAge)
                 augAtom.append(currentAnatom)
 
+            ### imgNames [256]
+            namesList = [imgName, imgName + "_VerFlip", imgName + "_HorFlip", imgName + "_VerHorFlip"]
+            for oneName in namesList:
+                resizeCV2 = cv2.imread(os.path.join("./PosTrainAugResize", oneName + ".jpg"))
+                histEqu(resizeCV2, os.path.join("./PosTrainAugResize", oneName))
+
+            ### random crop
+            transformationList = [resizePIL, tv.transforms.RandomVerticalFlip(p=1.)(resizePIL),
+                                  tv.transforms.RandomHorizontalFlip(p=1.)(resizePIL),
+                                  tv.transforms.Compose([
+                                      tv.transforms.RandomVerticalFlip(p=1.),
+                                      tv.transforms.RandomHorizontalFlip(p=1.)
+                                  ])(resizePIL)]
+            for t in range(7):
+                imgRandom = randomCrop(transformationList[np.random.randint(0,4)])
+                imgRandom.save(os.path.join(savePath, imgName + "_" +  str(t) +  "_Random.jpg"))
+                augNames.append(imgName + "_" +  str(t) + "_Random")
+                augSex.append(sexs[i])
+                augAge.append(ages[i])
+                augAtom.append(anatom[i])
+
         else:
 
             imgPIL = Image.open(os.path.join("./train", imgName + ".jpg")).convert("RGB")
@@ -200,8 +232,12 @@ if __name__ == "__main__":
             augAge.append(ages[i])
             augAtom.append(anatom[i])
 
-            ### cut mix
-            if np.random.rand(1) <= 0.3:
+            randNum = np.random.rand(1)
+
+            if randNum <= 0.025:
+                resizeCV2 = cv2.imread(os.path.join("./NegTrainAugResize", imgName + ".jpg"))
+                histEqu(resizeCV2, os.path.join("./NegTrainAugResize", imgName))
+            elif 0.025 < randNum <= 0.15:
                 j = np.random.randint(0, len(imgsNames))
                 while j == i:
                     j = np.random.randint(0, len(imgsNames))

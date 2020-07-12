@@ -155,7 +155,8 @@ from torch.utils.tensorboard import SummaryWriter
 
 writer = SummaryWriter()
 #model = EfficientNet.from_pretrained("efficientnet-b5",num_classes=1)
-model = ETNet(2, 1.8, 2, 0.5, 1, [224, 224])
+model = ETNet(w = 2, d = 1.5, expand_ratio = 3, drop_ratio = 0.5, classes_num=1,
+                  input_image_size=[224, 224])
 model = model.train(True)
 testInput = torch.randn(size=[8,3,224,224]).float()
 writer.add_graph(model,testInput)
@@ -179,13 +180,13 @@ import torch.nn.functional as F
 # testInput2 = torch.randn(size=[1, 9, 1 , 1]).float()
 # print((testInput1 * testInput2).shape)
 
-# from Models.ETNet import PositionEncoding2D
-# i = 7
-# testM = PositionEncoding2D(i,i)
-# print(testM.pe)
-# pe = testM.pe.detach().cpu().numpy()
-# print(len(np.unique(pe.reshape(i*i))))
-# print(i * i)
+from Models.ETNet import PositionEncoding2D
+i = 28
+testM = PositionEncoding2D(i,i)
+print(testM.pe)
+pe = testM.pe.detach().cpu().numpy()
+print(len(np.unique(pe.reshape(i*i))))
+print(i * i)
 
 # test1 = torch.tensor([[1,2],[3,4]]).float().view([1,1,2,2])
 # test2 = torch.tensor([5,6]).float().view([1,2,1,1])

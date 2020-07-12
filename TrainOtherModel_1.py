@@ -31,9 +31,9 @@ if __name__ == "__main__":
     ## The value of alpha must less than 0.5
     alpha = 0.0
     ### config
-    batchSize = 12
+    batchSize = 38
     labelsNumber = 1
-    epoch = 10
+    epoch = 60
     displayTimes = 20
     reg_lambda = 2.5e-4
     reduction = 'mean'
@@ -42,13 +42,13 @@ if __name__ == "__main__":
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
     ###
-    loadWeight = True
-    trainModelLoad = "Model_Oth_AUC0.8943_AUCPR0.1564.pth"
-    if_Ori = False
+    loadWeight = False
+    trainModelLoad = "senet154-c7b49a05.pth"
+    if_Ori = True
     ###
     LR = 1e-4
     warmEpoch = 2
-    multiplier = 5
+    multiplier = 10
     ###
     device0 = "cuda:0"
 

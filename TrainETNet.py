@@ -6,6 +6,7 @@ from Models.ETNet import ETNet
 from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
+from WarmUpSch import GradualWarmupScheduler
 
 
 def generator(data_loader):
@@ -30,23 +31,24 @@ if __name__ == "__main__":
     ## The value of alpha must less than 0.5
     ### label smooth 0.01
     alpha = 0.00
-    batchSize = 18
+    batchSize = 16
     labelsNumber = 1
     epoch = 60
     displayTimes = 20
     reduction = 'mean'
-    drop_rate = 0.2
+    drop_rate = 0.15
     ###
     modelSavePath = "./Model_Weight/"
     ###
     loadWeight = False
-    trainModelLoad = "Model_ETNet_AUC0.735_AUCPR0.0173.pth"
+    trainModelLoad = "Model_ETNet_AUC0.7965_AUCPR0.0421.pth"
     ###
-    LR = 1e-3
-    iteration = 10
+    LR = 1e-4
+    warmEpoch = 3
+    multiplier = 10
     ###
     device0 = "cuda:1"
-    reg_lambda = 1e-5
+    reg_lambda = 1e-4
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
@@ -74,7 +76,7 @@ if __name__ == "__main__":
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True, num_workers=2)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False, num_workers=2)
 
-    model = ETNet(w = 2., d = 1.5, expand_ratio = 2, drop_ratio = drop_rate, classes_num=labelsNumber,
+    model = ETNet(w = 2 , d = 1.5, expand_ratio = 3, drop_ratio = drop_rate, classes_num=labelsNumber,
                   input_image_size=[224, 224]).to(device0)
     print(model)
 
@@ -88,7 +90,9 @@ if __name__ == "__main__":
     lossCri = nn.BCELoss(reduction=reduction).to(device0)
 
     optimizer = torch.optim.SGD(model.parameters(), lr=LR, momentum=0.9, weight_decay=reg_lambda, nesterov=True)
-    cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, iteration, eta_min=0, last_epoch=-1)
+    cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epoch, eta_min=0, last_epoch=-1)
+    scheduler = GradualWarmupScheduler(optimizer, multiplier=multiplier, total_epoch=warmEpoch,
+                                       after_scheduler=cosine_scheduler)
 
     if loadWeight :
         model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
@@ -160,7 +164,7 @@ if __name__ == "__main__":
                 torch.save(model.state_dict(), modelSavePath + "Model_ETNet_" + "AUC" + str(auc)
                            + "_AUCPR" + str(aucPR) + ".pth")
                 model = model.train(mode=True)
-        cosine_scheduler.step()
+        scheduler.step()
     torch.save(model.state_dict(), modelSavePath + modelSavePath + "Model_ETNetF_.pth")
 
 

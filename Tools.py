@@ -161,13 +161,15 @@ class SE(nn.Module):
     def __init__(self,in_channels,out_channels,reduce_factor = 2):
         super().__init__()
         self.dense1 = nn.Conv2d(in_channels,out_channels=in_channels // reduce_factor,kernel_size=1,
-                                stride=1,padding=0,groups=4)
+                                stride=1,padding=0)
+        self.bn = nn.BatchNorm2d(in_channels // reduce_factor, eps=1e-3, momentum=1 - 0.99)
         self.dense2 = nn.Conv2d(in_channels // reduce_factor,out_channels=out_channels,kernel_size=1,
                                 stride=1,padding=0)
+        self.act = MemoryEfficientSwish()
 
     def forward(self,x):
         globalPooling = F.adaptive_avg_pool2d(x,[1,1])
-        dense1 = F.relu(self.dense1(globalPooling),True)
+        dense1 = self.act((self.bn(self.dense1(globalPooling))))
         dense2 = self.dense2(dense1)
         return torch.sigmoid(dense2)
 

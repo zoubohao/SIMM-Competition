@@ -40,10 +40,8 @@ class SIMM_DataSet(Dataset):
             img = self.transforms(img)
         if self.if_train:
             target = torch.as_tensor(self.labels[idx]).float()
-
             return img, target
         else:
-
             return img, self.imgs[idx]
 
 

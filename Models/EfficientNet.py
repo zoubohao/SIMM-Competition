@@ -263,8 +263,8 @@ class EfficientNet(nn.Module):
             #print(idx)
             drop_connect_rate = self._global_params.drop_connect_rate
             #print("Drop before scale ",drop_connect_rate)
-            # if drop_connect_rate:
-            #     drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
+            if drop_connect_rate:
+                drop_connect_rate *= float(idx) / len(self._blocks) # scale drop connect_rate
             #print("Drop after scale ",drop_connect_rate)
             x = block(x, drop_connect_rate=drop_connect_rate)
         
@@ -284,10 +284,10 @@ class EfficientNet(nn.Module):
             Output of this model after processing.
         """
         bs = inputs.size(0)
-        #print(inputs.shape)
+        #print("input shape",inputs.shape)
         # Convolution layers
         x = self.extract_features(inputs)
-        #print(x.shape)
+        #print("x shape",x.shape)
 
         # Pooling and final linear layer
         x = self._avg_pooling(x)

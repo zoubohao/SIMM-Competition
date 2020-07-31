@@ -15,9 +15,15 @@ def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
     effi.load_state_dict(torch.load(effi_weight_path))
     effi = effi.eval()
     ## transformations of testing
+    # transformations = tv.transforms.Compose([
+    #     tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+    #     tv.transforms.CenterCrop([272, 408]),
+    #     tv.transforms.ToTensor(),
+    #     tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    # ])
     transformations = tv.transforms.Compose([
-        tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop([272, 408]),
+        tv.transforms.Resize([576, 576]),
+        tv.transforms.CenterCrop([512, 512]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -39,15 +45,22 @@ def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
     return imgNames, effiResults
 
 
-def constructOtherModel(model_weight_path, csv_file, img_path, model = None):
+def constructOtherModel(model_weight_path, csv_file, img_path, model):
     imgNames = list()
     results = list()
+    model = model.to(device)
     model.load_state_dict(torch.load(model_weight_path))
     model = model.eval()
     ## transformations of testing
+    # transformations = tv.transforms.Compose([
+    #     tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+    #     tv.transforms.CenterCrop([272, 408]),
+    #     tv.transforms.ToTensor(),
+    #     tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    # ])
     transformations = tv.transforms.Compose([
-        tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop([272, 408]),
+        tv.transforms.Resize([576, 576]),
+        tv.transforms.CenterCrop([512, 512]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -70,19 +83,20 @@ def constructOtherModel(model_weight_path, csv_file, img_path, model = None):
 
 if __name__ == "__main__":
     import torch.nn as nn
-    from Models.SENet import senet154
+    from Models.ETNet import ETNet
     #### file path
-    modelWeight = "./Model_Weight/Model_Oth_AUC0.8892_AUCPR0.3317.pth"  ### change here
+    modelWeight = "./Model_Weight/Model_EF_b5AUC0.9644_AUCPR0.8817.pth"  ### change here
     CSV = "./CSVFile/test.csv"
     imgFilesFolder = "./test"
     ### name string for efficient net
     modelName = "b5"
-    outputName = "_TEST_0.8892_test"  ### change here
+    outputName = "_TEST_0.9644_test"  ### change here
     ### construction data or testing the result
     if_test = True
     ### other model test
-    if_other_model = True
-    modelModule = senet154(1).to(device)
+    if_other_model = False
+    modelModule =  ETNet(w = 1 , d = 1.5, expand_ratio = 2, drop_ratio = 0.1, classes_num=1,
+                  input_image_size=[352, 352])
 
     Data = pd.read_csv(CSV)
     if if_test is False:
@@ -102,7 +116,7 @@ if __name__ == "__main__":
                             "effi" + modelName + "Result": effiR,
                             "target": targets
                             }
-            dataframe = pd.DataFrame(dataframeMap).to_csv("./CSVFile/Test/Effi" + modelName + outputName + ".csv",
+            dataframe = pd.DataFrame(dataframeMap).to_csv("./CSVFile/Effi" + modelName + outputName + ".csv",
                                                           index=False)
         except KeyError:
             if if_other_model:
@@ -115,7 +129,7 @@ if __name__ == "__main__":
                             "anatom_site_general_challenge": anatom,
                             "effi" + modelName + "Result": effiR,
                             }
-            dataframe = pd.DataFrame(dataframeMap).to_csv("./CSVFile/Test/Effi" + modelName + outputName + ".csv",
+            dataframe = pd.DataFrame(dataframeMap).to_csv("./CSVFile/Effi" + modelName + outputName + ".csv",
                                                           index=False)
 
     else:

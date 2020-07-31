@@ -7,7 +7,7 @@ from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
 from WarmUpSch import GradualWarmupScheduler
-
+import torch.cuda.amp as amp
 
 
 
@@ -32,38 +32,37 @@ if __name__ == "__main__":
     ### config
     ## The value of alpha must less than 0.5
     ### label smooth 0.01
-    alpha = 0.0
-    batchSize = 28
+    alpha = 0.
+    batchSize = 10
     labelsNumber = 1
-    epoch = 50
+    epoch = 20
     displayTimes = 20
     reduction = 'mean'
     ###
     modelSavePath = "./Model_Weight/"
     saveTimes = 2500
     ###
-    loadWeight = True
-    trainModelLoad = "Model_EF_b5AUC0.892_AUCPR0.0622.pth"
+    loadWeight = False
+    trainModelLoad = "Model_EF_b5AUC0.8848_AUCPR0.5452.pth"
     ###
-    LR = 1e-4
+    LR = 1e-5
     warmEpoch = 5
-    multiplier = 10
+    multiplier = 100
     ###
     device0 = "cuda:0"
     model_name = "b5"
-    reg_lambda = 1e-5
+    reg_lambda = 5e-5
 
     ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomCrop([224, 224]),
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.25),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=25)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
-        tv.transforms.Resize([256, 256]),
-        tv.transforms.CenterCrop([224, 224]),
+        tv.transforms.Resize([576, 576]),
+        tv.transforms.CenterCrop([512, 512]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -89,11 +88,12 @@ if __name__ == "__main__":
     print("Negative samples number ",negLength)
     trainTimesInOneEpoch = max(negLength,posLength) // (batchSize // 2) + 1
 
-    lossCri = nn.BCELoss(reduction=reduction).to(device0)
+    lossCri = nn.BCEWithLogitsLoss(reduction=reduction).to(device0)
 
     optimizer = torch.optim.SGD(model.parameters(),lr=LR,momentum=0.9, weight_decay=reg_lambda,nesterov=True)
     cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epoch, eta_min=0, last_epoch=-1)
     scheduler = GradualWarmupScheduler(optimizer, multiplier=multiplier, total_epoch=warmEpoch, after_scheduler=cosine_scheduler)
+    scaler = amp.GradScaler()
 
     if loadWeight :
         model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
@@ -106,7 +106,6 @@ if __name__ == "__main__":
     trainingTimes = 0
     print("Training %3d times in one epoch" % (trainTimesInOneEpoch,))
     for e in range(1,epoch + 1):
-
         for times in range(trainTimesInOneEpoch):
             imgsNegTr,  targetsNegTr = negGene.__next__()
             imgsPosTr,  targetsPosTr = posGene.__next__()
@@ -114,14 +113,17 @@ if __name__ == "__main__":
                 [imgsNegTr,  targetsNegTr],
                 [imgsPosTr,  targetsPosTr])
             imagesCuda = imgsTr.to(device0, non_blocking=True)
-            labelsCuda = targetsTr.float().to(device0, non_blocking=True)
+            labelsCuda = targetsTr.float().to(device0, non_blocking=True).view([-1,1])
+            #print(imagesCuda.shape)
 
             ## img, sex, age_approx, anatom
             optimizer.zero_grad()
-            predict = torch.sigmoid(model(imagesCuda)).squeeze()
-            criLoss = lossCri(predict, labelsCuda)
-            criLoss.backward()
-            optimizer.step()
+            with amp.autocast():
+                predict = model(imagesCuda)
+                criLoss = lossCri(predict, labelsCuda)
+            scaler.scale(criLoss).backward()
+            scaler.step(optimizer)
+            scaler.update()
             trainingTimes += 1
 
             if trainingTimes % displayTimes == 0:
@@ -130,7 +132,7 @@ if __name__ == "__main__":
                     print("Epoch : %d , Training time : %d" % (e, trainingTimes))
                     print("Cri Loss is %.3f " % (criLoss.item()))
                     print("Learning rate is ", optimizer.state_dict()['param_groups'][0]["lr"])
-                    print("predicted labels : ", predict[0:5])
+                    print("predicted labels : ", torch.sigmoid(predict[0:5]))
                     print("Truth labels : ", labelsCuda[0:5])
 
 

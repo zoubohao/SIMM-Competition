@@ -1,3 +1,5 @@
+from abc import ABC
+
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -9,7 +11,7 @@ import numpy as np
 from Tools import SE
 
 
-class PositionEncoding2D(nn.Module):
+class PositionEncoding2D(nn.Module, ABC):
 
     def __init__(self,reducedHeight, reducedWidth):
         super().__init__()
@@ -37,7 +39,7 @@ class PositionEncoding2D(nn.Module):
         return x + self.pe
 
 
-class AttentionAugmentedConvolution(nn.Module):
+class AttentionAugmentedConvolution(nn.Module, ABC):
 
     def __init__(self, inChannels, reducedHeight, reducedWidth, drop_p = 0.1):
         super().__init__()
@@ -190,7 +192,7 @@ class ETNet (nn.Module):
 
     def __init__(self, w, d, expand_ratio, drop_ratio,classes_num,input_image_size):
         """
-        :param w: coefficient of channels
+        :param w: coefficient of channels, must be divided by 2.
         :param d: coefficient of layers
         :param expand_ratio: expand ratio of channels of each layers
         :param drop_ratio: drop rate

@@ -5,7 +5,7 @@ from DataSet import SIMM_DataSet
 from torch.utils.data import DataLoader
 import pandas as pd
 
-device = "cuda:1"
+device = "cuda:0"
 
 
 def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
@@ -15,9 +15,15 @@ def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
     effi.load_state_dict(torch.load(effi_weight_path))
     effi = effi.eval()
     ## transformations of testing
+    # transformations = tv.transforms.Compose([
+    #     tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+    #     tv.transforms.CenterCrop([272, 408]),
+    #     tv.transforms.ToTensor(),
+    #     tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    # ])
     transformations = tv.transforms.Compose([
-        tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop([272, 408]),
+        tv.transforms.Resize([256, 256]),
+        tv.transforms.CenterCrop([224, 224]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -39,15 +45,22 @@ def constructEffiData(effi_weight_path, csv_file, img_path, model_name):
     return imgNames, effiResults
 
 
-def constructOtherModel(model_weight_path, csv_file, img_path, model = None):
+def constructOtherModel(model_weight_path, csv_file, img_path, model):
     imgNames = list()
     results = list()
+    model = model.to(device)
     model.load_state_dict(torch.load(model_weight_path))
     model = model.eval()
     ## transformations of testing
+    # transformations = tv.transforms.Compose([
+    #     tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
+    #     tv.transforms.CenterCrop([272, 408]),
+    #     tv.transforms.ToTensor(),
+    #     tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    # ])
     transformations = tv.transforms.Compose([
-        tv.transforms.Resize([int(272 * 1.118), int(408 * 1.118)]),
-        tv.transforms.CenterCrop([272, 408]),
+        tv.transforms.Resize([256, 256]),
+        tv.transforms.CenterCrop([224, 224]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -70,18 +83,21 @@ def constructOtherModel(model_weight_path, csv_file, img_path, model = None):
 
 if __name__ == "__main__":
     import torch.nn as nn
+    from Models.ETNet import ETNet
     #### file path
-    modelWeight = "./Model_Weight/Model_EF_b5AUC0.8811_AUCPR0.2081.pth"  ### change here
+    modelWeight = "./Model_Weight/Model_EF_b5AUC0.89_AUCPR0.0669.pth"  ### change here
     CSV = "./CSVFile/test.csv"
     imgFilesFolder = "./test"
     ### name string for efficient net
     modelName = "b5"
-    outputName = "_TEST_0.8811_test"  ### change here
+    outputName = "_TEST_0.89_test"  ### change here
     ### construction data or testing the result
     if_test = True
     ### other model test
     if_other_model = False
-    modelModule = nn.Module
+    modelModule =  ETNet(w = 2 , d = 1.5, expand_ratio = 3, drop_ratio = 0, classes_num=1,
+                  input_image_size=[224, 224])
+
 
     Data = pd.read_csv(CSV)
     if if_test is False:

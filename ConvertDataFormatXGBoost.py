@@ -13,17 +13,10 @@ def oneHot(mapPara, oneArray):
     return zerosMatrix
 
 
-def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
+def convertXGBoostData(csvFile, anatomMapping, sexMapping):
     data = pd.read_csv(csvFile)
     colNames = data.columns
 
-    with open(ageMapping,"r") as rh:
-        ageX = {}
-        for line in rh:
-            oneline = line.strip()
-            if oneline != "":
-                oneline = oneline.split(",")
-                ageX[oneline[0]] = int(oneline[1])
 
 
     with open(anatomMapping,"r") as rh:
@@ -43,10 +36,6 @@ def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
                 sexMap[oneline[0]] = int(oneline[1])
 
     ### transform age, age contains order information, so, we can't transform it into onehot encoder
-    newAgeOrderInt = list()
-    for ageNum in data["age_approx"]:
-        #print(ageNum)
-        newAgeOrderInt.append(ageX[str(ageNum)])
 
     newAnatomInt = list()
     for anaStr in data["anatom_site_general_challenge"]:
@@ -62,7 +51,7 @@ def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
     sexOneHot = oneHot(sexMap, newSexInt)
 
     ### concat
-    matrix = np.concatenate([np.array(newAgeOrderInt).reshape([-1,1]), anatomOneHot, sexOneHot], axis=1)
+    matrix = np.concatenate([np.array(data["age_approx"]).reshape([-1,1]), anatomOneHot, sexOneHot], axis=1)
 
     ### concat other array
     for colName in colNames:
@@ -78,7 +67,8 @@ def convertXGBoostData(csvFile, ageMapping, anatomMapping, sexMapping):
 
 
 if __name__ == "__main__":
-    testM, testT = convertXGBoostData(csvFile="./CSVFile/SecondTrainNeg.csv", ageMapping="./MappingFile/ageMapping.txt",
+    ### test function
+    testM, testT = convertXGBoostData(csvFile="./CSVFile/SecondTrainNeg.csv",
                                       anatomMapping="./MappingFile/anatomMapping.txt", sexMapping="./MappingFile/sexMapping.txt")
     print(testM.shape)
     print(testM[0:10])

@@ -7,7 +7,7 @@ from DataSet import SIMM_DataSet
 import torch.nn as nn
 import numpy as np
 from WarmUpSch import GradualWarmupScheduler
-
+import torch.cuda.amp as amp
 
 def generator(data_loader):
     while True:
@@ -29,38 +29,39 @@ def randomConcatTensor(t1s, t2s):
 if __name__ == "__main__":
     ### config
     ## The value of alpha must less than 0.5
-    ### label smooth 0.01
-    alpha = 0.00
-    batchSize = 16
+    ### label smooth 0.001
+    alpha = 0.0
+    batchSize = 4
     labelsNumber = 1
-    epoch = 60
+    epoch = 10
     displayTimes = 20
     reduction = 'mean'
-    drop_rate = 0.15
+    drop_rate = 0.2
+    saveTimes = 5000
     ###
     modelSavePath = "./Model_Weight/"
     ###
     loadWeight = False
-    trainModelLoad = "Model_ETNet_AUC0.7965_AUCPR0.0421.pth"
+    trainModelLoad = "Model_ETNet_AUC0.8805_AUCPR0.5707.pth"
     ###
-    LR = 1e-4
-    warmEpoch = 3
-    multiplier = 10
+    LR = 1e-5
+    warmEpoch = 1
+    multiplier = 100
     ###
     device0 = "cuda:1"
-    reg_lambda = 1e-4
+    reg_lambda = 1e-5
 
     ### Data pre-processing
+    ### Data pre-processing
     transformationTrain = tv.transforms.Compose([
-        tv.transforms.RandomCrop([224, 224]),
-        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=30)], p=0.25),
+        tv.transforms.RandomApply([tv.transforms.RandomRotation(degrees=25)], p=0.25),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])
 
     transformationTest = tv.transforms.Compose([
-        tv.transforms.Resize([256, 256]),
-        tv.transforms.CenterCrop([224, 224]),
+        tv.transforms.Resize([576, 576]),
+        tv.transforms.CenterCrop([512, 512]),
         tv.transforms.ToTensor(),
         tv.transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
@@ -76,8 +77,8 @@ if __name__ == "__main__":
     trainPosDataLoader = DataLoader(trainPosDataSet, batch_size= batchSize - batchSize // 2, shuffle=True, pin_memory=True, num_workers=2)
     testloader = DataLoader(testDataSet, batch_size=1, shuffle=False, num_workers=2)
 
-    model = ETNet(w = 2 , d = 1.5, expand_ratio = 3, drop_ratio = drop_rate, classes_num=labelsNumber,
-                  input_image_size=[224, 224]).to(device0)
+    model = ETNet(w = 1 , d = 1.5, expand_ratio = 2, drop_ratio = drop_rate, classes_num=labelsNumber,
+                  input_image_size=[352, 352]).to(device0)
     print(model)
 
     negLength = trainNegDataSet.__len__()
@@ -85,15 +86,14 @@ if __name__ == "__main__":
     print("Positive samples number ", posLength)
     print("Negative samples number ",negLength)
     trainTimesInOneEpoch = max(negLength,posLength) // (batchSize // 2) + 1
-    saveTimes = trainTimesInOneEpoch
 
-    lossCri = nn.BCELoss(reduction=reduction).to(device0)
+    lossCri = nn.BCEWithLogitsLoss(reduction=reduction).to(device0)
 
     optimizer = torch.optim.SGD(model.parameters(), lr=LR, momentum=0.9, weight_decay=reg_lambda, nesterov=True)
     cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epoch, eta_min=0, last_epoch=-1)
     scheduler = GradualWarmupScheduler(optimizer, multiplier=multiplier, total_epoch=warmEpoch,
                                        after_scheduler=cosine_scheduler)
-
+    scaler = amp.GradScaler()
     if loadWeight :
         model.load_state_dict(torch.load(modelSavePath + trainModelLoad))
 
@@ -105,7 +105,6 @@ if __name__ == "__main__":
     trainingTimes = 0
     print("Training %3d times in one epoch" % (trainTimesInOneEpoch,))
     for e in range(1,epoch + 1):
-
         for times in range(trainTimesInOneEpoch):
             imgsNegTr,  targetsNegTr = negGene.__next__()
             imgsPosTr,  targetsPosTr = posGene.__next__()
@@ -113,14 +112,17 @@ if __name__ == "__main__":
                 [imgsNegTr,  targetsNegTr],
                 [imgsPosTr,  targetsPosTr])
             imagesCuda = imgsTr.to(device0, non_blocking=True)
-            labelsCuda = targetsTr.float().to(device0, non_blocking=True)
+            labelsCuda = targetsTr.float().to(device0, non_blocking=True).view([-1,1])
 
             ## img, sex, age_approx, anatom
             optimizer.zero_grad()
-            predict = torch.sigmoid(model(imagesCuda)).squeeze()
-            criLoss = lossCri(predict, labelsCuda)
-            criLoss.backward()
-            optimizer.step()
+            with amp.autocast():
+                #print(imagesCuda.shape)
+                predict = model(imagesCuda)
+                criLoss = lossCri(predict, labelsCuda)
+            scaler.scale(criLoss).backward()
+            scaler.step(optimizer)
+            scaler.update()
             trainingTimes += 1
 
             if trainingTimes % displayTimes == 0:
@@ -129,7 +131,7 @@ if __name__ == "__main__":
                     print("Epoch : %d , Training time : %d" % (e, trainingTimes))
                     print("Cri Loss is %.3f " % (criLoss.item()))
                     print("Learning rate is ", optimizer.state_dict()['param_groups'][0]["lr"])
-                    print("predicted labels : ", predict[0:5])
+                    print("predicted labels : ", torch.sigmoid(predict[0:5]))
                     print("Truth labels : ", labelsCuda[0:5])
 
 
@@ -165,7 +167,7 @@ if __name__ == "__main__":
                            + "_AUCPR" + str(aucPR) + ".pth")
                 model = model.train(mode=True)
         scheduler.step()
-    torch.save(model.state_dict(), modelSavePath + modelSavePath + "Model_ETNetF_.pth")
+    torch.save(model.state_dict(), modelSavePath + "Model_ETNetF_.pth")
 
 
 
